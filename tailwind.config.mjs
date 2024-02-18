@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'banner': "url('/cphlive/windows.png')",
+				'banner': "url('/windows.png')",
 			  }
 		},
 	},
