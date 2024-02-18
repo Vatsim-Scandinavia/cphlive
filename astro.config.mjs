@@ -5,5 +5,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://Vatsim-Scandinavia.github.io',
+  site: 'https://cphlive.vatsim-scandinavia.org/',
+  base: '/cphlive'
 });
