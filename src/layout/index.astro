@@ -3,10 +3,10 @@ import { ViewTransitions } from "astro:transitions";
 import ThemeToggle from "../components/ThemeToggle.tsx";
 ---
 
-<html lang="en" class="bg-[#0f131b]">
+<html lang="en">
   <head>
     <script is:inline>
-      const isDarkMode = localStorage.getItem("darkMode");
+      const isDarkMode = localStorage.getItem("theme");
       const theme = isDarkMode === "true" ? "dark" : "";
       document.querySelector("html").className = theme;
     </script>
