@@ -1,85 +1,163 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import ThemeToggle from "../components/ThemeToggle";
+import { ViewTransitions } from "astro:transitions";
+import ThemeToggle from "../components/ThemeToggle.tsx";
 ---
+
 <html lang="en" class="bg-[#0f131b]">
   <head>
+    <script is:inline>
+      const isDarkMode = localStorage.getItem("darkMode");
+      const theme = isDarkMode === "true" ? "dark" : "";
+      document.querySelector("html").className = theme;
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script is:inline>
-      const isDarkMode = localStorage.getItem('darkMode');
-      const theme = isDarkMode === 'true' ? 'dark' : '';
-      document.querySelector("html").className = theme;
-    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
+    <title>Copenhagen Live 2024</title>
     <ViewTransitions />
   </head>
-  <body class="bg-[#0f131b] h-full w-screen">
+  <body class="bg-white dark:bg-[#0f131b] h-full w-screen">
     <div
-      class="w-32 absolute top-0 left-5 h-full flex flex-col items-center p-2 text-white"
+      class="w-24 absolute top-0 left-5 h-full flex flex-col items-center p-2 text-white"
     >
-      <a href="/" class="bg-[#28465e] p-2 rounded mt-8">
+      <a href="/" class="bg-[#28465e] p-2 rounded mt-2">
         <img src="/Arrow transparent.svg" class="W-12 h-12" />
       </a>
       <div
-        class="flex h-1/3 justify-between gap-6 flex-col mt-12 font-semibold text-lg uppercase"
+        class="flex h-1/3 justify-between gap-2 flex-col mt-12 font-semibold text-lg uppercase"
       >
         <a
           href="/briefing"
-          class=" p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary "
+          class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
-          <img src="/icons/Documents.svg" class="w-18 h-18 p-2" />
-          <p class="text-opacity-100">Briefing</p>
+          <svg
+            class="w-14 h-14 p-2 stroke-black dark:stroke-white"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.25 29.1667V20.8333C6.25 12.9766 6.25 9.04823 8.69077 6.60744C11.1316 4.16667 15.0599 4.16667 22.9167 4.16667H27.0833C34.94 4.16667 38.8685 4.16667 41.3092 6.60744C42.67 7.96826 43.2721 9.79144 43.5385 12.5M43.75 20.8333V29.1667C43.75 37.0233 43.75 40.9519 41.3092 43.3925C38.8685 45.8333 34.94 45.8333 27.0833 45.8333H22.9167C15.0599 45.8333 11.1316 45.8333 8.69077 43.3925C7.32998 42.0317 6.72785 40.2085 6.46144 37.5"
+              stroke-width="4"
+              stroke-linecap="round"></path>
+            <path
+              d="M16.6667 29.1667H27.0834"
+              stroke-width="4"
+              stroke-linecap="round"></path>
+            <path
+              d="M16.6667 20.8333H18.75M33.3334 20.8333H25"
+              stroke-width="4"
+              stroke-linecap="round"></path>
+          </svg>
+
+          <p class="text-opacity-100 dark:text-white text-black">Briefing</p>
         </a>
         <a
           href="/scenery"
-          class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary "
+          class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
-          <img src="/icons/Runway.svg" class="w-18 h-18 p-2" />
-          <span>SCENERY</span>
+          <svg
+            class="w-14 h-14 p-2 fill-black dark:fill-white"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.172 6.31219C18.2882 6.59125 18.9669 7.72235 18.6878 8.8386L10.3545 42.1719C10.0754 43.2881 8.94429 43.9669 7.82806 43.6877C6.71181 43.4087 6.03315 42.2777 6.31221 41.1615L14.6455 7.82804C14.9246 6.71179 16.0557 6.03312 17.172 6.31219ZM35.3544 7.82804L43.6877 41.1615C43.9669 42.2777 43.2881 43.4087 42.1719 43.6877C41.0556 43.9669 39.9246 43.2881 39.6456 42.1719L31.3123 8.8386C31.0331 7.72235 31.7119 6.59125 32.8281 6.31219C33.9444 6.03312 35.0754 6.71179 35.3544 7.82804ZM25 35.4167C26.0685 35.4167 26.949 36.2209 27.0693 37.257L27.0834 37.5V41.6667C27.0834 42.8173 26.1506 43.75 25 43.75C23.9316 43.75 23.051 42.9458 22.9307 41.9096L22.9167 41.6667V37.5C22.9167 36.3494 23.8494 35.4167 25 35.4167ZM25 20.8333C26.1506 20.8333 27.0834 21.766 27.0834 22.9166V27.0833C27.0834 28.234 26.1506 29.1666 25 29.1666C23.8494 29.1666 22.9167 28.234 22.9167 27.0833V22.9166C22.9167 21.766 23.8494 20.8333 25 20.8333ZM25 6.24998C26.0685 6.24998 26.949 7.05424 27.0693 8.09035L27.0834 8.33331V12.5C27.0834 13.6506 26.1506 14.5833 25 14.5833C23.9316 14.5833 23.051 13.7791 22.9307 12.7429L22.9167 12.5V8.33331C22.9167 7.18273 23.8494 6.24998 25 6.24998Z"
+            ></path>
+          </svg>
+          <span class="dark:text-white text-black">SCENERY</span>
         </a>
         <a
           href="/metar"
-          class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary "
+          class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
-          <img src="/icons/Wether.svg" class="w-18 h-18 p-2" />
-          <span>METAR</span>
+          <svg
+            class="w-14 h-14 p-2 stroke-black dark:stroke-white"
+            viewBox="0 0 61 54"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M41.8872 11.375C43.6038 9.45703 46.0984 8.25 48.875 8.25C54.0528 8.25 58.25 12.4473 58.25 17.625C58.25 22.8028 54.0528 27 48.875 27H2M19.2164 4.08334C20.3609 2.80469 22.024 2 23.875 2C27.3269 2 30.125 4.79822 30.125 8.25C30.125 11.7018 27.3269 14.5 23.875 14.5H2M28.5916 49.9166C29.7359 51.1953 31.3991 52 33.25 52C36.7019 52 39.5 49.2019 39.5 45.75C39.5 42.2981 36.7019 39.5 33.25 39.5H2"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+
+          <span class="dark:text-white text-black">METAR</span>
         </a>
         <a
           href="/stands"
-          class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary "
+          class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
-          <img src="/icons/Aircraft.svg" class="w-18 h-18 p-2" />
-          <span>STANDS</span>
+          <svg
+            class="w-14 h-14 p-2 fill-black dark:fill-white"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M25 0C21.5482 0 18.75 2.79822 18.75 6.25V13.4152C18.75 14.087 18.3206 14.6836 17.6835 14.8969L4.03779 19.4653C1.62583 20.2728 0 22.5317 0 25.0752V26.3622C0 26.5355 0.0144003 26.7084 0.0430521 26.8792C0.328547 28.5813 1.93982 29.7297 3.64194 29.4442L18.8861 26.8873L19.7721 38.3701L14.9876 42.0414C14.1494 42.6845 13.6929 43.7077 13.7742 44.7611L13.8883 46.2403C13.9194 46.6436 14.0285 47.037 14.2096 47.3987C14.9821 48.942 16.8595 49.5669 18.4028 48.7944L24.9905 45.4969L31.5996 48.7979C31.9606 48.9782 32.353 49.0868 32.7553 49.1179C34.476 49.2508 35.9788 47.9636 36.1117 46.2429L36.2304 44.7062C36.3118 43.6521 35.8547 42.6282 35.0155 41.9851L30.2323 38.3197L31.1139 26.9077L46.3597 29.4565C46.53 29.485 46.7024 29.4993 46.875 29.4993C48.6009 29.4993 50 28.1002 50 26.3743V25.0952C50 22.5572 48.3796 20.3027 45.9741 19.4936L32.3144 14.8995C31.6784 14.6856 31.25 14.0895 31.25 13.4185V6.25C31.25 2.79822 28.4518 0 25 0ZM25 3.125C26.7259 3.125 28.125 4.52411 28.125 6.25V13.4185C28.125 15.4315 29.4102 17.2197 31.3182 17.8614L44.9779 22.4556C46.1114 22.8368 46.875 23.8992 46.875 25.0952V26.3743L31.6291 23.8255C29.9269 23.5409 28.3162 24.6901 28.0316 26.3924C28.0164 26.4834 28.0052 26.575 27.9981 26.667L27.1166 38.079C27.0352 39.1332 27.4923 40.157 28.3315 40.8001L33.1147 44.4655L32.996 46.0022L26.3868 42.7012C25.5068 42.2617 24.4713 42.2622 23.5917 42.7025L17.004 45.9999L16.8899 44.5206L21.6745 40.8494C22.5127 40.2062 22.9692 39.1831 22.8879 38.1297L22.0018 26.6469C21.869 24.9261 20.3664 23.6388 18.6456 23.7716C18.553 23.7787 18.4608 23.79 18.3691 23.8053L3.125 26.3622V25.0752C3.125 23.8753 3.89201 22.8096 5.02989 22.4287L18.6756 17.8602C20.5868 17.2204 21.875 15.4306 21.875 13.4152V6.25C21.875 4.52411 23.2741 3.125 25 3.125Z"
+            ></path>
+          </svg>
+
+          <span class="dark:text-white text-black">STANDS</span>
         </a>
         <a
           href="/competition"
-          class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary "
+          class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
-          <img src="/icons/Pokal.svg" class="w-18 h-18 p-2" />
-          <span>COMPETITION</span>
+          <svg
+            class="w-14 h-14 p-2 fill-black dark:fill-white"
+            viewBox="0 0 50 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M48.2143 3.57143H37.5C37.4607 3.57143 37.4286 3.59107 37.3911 3.59286C36.2286 1.58571 34.95 0.480357 34.8571 0.403572C34.5375 0.142857 34.1375 0 33.725 0H16.2732C15.8607 0 15.4607 0.142857 15.1429 0.405357C15.05 0.482143 13.7696 1.5875 12.6089 3.59464C12.5714 3.59107 12.5393 3.57143 12.5 3.57143H1.78572C1.27679 3.57143 0.79286 3.7875 0.45536 4.16607C0.116074 4.54464 -0.0446402 5.05 0.010717 5.55357C0.61786 11.0196 4.59465 21.5143 15.2143 23.0089C16.3714 24.6589 17.7375 26.3268 19.3411 28.0143C19.4268 28.1054 19.5411 28.1536 19.6411 28.2232V32.1429H16.0696C15.0839 32.1429 14.2839 32.9411 14.2839 33.9286V39.2857H10.7143C9.72857 39.2857 8.92857 40.0839 8.92857 41.0714V48.2143C8.92857 49.2018 9.72857 50 10.7143 50H39.2857C40.2714 50 41.0714 49.2018 41.0714 48.2143V41.0714C41.0714 40.0839 40.2714 39.2857 39.2857 39.2857H35.7143V33.9286C35.7143 32.9411 34.9143 32.1429 33.9286 32.1429H30.3571V28.225C30.4589 28.1554 30.5714 28.1054 30.6571 28.0161C32.2589 26.3304 33.625 24.6607 34.7839 23.0107C45.4036 21.5161 49.3821 11.0214 49.9875 5.55536C50.0446 5.05179 49.8821 4.54643 49.5429 4.16786C49.2071 3.7875 48.7232 3.57143 48.2143 3.57143ZM3.93393 7.14286H11.1768C10.9696 7.95179 10.8018 8.80536 10.7429 9.75536C10.5625 12.6321 11.2036 15.6107 12.65 18.6732C6.88036 16.3375 4.69465 10.3107 3.93393 7.14286ZM37.5 46.4286H12.5V42.8571H16.0714H33.9286H37.5V46.4286ZM32.1429 39.2857H17.8571V35.7143H21.4286H28.5714H32.1429V39.2857ZM23.2143 32.1429V28.5714H26.7857V32.1429H23.2143ZM28.5893 25H28.5714H21.4286H21.4107C16.4411 19.6089 14.05 14.5839 14.3036 10.0554C14.4946 6.61964 16.1875 4.42679 16.9893 3.57143H33.0089C33.8161 4.43214 35.5054 6.62321 35.6964 10.0571C35.9482 14.5839 33.5571 19.6089 28.5893 25ZM37.3571 18.6589C38.8 15.6018 39.4375 12.6268 39.2571 9.75357C39.1982 8.80536 39.0304 7.95179 38.825 7.14286H46.0518C45.2714 10.2946 43.0554 16.3143 37.3571 18.6589Z"
+            ></path>
+          </svg>
+          <span class="dark:text-white text-black">COMPETITION</span>
         </a>
       </div>
       <a
-      href="/atc"
-      class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary absolute bottom-10 "
-    >
-      <img src="/icons/Atc.svg" class="w-16 h-16 p-2" />
-      <span>ATC</span>
-    </a>
+        href="/atc"
+        class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary absolute bottom-10"
+      >
+        <svg
+          version="1.1"
+          id="Layer_1"
+          class="w-14 h-14 p-2 fill-black dark:fill-white"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 485 485"
+        >
+          <g>
+            <path
+              d="M450.463,211.887h-94.811l23.411-115.613H257.5V0h-30v96.274H105.938l23.411,115.613H34.537L64.022,357.5h121.925V485h30
+		V357.5h53.105V485h30V357.5h121.925L450.463,211.887z M257.5,241.887h63.215l-8.668,85.613H257.5V241.887z M227.5,327.5h-54.547
+		l-8.668-85.613H227.5V327.5z M142.621,126.274h199.758l-17.335,85.613H159.956L142.621,126.274z M71.221,241.887h62.911
+		l8.668,85.613H88.557L71.221,241.887z M396.443,327.5h-54.242l8.668-85.613h62.911L396.443,327.5z"
+            ></path>
+          </g>
+        </svg>
+        <span class="dark:text-white text-black">ATC</span>
+      </a>
     </div>
-    <div class="w-[calc(100%-10.5rem)] h-full absolute top-0 left-[10.5rem] -mr-32">
+    <div
+      class="w-[calc(100%-10.5rem)] h-full absolute top-0 left-[10.5rem] -mr-32"
+    >
       <slot />
     </div>
-    <div class="absolute right-10 bottom-10">
-      <ThemeToggle client:only />
-    </div>
+    <divnp class="absolute right-10 bottom-10">
+      <ThemeToggle client:visible />
+    </divnp>
   </body>
 </html>
