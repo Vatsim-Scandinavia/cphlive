@@ -23,29 +23,29 @@ const metarObject = metarParser('EKCH 231220Z AUTO 22016KT 9999 BKN033/// 07/03 
     <div class="flex">
         <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Wether.svg" class="w-16 p-2" />
-            <p class="font-bold">Winds</p>
-            <p class="">{metarObject.wind.degrees}° / {metarObject.wind.speed_kts}kt</p>
+            <p class="font-bold text-white">Winds</p>
+            <p class="text-white">{metarObject.wind.degrees}° / {metarObject.wind.speed_kts}kt</p>
         </div>
         <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Binoculars.svg" class="w-16 p-2" />
-            <p class="font-bold">Visibility</p>
-            <p class="">{metarObject.visibility.meters_float}</p>
+            <p class="text-white font-bold">Visibility</p>
+            <p class="text-white">{metarObject.visibility.meters_float}</p>
         </div>
         <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Clouds.svg" class="w-16 p-2" />
-            <p class="font-bold">Clouds</p>
-            <p class="">{metarObject.clouds[0].code}</p>
+            <p class="text-white font-bold">Clouds</p>
+            <p class="text-white">{metarObject.clouds[0].code}</p>
         </div>
         <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Temp.svg" class="w-16 p-2" />
-            <p class="font-bold">Temperature</p>
-            <p class="">{metarObject.temperature.celsius}°C / {metarObject.dewpoint.celsius}°C</p>
+            <p class="text-white font-bold">Temperature</p>
+            <p class="text-white">{metarObject.temperature.celsius}°C / {metarObject.dewpoint.celsius}°C</p>
         </div>
         <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Barometer.svg" class="w-16 p-2" />
-            <p class="font-bold">Barometer</p>
-            <p class="">{metarObject.barometer.mb}</p>
+            <p class="text-white font-bold">Barometer</p>
+            <p class="text-white">{metarObject.barometer.mb}</p>
         </div>
     </div>
-    <p>Last updated {metarObject.observed}</p>
+    <p class="text-white">Last updated {metarObject.observed}</p>
 </div>

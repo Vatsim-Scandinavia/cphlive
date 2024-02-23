@@ -23,11 +23,9 @@ import ThemeToggle from "../components/ThemeToggle.tsx";
     <title>Copenhagen Live 2024</title>
     <ViewTransitions />
   </head>
-  <body class="bg-white dark:bg-[#0f131b] h-full w-screen">
-    <div
-      class="w-32 absolute top-0 left-2.5 h-full flex flex-col items-center p-2 text-white"
-    >
-      <a href="/" class="bg-[#28465e] p-2 rounded mt-10">
+  <body class="dark:bg-gradient-to-tr from-slate-800 via-slate-700 to-slate-800 h-full w-screen">
+    <div class="w-36 absolute top-0 h-full flex flex-col items-center p-4 text-white bg-[#011328]">
+      <a href="/" class="bg-[#28465e] p-2 rounded mt-6">
         <img src="/Arrow transparent.svg" class="W-12 h-12" alt="site logo" />
       </a>
       <div
@@ -38,7 +36,7 @@ import ThemeToggle from "../components/ThemeToggle.tsx";
           class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
           <svg
-            class="w-14 h-14 p-2 stroke-black dark:stroke-white"
+            class="w-14 h-14 p-2 stroke-white"
             viewBox="0 0 50 50"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -57,14 +55,14 @@ import ThemeToggle from "../components/ThemeToggle.tsx";
               stroke-linecap="round"></path>
           </svg>
 
-          <p class="text-opacity-100 dark:text-white text-black">Briefing</p>
+          <p class="text-opacity-100 text-white ">Briefing</p>
         </a>
         <a
           href="/scenery"
           class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
           <svg
-            class="w-14 h-14 p-2 fill-black dark:fill-white"
+            class="w-14 h-14 p-2 fill-white"
             viewBox="0 0 50 50"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -73,14 +71,14 @@ import ThemeToggle from "../components/ThemeToggle.tsx";
               d="M17.172 6.31219C18.2882 6.59125 18.9669 7.72235 18.6878 8.8386L10.3545 42.1719C10.0754 43.2881 8.94429 43.9669 7.82806 43.6877C6.71181 43.4087 6.03315 42.2777 6.31221 41.1615L14.6455 7.82804C14.9246 6.71179 16.0557 6.03312 17.172 6.31219ZM35.3544 7.82804L43.6877 41.1615C43.9669 42.2777 43.2881 43.4087 42.1719 43.6877C41.0556 43.9669 39.9246 43.2881 39.6456 42.1719L31.3123 8.8386C31.0331 7.72235 31.7119 6.59125 32.8281 6.31219C33.9444 6.03312 35.0754 6.71179 35.3544 7.82804ZM25 35.4167C26.0685 35.4167 26.949 36.2209 27.0693 37.257L27.0834 37.5V41.6667C27.0834 42.8173 26.1506 43.75 25 43.75C23.9316 43.75 23.051 42.9458 22.9307 41.9096L22.9167 41.6667V37.5C22.9167 36.3494 23.8494 35.4167 25 35.4167ZM25 20.8333C26.1506 20.8333 27.0834 21.766 27.0834 22.9166V27.0833C27.0834 28.234 26.1506 29.1666 25 29.1666C23.8494 29.1666 22.9167 28.234 22.9167 27.0833V22.9166C22.9167 21.766 23.8494 20.8333 25 20.8333ZM25 6.24998C26.0685 6.24998 26.949 7.05424 27.0693 8.09035L27.0834 8.33331V12.5C27.0834 13.6506 26.1506 14.5833 25 14.5833C23.9316 14.5833 23.051 13.7791 22.9307 12.7429L22.9167 12.5V8.33331C22.9167 7.18273 23.8494 6.24998 25 6.24998Z"
             ></path>
           </svg>
-          <span class="dark:text-white text-black">SCENERY</span>
+          <span class="text-white ">SCENERY</span>
         </a>
         <a
           href="/metar"
           class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
           <svg
-            class="w-14 h-14 p-2 stroke-black dark:stroke-white"
+            class="w-14 h-14 p-2 stroke-white"
             viewBox="0 0 61 54"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -92,14 +90,14 @@ import ThemeToggle from "../components/ThemeToggle.tsx";
               stroke-linejoin="round"></path>
           </svg>
 
-          <span class="dark:text-white text-black">METAR</span>
+          <span class="text-white ">METAR</span>
         </a>
         <a
           href="/stands"
           class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
           <svg
-            class="w-14 h-14 p-2 fill-black dark:fill-white"
+            class="w-14 h-14 p-2 fill-white"
             viewBox="0 0 50 50"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -109,14 +107,14 @@ import ThemeToggle from "../components/ThemeToggle.tsx";
             ></path>
           </svg>
 
-          <span class="dark:text-white text-black">STANDS</span>
+          <span class="text-white ">STANDS</span>
         </a>
         <a
           href="/competition"
           class="p-2 rounded justify-center items-center flex flex-col text-center hover:bg-vatscasecondary"
         >
           <svg
-            class="w-14 h-14 p-2 fill-black dark:fill-white"
+            class="w-14 h-14 p-2 fill-white"
             viewBox="0 0 50 50"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +123,7 @@ import ThemeToggle from "../components/ThemeToggle.tsx";
               d="M48.2143 3.57143H37.5C37.4607 3.57143 37.4286 3.59107 37.3911 3.59286C36.2286 1.58571 34.95 0.480357 34.8571 0.403572C34.5375 0.142857 34.1375 0 33.725 0H16.2732C15.8607 0 15.4607 0.142857 15.1429 0.405357C15.05 0.482143 13.7696 1.5875 12.6089 3.59464C12.5714 3.59107 12.5393 3.57143 12.5 3.57143H1.78572C1.27679 3.57143 0.79286 3.7875 0.45536 4.16607C0.116074 4.54464 -0.0446402 5.05 0.010717 5.55357C0.61786 11.0196 4.59465 21.5143 15.2143 23.0089C16.3714 24.6589 17.7375 26.3268 19.3411 28.0143C19.4268 28.1054 19.5411 28.1536 19.6411 28.2232V32.1429H16.0696C15.0839 32.1429 14.2839 32.9411 14.2839 33.9286V39.2857H10.7143C9.72857 39.2857 8.92857 40.0839 8.92857 41.0714V48.2143C8.92857 49.2018 9.72857 50 10.7143 50H39.2857C40.2714 50 41.0714 49.2018 41.0714 48.2143V41.0714C41.0714 40.0839 40.2714 39.2857 39.2857 39.2857H35.7143V33.9286C35.7143 32.9411 34.9143 32.1429 33.9286 32.1429H30.3571V28.225C30.4589 28.1554 30.5714 28.1054 30.6571 28.0161C32.2589 26.3304 33.625 24.6607 34.7839 23.0107C45.4036 21.5161 49.3821 11.0214 49.9875 5.55536C50.0446 5.05179 49.8821 4.54643 49.5429 4.16786C49.2071 3.7875 48.7232 3.57143 48.2143 3.57143ZM3.93393 7.14286H11.1768C10.9696 7.95179 10.8018 8.80536 10.7429 9.75536C10.5625 12.6321 11.2036 15.6107 12.65 18.6732C6.88036 16.3375 4.69465 10.3107 3.93393 7.14286ZM37.5 46.4286H12.5V42.8571H16.0714H33.9286H37.5V46.4286ZM32.1429 39.2857H17.8571V35.7143H21.4286H28.5714H32.1429V39.2857ZM23.2143 32.1429V28.5714H26.7857V32.1429H23.2143ZM28.5893 25H28.5714H21.4286H21.4107C16.4411 19.6089 14.05 14.5839 14.3036 10.0554C14.4946 6.61964 16.1875 4.42679 16.9893 3.57143H33.0089C33.8161 4.43214 35.5054 6.62321 35.6964 10.0571C35.9482 14.5839 33.5571 19.6089 28.5893 25ZM37.3571 18.6589C38.8 15.6018 39.4375 12.6268 39.2571 9.75357C39.1982 8.80536 39.0304 7.95179 38.825 7.14286H46.0518C45.2714 10.2946 43.0554 16.3143 37.3571 18.6589Z"
             ></path>
           </svg>
-          <span class="dark:text-white text-black">COMPETITION</span>
+          <span class="text-white ">COMPETITION</span>
         </a>
       </div>
       <a
@@ -135,7 +133,7 @@ import ThemeToggle from "../components/ThemeToggle.tsx";
         <svg
           version="1.1"
           id="Layer_1"
-          class="w-14 h-14 p-2 fill-black dark:fill-white"
+          class="w-14 h-14 p-2 fill-white"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 485 485"
         >
@@ -148,11 +146,11 @@ import ThemeToggle from "../components/ThemeToggle.tsx";
             ></path>
           </g>
         </svg>
-        <span class="dark:text-white text-black">ATC</span>
+        <span class="text-white ">ATC</span>
       </a>
     </div>
     <div
-      class="w-[calc(100%-9.125rem)] h-screen absolute top-0 left-[9.125rem] -mr-32 bg-gradient-to-tr from-slate-100 via-slate-200 to-slate-300 dark:bg-gradient-to-tr dark:from-slate-800 dark:via-slate-700 dark:to-slate-800"
+      class="w-[calc(100%-9rem)] h-screen absolute top-0 left-[9rem] -mr-32 bg-gradient-to-tr from-slate-100 via-slate-200 to-slate-300 dark:bg-gradient-to-tr dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 overflow-y-scroll"
     >
       <slot />
     </div>
