@@ -1,7 +1,8 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import ThemeToggle from "../components/ThemeToggle";
 ---
-<html lang="en">
+<html lang="en" class="bg-[#0f131b]">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -9,16 +10,20 @@ import { ViewTransitions } from 'astro:transitions';
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+    <script is:inline>
+      const isDarkMode = localStorage.getItem('darkMode');
+      const theme = isDarkMode === 'true' ? 'dark' : '';
+      document.querySelector("html").className = theme;
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
     <ViewTransitions />
   </head>
-  <body class="bg-[#0f131] dark:bg-[#0f131b] h-full w-screen">
+  <body class="bg-[#0f131b] h-full w-screen">
     <div
-      class="w-32 absolute top-0 left-5 h-full flex flex-col items-center p-2 text-vatscaSnow"
+      class="w-32 absolute top-0 left-5 h-full flex flex-col items-center p-2 text-white"
     >
       <a href="/" class="bg-[#28465e] p-2 rounded mt-8">
         <img src="/Arrow transparent.svg" class="W-12 h-12" />
@@ -72,6 +77,9 @@ import { ViewTransitions } from 'astro:transitions';
     </div>
     <div class="w-[calc(100%-10.5rem)] h-full absolute top-0 left-[10.5rem] -mr-32">
       <slot />
+    </div>
+    <div class="absolute right-10 bottom-10">
+      <ThemeToggle client:only />
     </div>
   </body>
 </html>

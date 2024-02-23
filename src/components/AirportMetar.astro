@@ -19,29 +19,29 @@ const x = getMetarData(icao)
 const metarObject = metarParser('EKCH 231220Z AUTO 22016KT 9999 BKN033/// 07/03 Q0991 NOSIG');
 ---
 <div class="flex flex-col items-center">
-    <p class="text-vatscaSnow text-2xl font-semibold">{airport}</p>
+    <p class="text-white text-2xl font-semibold">{airport}</p>
     <div class="flex">
-        <div class="w-32 h-32 bg-vatscasecondary p-4 m-2 rounded flex justify-center items-center flex-col">
+        <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Wether.svg" class="w-16 p-2" />
             <p class="font-bold">Winds</p>
             <p class="">{metarObject.wind.degrees}° / {metarObject.wind.speed_kts}kt</p>
         </div>
-        <div class="w-32 h-32 bg-vatscasecondary p-4 m-2 rounded flex justify-center items-center flex-col">
+        <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Binoculars.svg" class="w-16 p-2" />
             <p class="font-bold">Visibility</p>
             <p class="">{metarObject.visibility.meters_float}</p>
         </div>
-        <div class="w-32 h-32 bg-vatscasecondary p-4 m-2 rounded flex justify-center items-center flex-col">
+        <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Clouds.svg" class="w-16 p-2" />
             <p class="font-bold">Clouds</p>
             <p class="">{metarObject.clouds[0].code}</p>
         </div>
-        <div class="w-32 h-32 bg-vatscasecondary p-4 m-2 rounded flex justify-center items-center flex-col">
+        <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Temp.svg" class="w-16 p-2" />
             <p class="font-bold">Temperature</p>
             <p class="">{metarObject.temperature.celsius}°C / {metarObject.dewpoint.celsius}°C</p>
         </div>
-        <div class="w-32 h-32 bg-vatscasecondary p-4 m-2 rounded flex justify-center items-center flex-col">
+        <div class="w-32 h-32 bg-[#30465d] p-4 m-2 rounded flex justify-center items-center flex-col">
             <img src="/icons/Barometer.svg" class="w-16 p-2" />
             <p class="font-bold">Barometer</p>
             <p class="">{metarObject.barometer.mb}</p>
