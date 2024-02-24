@@ -37,7 +37,7 @@ const ThemeToggle = () => {
   }, []);
 
   return (
-<button id="themeToggle">
+<button id="themeToggle" className='hidden lg:block'>
   <svg width="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="fill-[#011328] dark:fill-white">
     <path
       className="sun"
