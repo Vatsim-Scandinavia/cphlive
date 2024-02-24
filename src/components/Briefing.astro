@@ -1,0 +1,13 @@
+---
+const { background, briefLogo, briefText, briefUrl, briefUrlText } = Astro.props
+---
+<div class="rounded-lg w-64 h-64 text-center flex flex-col items-center justify-center bg-[url('https://images.ctfassets.net/oz9qk43ly6yk/3dhInj4LD6097MuIDchKgM/806cccb5d2f37ab47f01394bddc27a13/Bi3706_rgb_SAS_A330_Bild_2.jpg?w=800&q=72')] bg-cover bg-center bg-opacity-75">
+    <div class="backdrop-blur-sm bg-white/30 w-full h-full flex-col flex items-center justify-center">
+        <img src={briefLogo} class="p-2 w-full h-16">
+        <br/>
+        <div>
+            <p class="text-black">{briefText}</p>
+            <a class="text-black font-bold mt-8" href={briefUrl}>{briefUrlText}</a>
+        </div>
+    </div>
+</div>

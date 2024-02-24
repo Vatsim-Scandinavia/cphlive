@@ -1,37 +1,19 @@
 ---
 import Layout from "../layout/index.astro"
+import AirportBriefing from "../components/Briefing.astro"
 ---
 <Layout>
     <div class="w-full h-full flex justify-start pt-12 flex-col items-center">
         <h1 class="text-6xl font-semibold text-white ">Briefing</h1>
         <br />
-        <p class="text-center text-white">It is important for us, you get a good experience with us, at CPH LIVE 24.<br/> 
-        Therefore we have gathered all the briefings to help you to a smooth flight.<br /> 
+        <p class="text-center text-white p-4">It is important for us, you get a good experience with us, at CPH LIVE 24. 
+        Therefore we have gathered all the briefings to help you to a smooth flight.
         Make sure you are aware of the material before you fly, and check the FAQ. </p>
-        <div class="grid gap-12 mt-12 grid-cols-2 xl:grid-cols-4">
-            <div class="bg-[#28465e] p-2 rounded w-64 h-64 text-center flex flex-col items-center justify-center">
-                <img src="https://static.wixstatic.com/media/1bcc9c_51d507bd2dcf42478dbd7fd5ca6ecde8~mv2.png/v1/fill/w_222,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/1bcc9c_51d507bd2dcf42478dbd7fd5ca6ecde8~mv2.png" alt="" class="p-4">
-                <br/>
-                <p class="text-white">I want to fly a flight for SAS.</p>
-                <a class="text-white font-bold mt-8" href="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2659">SAS Briefing</a>
-            </div>
-            <div class="bg-[#28465e] p-2 rounded w-64 h-64 text-center flex flex-col items-center justify-center">
-                <img src="https://www.virtualnorwegian.net/lib/skins/vnorwegian/img/logo2.png" alt="" class="p-4">
-                <br/>
-                <p class="text-white">I want to fly a flight for Norwegian.</p>
-                <a class="text-white font-bold mt-8" href="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2655">Norwegian Briefing</a>
-            </div>
-            <div class="bg-[#28465e] p-2 rounded w-64 h-64 text-center flex flex-col items-center justify-center">
-                <img src="https://web.archive.org/web/20230909105523im_/https://vatsim-scandinavia.org/uploads/monthly_2020_07/1637069529_logolegacyeu.png.d7ead1720cce8a79ad5f133a8aba7343.png" alt="" class="p-4">
-                <p class="text-white">I want to fly a flight for A European legacy carrier.</p>
-                <a class="text-white font-bold mt-8" href="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2657">European Carriers Briefing</a>
-            </div>
-            <div class="bg-[#28465e] p-2 rounded w-64 h-64 text-center flex flex-col items-center justify-center">
-                <img src="https://web.archive.org/web/20230909105523im_/https://vatsim-scandinavia.org/uploads/monthly_2020_07/1729978211_logolowcost.png.073bb0b0301c62291894bdfceca5895a.png" alt="" class="p-4">
-                <br/>
-                <p class="text-white">I want to fly a flight for Low cost carrier.</p>
-                <a class="text-white font-bold mt-8" href="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2660">Low Cost Airlines Briefing</a>
-            </div>
+        <div class="grid gap-12 mt-12 grid-cols-1 xl:grid-cols-4 rounded">
+            <AirportBriefing briefLogo="/logos/sas.svg" briefText="I want to fly a flight for SAS." briefUrl="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2659" briefUrlText="SAS Briefing"/>
+            <AirportBriefing briefLogo="/logos/norwegian.svg" briefText="I want to fly a flight for Norwegian." briefUrl="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2655" briefUrlText="Norwegian Briefing"/>
+            <AirportBriefing briefLogo="https://web.archive.org/web/20230909105523im_/https://vatsim-scandinavia.org/uploads/monthly_2020_07/1637069529_logolegacyeu.png.d7ead1720cce8a79ad5f133a8aba7343.png" briefText="I want to fly a flight for A European legacy carrier." briefUrl="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2657" briefUrlText="European Carriers Briefing"/>
+            <AirportBriefing briefLogo="https://web.archive.org/web/20230909105523im_/https://vatsim-scandinavia.org/uploads/monthly_2020_07/1729978211_logolowcost.png.073bb0b0301c62291894bdfceca5895a.png" briefText="I want to fly a flight for Low cost carrier." briefUrl="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2660" briefUrlText="Low Cost Airlines Briefing"/>
         </div>
     </div>
 </Layout>
