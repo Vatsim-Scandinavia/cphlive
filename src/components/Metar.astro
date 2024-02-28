@@ -1,5 +1,7 @@
 ---
+'use strict';
 const {icao, airport} = Astro.props
+import "./aewx-metar-parser.d.ts"
 import metarParser from 'aewx-metar-parser';
 const response = await fetch("https://metar.vatsim.net/"+icao)
 const metar = await response.text()
