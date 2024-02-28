@@ -1,7 +1,7 @@
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 
 interface Airport {
-  name: string;,
+  name: string,
   standguide: string,
   icao:string
 }
