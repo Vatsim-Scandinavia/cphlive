@@ -1,19 +1,89 @@
 ---
-import Layout from "../layout/index.astro"
-import AirportBriefing from "../components/Briefing.astro"
+import Layout from "../layout/index.astro";
+import AirportModal from "../components/AirportModal.tsx";
+const airports = [
+    { name: "Kastrup", icao: "EKCH", standguide: "https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=3318", pushback: "https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=4391&key=5033a7fc554455bce1ceabead8c1bd96", taxi: "https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=3320", charts: "https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=4454&key=3384d7148670adf2b4acf5986ff5e00d"},
+    { name: "Roskilde", icao: "EKRK", standguide: "", pushback: "", taxi: "", charts: ""},
+    { name: "Rønne", icao: "EKRN", standguide: "", pushback: "", taxi: "", charts: ""},
+    { name: "Billund", icao: "EKBI", standguide: "", pushback: "", taxi: "", charts: ""},
+    { name: "Aalborg", icao: "EKYT", standguide: "", pushback: "", taxi: "", charts: ""},
+    { name: "Aarhus", icao: "EKAH", standguide: "", pushback: "", taxi: "", charts: ""},
+    { name: "Sønderborg", icao: "EKSB", standguide: "", pushback: "", taxi: "", charts: ""},
+];
 ---
+
 <Layout>
-    <div class="w-full h-full flex justify-start pt-12 flex-col items-center">
-        <h1 class="text-6xl font-semibold text-white ">Briefing</h1>
-        <br />
-        <p class="text-center text-white p-4">It is important for us, you get a good experience with us, at CPH LIVE 24. 
-        Therefore we have gathered all the briefings to help you to a smooth flight.
-        Make sure you are aware of the material before you fly, and check the FAQ. </p>
-        <div class="grid gap-12 mt-12 grid-cols-1 xl:grid-cols-4 rounded">
-            <AirportBriefing briefLogo="/logos/sas.svg" briefText="I want to fly a flight for SAS." briefUrl="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2659" briefUrlText="SAS Briefing"/>
-            <AirportBriefing briefLogo="/logos/norwegian.svg" briefText="I want to fly a flight for Norwegian." briefUrl="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2655" briefUrlText="Norwegian Briefing"/>
-            <AirportBriefing briefLogo="https://web.archive.org/web/20230909105523im_/https://vatsim-scandinavia.org/uploads/monthly_2020_07/1637069529_logolegacyeu.png.d7ead1720cce8a79ad5f133a8aba7343.png" briefText="I want to fly a flight for A European legacy carrier." briefUrl="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2657" briefUrlText="European Carriers Briefing"/>
-            <AirportBriefing briefLogo="https://web.archive.org/web/20230909105523im_/https://vatsim-scandinavia.org/uploads/monthly_2020_07/1729978211_logolowcost.png.073bb0b0301c62291894bdfceca5895a.png" briefText="I want to fly a flight for Low cost carrier." briefUrl="https://web.archive.org/web/20230909105523/https://vatsim-scandinavia.org/applications/core/interface/file/attachment.php?id=2660" briefUrlText="Low Cost Airlines Briefing"/>
+  <div class="w-full h-full flex justify-start pt-12 flex-col items-center">
+    <h1 class="text-6xl font-semibold text-white">Briefing</h1>
+    <br />
+    <div class="flex items-center justify-center dark:text-white w-full">
+      <div class="flex w-full justify-center items-center flex-col">
+        <h1 class="text-4xl font-semibold m-6">Airports</h1>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {airports.map((item) => (
+                <AirportModal airport={item} client:visible />
+            ))}
         </div>
-    </div>
+      </div>
+      <div class="flex w-full justify-center items-center flex-col">
+        <h1 class="text-4xl font-semibold m-6">Airlines</h1>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div
+            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
+          >
+            <p class="text-black font-semibold text-xl text-center">
+              Scandinavian<br />Airlines
+            </p>
+            <p class="text-black font-semibold">SAS</p>
+          </div>
+          <div
+            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
+          >
+            <p class="text-black font-semibold text-xl">Norwegian</p>
+            <p class="text-black font-semibold">NOZ</p>
+          </div>
+          <div
+            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
+          >
+            <p class="text-black font-semibold text-xl">Ryanair</p>
+            <p class="text-black font-semibold">RYR</p>
+          </div>
+          <div
+            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
+          >
+            <p class="text-black font-semibold text-xl">DAT</p>
+            <p class="text-black font-semibold">DTR</p>
+          </div>
+          <div
+            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
+          >
+            <p class="text-black font-semibold text-xl">KLM</p>
+            <p class="text-black font-semibold">KLM</p>
+          </div>
+          <div
+            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
+          >
+            <p class="text-black font-semibold text-xl">Lufthansa</p>
+            <p class="text-black font-semibold">DLH</p>
+          </div>
+          <div
+            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
+          >
+            <p class="text-black font-semibold text-xl">
+              European<br />Carriers
+            </p>
+            <p class="text-black font-semibold">Multiple</p>
+          </div>
+          <div
+            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
+          >
+            <p class="text-black font-semibold text-xl">
+              Low Cost<br />Airlines
+            </p>
+            <p class="text-black font-semibold">Multiple</p>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
 </Layout>
