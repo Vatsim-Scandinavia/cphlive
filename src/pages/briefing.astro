@@ -39,60 +39,9 @@ const airlines = [
       <div class="flex w-full justify-center items-center flex-col">
         <h1 class="text-4xl font-semibold m-6">Airlines</h1>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div
-            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
-          >
-            <p class="text-black font-semibold text-xl text-center">
-              Scandinavian<br />Airlines
-            </p>
-            <p class="text-black font-semibold">SAS</p>
-          </div>
-          <div
-            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
-          >
-            <p class="text-black font-semibold text-xl">Norwegian</p>
-            <p class="text-black font-semibold">NOZ</p>
-          </div>
-          <div
-            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
-          >
-            <p class="text-black font-semibold text-xl">Ryanair</p>
-            <p class="text-black font-semibold">RYR</p>
-          </div>
-          <div
-            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
-          >
-            <p class="text-black font-semibold text-xl">DAT</p>
-            <p class="text-black font-semibold">DTR</p>
-          </div>
-          <div
-            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
-          >
-            <p class="text-black font-semibold text-xl">KLM</p>
-            <p class="text-black font-semibold">KLM</p>
-          </div>
-          <div
-            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
-          >
-            <p class="text-black font-semibold text-xl">Lufthansa</p>
-            <p class="text-black font-semibold">DLH</p>
-          </div>
-          <div
-            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
-          >
-            <p class="text-black font-semibold text-xl">
-              European<br />Carriers
-            </p>
-            <p class="text-black font-semibold">Multiple</p>
-          </div>
-          <div
-            class="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24"
-          >
-            <p class="text-black font-semibold text-xl">
-              Low Cost<br />Airlines
-            </p>
-            <p class="text-black font-semibold">Multiple</p>
-          </div>
+          {airlines.map((item) => (
+            <AirportModal airport={item} client:visible />
+        ))}
         </div>
       </div>
     </div>    
