@@ -1,6 +1,12 @@
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 
-export default function AirportModal(props: {airport: Object}) {
+interface Airport {
+  name: string;,
+  standguide: string,
+  icao:string
+}
+
+export default function AirportModal(props: {airport: Airport}) {
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
   return (
