@@ -1,7 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import ThemeToggle from "../components/ThemeToggle.tsx";
-import Navigation from "../components/Navigation.astro"
+import Navigation from "../components/Navigation.astro";
 ---
 
 <html lang="en">
@@ -24,24 +24,32 @@ import Navigation from "../components/Navigation.astro"
     <title>Copenhagen Live 2024</title>
     <ViewTransitions />
   </head>
-  <body class="dark:bg-gradient-to-tr from-slate-800 via-slate-700 to-slate-800 h-full w-screen">
+  <body class="w-screen">
     <Navigation />
-    <div
-      class="hidden lg:block w-[calc(100%-7rem)] h-screen absolute top-0 left-[7rem] -mr-32 bg-gradient-to-tr from-slate-100 via-slate-200 to-slate-300 dark:bg-gradient-to-tr dark:from-slate-800 dark:via-slate-700 dark:to-slate-800 overflow-y-scroll"
-    >
-      <slot />
+    <div class="w-full h-full text-[#dfebeb] flex flex-col justify-center items-center gap-4" >
+
+      <div class="hidden lg:block w-[calc(100%-7rem)] h-full absolute top-0 left-[7rem] -mr-32 overflow-y-scroll bg-[url('/background.jpg')] bg-center backdrop-blur bg-[size:150%]" >
+        <div class="w-full h-full backdrop-blur-sm bg-black/30 flex flex-col justify-center items-center gap-4">
+          <slot />
+        </div>
+      </div>
+
+      <div class="lg:hidden z-0 absolute top-0 w-screen h-full overflow-scroll bg-[url('/background.jpg')] bg-center bg-cover backdrop-blur">
+        <div class="w-full h-full backdrop-blur-sm bg-black/30 flex flex-col justify-center items-center gap-4">
+          <slot />
+        </div>
+      </div>
+
     </div>
-    <div class="lg:hidden z-0 absolute top-0 w-screen h-full overflow-scroll bg-gradient-to-tr from-slate-100 via-slate-200 to-slate-300 dark:bg-gradient-to-tr dark:from-slate-800 dark:via-slate-700 dark:to-slate-800">
-      <slot />
-    </div>
+
     <div class="hidden sm:block absolute right-5 bottom-5">
       <ThemeToggle client:visible />
     </div>
     <div class="absolute bottom-5 left-0 z-20 text-center w-28 hidden sm:block">
-      <p class="text-white">Powerd by
-        <br />OY-DDA</p>
+      <p class="text-white">
+        Powerd by
+        <br />OY-DDA
+      </p>
     </div>
   </body>
 </html>
-
-

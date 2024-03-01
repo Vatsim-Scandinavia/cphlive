@@ -7,10 +7,10 @@ const response = await fetch("https://metar.vatsim.net/"+icao)
 const metar = await response.text()
 const metarObject = metarParser(metar);
 ---
-<div class="flex flex-col items-center bg-gray-100 p-6 rounded-xl">
-    <p class="text-black text-2xl font-semibold uppercase pb-4">{airport}</p>
+<div class="flex flex-col items-center bg-[#1a475f] p-6 rounded-xl bg-opacity-45">
+    <p class="text-white text-2xl font-semibold uppercase pb-4">{airport}</p>
     <div class="grid grid-cols-3 gap-4">
-        <div class="w-28 h-28 lg:p-4   rounded-lg flex justify-center items-center flex-col shadow-md bg-white">
+        <div class="w-28 h-28 lg:p-4  rounded-lg flex justify-center items-center flex-col shadow-md bg-white ">
             <img src="/icons/Wether.svg" class="w-16 p-2" />
             <p class="text-black">{metarObject.wind.degrees}° / {metarObject.wind.speed_kts}kt</p>
         </div>
@@ -35,5 +35,5 @@ const metarObject = metarParser(metar);
             <p class="text-black">TBA</p>
         </div>
     </div>
-    <p class="text-black pt-4">Last updated {metarObject.observed}</p>
+    <p class="text-white pt-4">Last updated {metarObject.observed}</p>
 </div>
