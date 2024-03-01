@@ -1,63 +1,39 @@
 ---
-import Layout from "../layout/index.astro"
+import Layout from "../layout/index.astro";
 ---
 <Layout>
-    <div class="w-full h-full flex flex-col justify-center items-center gap-4">
-
-        <div class="flex w-64 justify-center items-center dark:text-white flex-col">
-            <p class="font-bold text-8xl">CPH</p>
-            <div class="flex items-center">
-                <h1 class="font-bold text-6xl">20</h1>
-                <img src="/Arrow transparent.svg" class="w-24 dark:fill-white fill-black" />
-                <h1 class="font-bold text-6xl">24</h1>
-            </div>
-            <p class="font-bold text-8xl">LIVE</p>
+    <div
+    class="w-full h-full bg-[#dfebeb] text-[#dfebeb] flex flex-col justify-center items-center gap-4 bg-[url('/background.jpg')] bg-center bg-cover backdrop-blur"
+  >
+    <div class="w-full h-full backdrop-blur-sm bg-black/30 flex flex-col justify-center items-center gap-4">
+      <div class="flex w-64 justify-center items-center dark:text-white flex-col">
+        <p class="font-bold text-8xl">CPH</p>
+        <div class="flex items-center">
+          <h1 class="font-bold text-6xl">20</h1>
+          <img src="/Arrow transparent.svg" class="w-24 fill-[#43c6e7]" />
+          <h1 class="font-bold text-6xl">24</h1>
         </div>
-
-        <div class="dark:text-white flex flex-col items-center mt-12 pr-2 pl-2 text-center">
-            <p class="text-4xl font-semibold">
-                The time has come once again!
-            </p>
-            <p class="text-xl">
-                On September 21st 2024, we are excited to welcome you to the 8th annual Copenhagen LIVE.
-            </p>
-            <p class="text-xl">
-                Join us as controllers from all of VATSIM-Scandinavia comes together in Copenhagen<br/>
-                to supply non-stop ATC for you the entire day starting from 6z and all the way until 22z. 
-            </p>
-            <p class="pt-12 text-xl">Use the navigation options to find what you are looking for</p>
-            <p class="text-4xl font-bold p-4" id="demo"></p>
-        </div>
+        <p class="font-bold text-8xl">LIVE</p>
+      </div>
+  
+      <div
+        class="hidden sm:flex dark:text-white flex-col items-center pr-2 pl-2 text-center"
+      >
+        <p class="text-4xl font-semibold">The time has come once again!</p>
+        <p class="text-xl">
+          On September 21st 2024, we are excited to welcome you to the 8th annual
+          Copenhagen LIVE.
+        </p>
+        <p class="text-xl">
+          Join us as controllers from all of VATSIM-Scandinavia comes together in
+          Copenhagen<br />
+          to supply non-stop ATC for you the entire day starting from 6z and all the
+          way until 22z.
+        </p>
+        <p class="pt-12 text-xl">
+          Use the navigation options to find what you are looking for
+        </p>
+      </div>
     </div>
+  </div>
 </Layout>
-
-<script is:inline>
-    // Set the date we're counting down to
-    var countDownDate = new Date("Sep 21, 2024 06:00:00").getTime();
-    
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-    
-      // Get today's date and time
-      var now = new Date().getTime();
-    
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-    
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-      // Display the result in the element with id="demo"
-      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-      + minutes + "m " + seconds + "s ";
-    
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-      }
-    }, 1000);
-    </script>

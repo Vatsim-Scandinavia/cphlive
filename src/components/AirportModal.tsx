@@ -11,7 +11,7 @@ export default function AirportModal(props: {airport: Airport}) {
 
   return (
     <>
-      <Button onPress={onOpen} className="rounded bg-white p-4 aspect-square items-center justify-center flex flex-col min-w-24 h-fit">
+      <Button onPress={onOpen} className="rounded bg-white p-2 aspect-square items-center justify-center flex flex-col min-w-20 h-fit">
             <p className="text-black font-semibold text-xl">{props.airport.name}</p>
             <p className="text-black font-semibold">{props.airport.icao}</p>
       </Button>
