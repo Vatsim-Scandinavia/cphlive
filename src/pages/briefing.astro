@@ -29,17 +29,10 @@ const airlines = [
     <br />
     <div class="flex items-center justify-center dark:text-white w-full">
       <div class="flex w-full justify-center items-center flex-col">
-        <h1 class="text-4xl font-semibold m-6">Airports</h1>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             {airports.map((item) => (
                 <AirportModal airport={item} client:visible />
             ))}
-        </div>
-      </div>
-      <div class="flex w-full justify-center items-center flex-col">
-        <h1 class="text-4xl font-semibold m-6">Airlines</h1>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
         </div>
       </div>
     </div>    
