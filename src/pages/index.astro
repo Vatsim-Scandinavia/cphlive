@@ -2,10 +2,6 @@
 import Layout from "../layout/index.astro";
 ---
 <Layout>
-    <div
-    class="w-full h-full bg-[#dfebeb] text-[#dfebeb] flex flex-col justify-center items-center gap-4 bg-[url('/background.jpg')] bg-center bg-cover backdrop-blur"
-  >
-    <div class="w-full h-full backdrop-blur-sm bg-black/30 flex flex-col justify-center items-center gap-4">
       <div class="flex w-64 justify-center items-center dark:text-white flex-col">
         <p class="font-bold text-8xl">CPH</p>
         <div class="flex items-center">
@@ -17,7 +13,7 @@ import Layout from "../layout/index.astro";
       </div>
   
       <div
-        class="hidden sm:flex dark:text-white flex-col items-center pr-2 pl-2 text-center"
+        class="hidden lg:flex dark:text-white flex-col items-center pr-2 pl-2 text-center"
       >
         <p class="text-4xl font-semibold">The time has come once again!</p>
         <p class="text-xl">
@@ -34,6 +30,4 @@ import Layout from "../layout/index.astro";
           Use the navigation options to find what you are looking for
         </p>
       </div>
-    </div>
-  </div>
 </Layout>
