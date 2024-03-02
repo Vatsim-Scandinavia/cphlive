@@ -1,6 +1,5 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import ThemeToggle from "../components/ThemeToggle.tsx";
 import Navigation from "../components/Navigation.astro"
 ---
 
@@ -33,9 +32,6 @@ import Navigation from "../components/Navigation.astro"
     </div>
     <div class="lg:hidden z-0 absolute top-0 w-screen h-full overflow-scroll bg-gradient-to-tr from-slate-100 via-slate-200 to-slate-300 dark:bg-gradient-to-tr dark:from-slate-800 dark:via-slate-700 dark:to-slate-800">
       <slot />
-    </div>
-    <div class="hidden sm:block absolute right-5 bottom-5">
-      <ThemeToggle client:visible />
     </div>
     <div class="absolute bottom-5 left-0 z-20 text-center w-28 hidden sm:block">
       <p class="text-white">Powerd by
