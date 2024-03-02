@@ -28,14 +28,16 @@ import Navigation from "../components/Navigation.astro"
     <div class="w-full h-full text-[#dfebeb] flex flex-col justify-center items-center gap-4" >
 
       <div class="hidden lg:block w-[calc(100%-7rem)] h-full absolute top-0 left-[7rem] -mr-32 overflow-y-scroll bg-[url('/background.jpg')] bg-center backdrop-blur bg-[size:150%]" >
-        <div class="w-full h-full backdrop-blur-sm bg-black/30 flex flex-col justify-center items-center gap-4">
+        <div class="w-full h-full backdrop-blur-sm flex flex-col justify-center items-center gap-4">
           <slot />
+          <span class="m-10"/>
         </div>
       </div>
 
-      <div class="lg:hidden z-0 absolute top-0 w-screen h-full overflow-scroll bg-[url('/background.jpg')] bg-center bg-cover backdrop-blur">
-        <div class="w-full h-full backdrop-blur-sm bg-black/30 flex flex-col justify-center items-center gap-4">
+      <div class="lg:hidden z-0 absolute top-0 w-screen h-[calc(100%-5rem)] overflow-scroll bg-[url('/background.jpg')] bg-center bg-cover backdrop-blur">
+        <div class="w-full h-full backdrop-blur-sm flex flex-col justify-center items-center gap-4">
           <slot />
+          <span class="m-10"/>
         </div>
       </div>
 
