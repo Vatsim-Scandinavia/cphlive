@@ -11,6 +11,9 @@ export default {
       backgroundImage: {
         banner: "url('/1704964023517.png')",
       },
+      colors: {
+        'snow': '#dfebeb',
+      },
     },
   },
   darkMode: "class",
