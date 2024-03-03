@@ -8,5 +8,7 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   site: 'https://cphlive.vatsim-scandinavia.org/',
   output: "hybrid",
-  adapter: vercel()
+  adapter: vercel({
+    edgeMiddleware: true,
+  })
 });
