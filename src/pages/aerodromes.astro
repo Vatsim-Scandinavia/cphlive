@@ -44,7 +44,7 @@ const airports = [
 
     <div class="flex items-center justify-center dark:text-snow w-full">
       <div class="flex w-full justify-center items-center flex-col">
-        <div class="w-full grid gap-4 grid-cols-1 lg:grid-cols-2 lg:w-2/3">
+        <div class="w-full grid gap-4 grid-cols-1  md:grid-cols-2 lg:grid-cols-3 lg:w-2/3 pl-10 pr-10">
           {
             airports.map((item) => (
               <AirportModal airport={item} client:visible />

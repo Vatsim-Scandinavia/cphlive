@@ -13,6 +13,9 @@ export default {
       },
       colors: {
         'snow': '#dfebeb',
+        'vat1': '#43c6e7',
+        'vat2': '#1a475f',
+        'vat3': '#011328'
       },
     },
   },
