@@ -7,8 +7,6 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   integrations: [tailwind(), react()],
   site: 'https://cphlive.vatsim-scandinavia.org/',
-  output: "hybrid",
-  adapter: vercel({
-    edgeMiddleware: true,
-  })
+  output: 'server',
+  adapter: vercelServerless(),
 });
