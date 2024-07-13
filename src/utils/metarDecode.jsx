@@ -1,4 +1,4 @@
-import metarParser from 'aewx-metar-parser';
+//import metarParser from 'aewx-metar-parser';
 
 function metarDecode(icao) {
     const response = fetch("https://metar.vatsim.net/"+icao)
