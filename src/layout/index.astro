@@ -1,16 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import Navigation from "../components/Navigation.astro"
-export const prerender = false;
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
-    <script is:inline>
-      const isDarkMode = localStorage.getItem("theme");
-      const theme = isDarkMode === "true" ? "dark" : "";
-      document.querySelector("html").className = theme;
-    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/Arrow transparent.svg" />
     <meta name="viewport" content="width=device-width" />
@@ -24,30 +17,7 @@ export const prerender = false;
     <title>Copenhagen Live 2024</title>
     <ViewTransitions />
   </head>
-  <body class="w-screen">
-    <Navigation />
-    <div class="w-full h-full text-[#dfebeb] flex flex-col justify-center items-center gap-4" >
-
-      <div class="hidden lg:block w-[calc(100%-7rem)] h-full absolute top-0 left-[7rem] -mr-32 overflow-y-scroll bg-[url('/background.jpg')] bg-center backdrop-blur bg-[size:150%]" >
-        <div class="backdrop-blur-sm flex flex-col justify-center items-center gap-4">
-          <slot />
-          <span class="m-10"/>
-        </div>
-      </div>
-
-      <div class="lg:hidden z-0 absolute top-0 w-screen h-[calc(100%-5rem)] overflow-scroll bg-[url('/background.jpg')] bg-center bg-cover backdrop-blur">
-        <div class="backdrop-blur-sm flex flex-col justify-center items-center gap-4">
-          <slot />
-          <span class="m-10"/>
-        </div>
-      </div>
-
-    </div>
-    <div class="absolute bottom-5 left-0 z-20 text-center w-28 hidden sm:block">
-      <p class="text-snow">
-        Powerd by
-        <br />OY-DDA
-      </p>
-    </div>
+  <body class="w-screen h-screen bg-[url('/skies.svg')] bg-cover">
+      <slot />
   </body>
 </html>
