@@ -2,7 +2,7 @@
 import Layout from "../layout/index.astro";
 ---
 <Layout>
-  <div class="w-screen h-screen flex flex-col justify-center items-center gap-4">
+  <div class="w-screen min-h-screen h-fit md:h-screen flex flex-col justify-center items-center gap-4">
     <img src="/logo.svg" alt="" class="max-w-[50vw]">
     <div class="text-[#1a4860] grid gap-2 grid-cols-2 md:grid-cols-4">
       <a href="https://twitch.tv/vatsimscandinavia" target="_blank" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
@@ -20,11 +20,11 @@ import Layout from "../layout/index.astro";
     </div>
   </div>
 
-  <div id="schedule" class="w-screen h-screen text-[#1a4860]">
+  <div id="schedule" class="w-screen min-h-screen h-fit md:h-screen text-[#1a4860]">
   
   </div>
 
-  <div id="pilot" class="w-screen h-screen text-[#1a4860] flex flex-col justify-center items-center place-content-center gap-6">
+  <div id="pilot" class="w-screen min-h-screen h-fit md:h-screen text-[#1a4860] flex flex-col justify-center items-center place-content-center gap-6">
     <h1 class="text-5xl font-bold text-center pt-12">Pilot Brief</h1>
     <div class="grid grid-cols-1 md:grid-cols-3 content-center gap-4 md:w-[75vw] p-2">
       <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekch-copenhagenkastrup" target="_blank">
@@ -50,7 +50,7 @@ import Layout from "../layout/index.astro";
     </div>
   </div>
 
-  <div id="comp" class="w-screen h-screen text-[#1a4860] flex flex-col justify-center items-center place-content-center gap-6">
+  <div id="comp" class="w-screen min-h-screen h-fit md:h-screen text-[#1a4860] flex flex-col justify-center items-center place-content-center gap-6">
     <h1 class="text-5xl font-bold text-center pt-12">Competitions</h1>
     <div class="grid grid-cols-1 md:grid-cols-3 content-center gap-4 md:w-[75vw] p-2">
 
