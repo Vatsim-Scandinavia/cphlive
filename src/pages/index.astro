@@ -8,67 +8,67 @@ import Layout from "../layout/index.astro";
       <a href="https://twitch.tv/vatsimscandinavia" target="_blank" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
         <img src="/tv.svg" class="w-8"/> Watch live
       </a>
-      <a href="#dep" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
-        <img src="/plane-departure.svg" class="w-8"/> Departing
+      <a href="#schedule" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
+        <img src="/schedule.svg" class="w-8"/> Schedule
       </a>
-      <a href="#arr" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
-        <img src="/plane-arrival.svg" class="w-8"/> Arriving
+      <a href="#pilot" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
+        <img src="/plane-arrival.svg" class="w-8"/> Pilot Briefing
       </a>
       <a href="#comp" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
         <img src="/icons/Pokal.svg" class="w-8"/> Competitions
       </a>
     </div>
   </div>
-  <div id="dep" class="w-screen h-screen">
-    <div class="w-full h-full grid md:grid-cols-4 justify-center items-center content-center place-items-center">
-      <div class="border-2 aspect-video w-full md:w-96 rounded backdrop-blur p-2">
-        <span>1. Kastrup Delivery <spab class="italic text-gray-500">119.805</span></span>
-        <p class="font-semibold">Aircraft</p>
-        <p class="italic text-gray-400 p-2">Scandinavian 123, stand B6, requesting clearnace to Oslo, we have information A.</p>
-        <p class="font-semibold">ATC</p>
-        <p class="italic text-gray-400 p-2">SAS123, you are cleraed to Oslo, via the VEDRA2C departue, squwak 1234, target off-block time 12:15z</p>
-        <p class="font-semibold">Aircraft</p>
-        <p class="italic text-gray-400 p-2">SAS123, we are cleared to Oslo via the VEDRA2C departue, squwak 1234, target off-block time 12:15z</p>
-        <p class="font-semibold">ATC</p>
-        <p class="italic text-gray-400 p-2">SAS123, readback correct, monitor apron on 121.9 for for statup</p>
-        <hr>
-        <p class="font-semibold">What is a target off-block time (TOBT)?</p>
-        <p>The time that an pilot estimates that their aircraft will be ready, all doors closed, boarding bridge removed, push back vehicle available and ready to start up / push back immediately upon reception of clearance from the Tower. </p>
-        <p>Pilots should call Apron 5 min up to or after their TOBT, to keep their slot</p>
-      </div>
-      <div class="border-2 aspect-video w-full md:w-96 rounded backdrop-blur p-2">
-        <span>2. Kastrup Apron <spab class="italic text-gray-500">119.805</span></span>
-        <p class="font-semibold">Aircraft</p>
-        <p class="italic text-gray-400 p-2">Scandinavian 123, stand B5, requesting startup & pushback</p>
-        <p class="font-semibold">ATC</p>
-        <p class="italic text-gray-400 p-2">SAS123, startup & pushback approved, release point Y1, QNH 1013</p>
-        <p class="font-semibold">Aircraft</p>
-        <p class="italic text-gray-400 p-2">SAS123, pushback & startup approved, release point Y1, QNH 1013</p>
-      </div>
+
+  <div id="schedule" class="w-screen h-screen text-[#1a4860]">
+  
+  </div>
+
+  <div id="pilot" class="w-screen h-screen text-[#1a4860] flex flex-col justify-center items-center place-content-center gap-6">
+    <h1 class="text-5xl font-bold text-center pt-12">Pilot Brief</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 content-center gap-4 md:w-[75vw] p-2">
+      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekch-copenhagenkastrup" target="_blank">
+        <h1 class="text-2xl font-bold">Copenhagen Kastrup Airport</h1>
+        <img src="/airports/EKCH.png" alt="" class="rounded">
+      </a>
+      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekbi-billund-airport" target="_blank">
+        <h1 class="text-2xl font-bold">Billund Airport</h1>
+        <img src="/airports/EKBI.png" alt="" class="rounded">
+      </a>
+      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekyt-aalborg" target="_blank">
+        <h1 class="text-2xl font-bold">Aalborg Airport</h1>
+        <img src="/airports/EKYT.png" alt="" class="rounded">
+      </a>
+      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekah-aarhus" target="_blank">
+        <h1 class="text-2xl font-bold">Aarhus Airport</h1>
+        <img src="/airports/EKAH.png" alt="" class="rounded">
+      </a>
+      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekrn-ronne" target="_blank">
+        <h1 class="text-2xl font-bold">Rønne Airport</h1>
+        <img src="/airports/EKRN.png" alt="" class="rounded">
+      </a>
     </div>
   </div>
-  <div id="arr" class="w-screen h-screen">
 
-  </div>
-  <div id="comp" class="w-screen h-screen text-[#1a4860]">
-    <h1 class="text-5xl font-bold text-center py-12">Competitions</h1>
-    <div class="grid md:grid-cols-4 gap-4 px-12">
-      <div class="bg-[#1a4860] text-white aspect-video w-full md:w-96 p-4 rounded">
-        <h1 class="font-semibold text-2xl mb-2">Early Bird</h1>
-        <p>Take off or touch down at Copenhagen Airport (EKCH) between 06-08z for your chance to soar to victory in this category!</p>
-      </div>
-      <div class="bg-[#1a4860] text-white aspect-video w-full md:w-96 p-4 rounded">
-        <h1 class="font-semibold text-2xl mb-2">Night Owl</h1>
-        <p>Take off or touch down at Copenhagen Airport (EKCH) between 20-22z for your chance to soar to victory in this category!</p>
-      </div>
-      <div class="bg-[#1a4860] text-white aspect-video w-full md:w-96 p-4 rounded">
-        <h1 class="font-semibold text-2xl mb-2">The skies are calling</h1>
-        <p>Fly VFR around the regional airports, do some traffic pattern work and practice your landings!</p>
-      </div>
-      <div class="bg-[#1a4860] text-white aspect-video w-full lg:w-96 p-4 rounded">
-        <h1 class="font-semibold text-2xl mb-2">Long haul</h1>
-        <p>Complete a long haul flight into Copenhagen</p>
-      </div>
+  <div id="comp" class="w-screen h-screen text-[#1a4860] flex flex-col justify-center items-center place-content-center gap-6">
+    <h1 class="text-5xl font-bold text-center pt-12">Competitions</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 content-center gap-4 md:w-[75vw] p-2">
+
+        <div class="bg-[#1a4860] text-white aspect-video w-full md:w-96 p-4 rounded">
+          <h1 class="font-semibold text-2xl">Morning rush</h1>
+          <p>depart from Copenhagen Airport (EKCH) in the morning hours (06-08z) to be in the raffel.</p>
+        </div>
+
+        <div class="bg-[#1a4860] text-white aspect-video w-full md:w-96">
+  
+        </div>
+        <div class="bg-[#1a4860] text-white aspect-video w-full md:w-96">
+  
+        </div>
+        <div class="bg-[#1a4860] text-white aspect-video w-full lg:w-96">
+  
+        </div>
+
     </div>
   </div>
 </Layout>
