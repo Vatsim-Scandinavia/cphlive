@@ -21,6 +21,5 @@ export default {
     },
   },
   darkMode: "class",
-  presets: [keepPreset],
   plugins: [nextui()]
 };
