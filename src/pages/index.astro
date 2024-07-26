@@ -1,74 +1,42 @@
 ---
 import Layout from "../layout/index.astro";
 ---
+
 <Layout>
+
   <div class="w-screen min-h-screen h-fit md:h-screen flex flex-col justify-center items-center gap-4">
-    <img src="/logo.svg" alt="" class="max-w-[50vw]">
-    <div class="text-[#1a4860] grid gap-2 grid-cols-2 md:grid-cols-4">
-      <a href="https://twitch.tv/vatsimscandinavia" target="_blank" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
-        <img src="/tv.svg" class="w-8"/> Watch live
-      </a>
-      <a href="#schedule" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
-        <img src="/schedule.svg" class="w-8"/> Schedule
-      </a>
-      <a href="#pilot" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
-        <img src="/plane-arrival.svg" class="w-8"/> Pilot Briefing
-      </a>
-      <a href="#comp" class="p-4 bg-[#d5dfdf] rounded font-bold flex items-center justify-center gap-2 w-44">
-        <img src="/icons/Pokal.svg" class="w-8"/> Competitions
+    <img src="/logo.svg" alt="" class="max-w-[50vw]" />
+      <iframe src="https://lottie.host/embed/51823aa2-f66a-43b7-822a-19bc5df0f843/mkeOn7yXol.json" />
+  </div>
+
+  <div class="w-screen min-h-screen h-fit md:h-screen text-[#1a4860] grid grid-cols-1 md:grid-cols-5 gap-8 p-12" id="info">
+    <div class="md:col-span-3 bg-white p-12 rounded-md">
+      <h1 class="text-4xl font-bold">📅 Schedule</h1>
+      <div class="flex text-2xl font-semibold pt-4 justify-center items-center">
+        <div class="w-1/3">
+          <h2>Test</h2>
+        </div>
+        <div class="w-1/3">
+          <h2>Test</h2>
+        </div>
+        <div class="w-1/3">
+          <h2>Test</h2>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-span-2 bg-white p-12 rounded-md">
+      <h1 class="text-4xl font-bold">🔗 Links</h1>
+      <a href="">
+        <p>📄 Pilot Briefing</p>
+        <p>📺 Twich Stream</p>
       </a>
     </div>
-  </div>
-
-  <div id="schedule" class="w-screen min-h-screen h-fit md:h-screen text-[#1a4860]">
-  
-  </div>
-
-  <div id="pilot" class="w-screen min-h-screen h-fit md:h-screen text-[#1a4860] flex flex-col justify-center items-center place-content-center gap-6">
-    <h1 class="text-5xl font-bold text-center pt-12">Pilot Brief</h1>
-    <div class="grid grid-cols-1 md:grid-cols-3 content-center gap-4 md:w-[75vw] p-2">
-      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekch-copenhagenkastrup" target="_blank">
-        <h1 class="text-2xl font-bold">Copenhagen Kastrup Airport</h1>
-        <img src="/airports/EKCH.png" alt="" class="rounded">
-      </a>
-      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekbi-billund-airport" target="_blank">
-        <h1 class="text-2xl font-bold">Billund Airport</h1>
-        <img src="/airports/EKBI.png" alt="" class="rounded">
-      </a>
-      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekyt-aalborg" target="_blank">
-        <h1 class="text-2xl font-bold">Aalborg Airport</h1>
-        <img src="/airports/EKYT.png" alt="" class="rounded">
-      </a>
-      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekah-aarhus" target="_blank">
-        <h1 class="text-2xl font-bold">Aarhus Airport</h1>
-        <img src="/airports/EKAH.png" alt="" class="rounded">
-      </a>
-      <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekrn-ronne" target="_blank">
-        <h1 class="text-2xl font-bold">Rønne Airport</h1>
-        <img src="/airports/EKRN.png" alt="" class="rounded">
-      </a>
+    <div class="md:col-span-3 bg-white p-12 rounded-md">
+      <h1 class="text-4xl font-bold">🏆 Competitions</h1>
+    </div>
+    <div class="md:col-span-2 bg-white p-12 rounded-md">
+      <h1 class="text-4xl font-bold">👋🏻 Event Sponsors</h1>
     </div>
   </div>
-
-  <div id="comp" class="w-screen min-h-screen h-fit md:h-screen text-[#1a4860] flex flex-col justify-center items-center place-content-center gap-6">
-    <h1 class="text-5xl font-bold text-center pt-12">Competitions</h1>
-    <div class="grid grid-cols-1 md:grid-cols-3 content-center gap-4 md:w-[75vw] p-2">
-
-        <div class="bg-[#1a4860] text-white aspect-video w-full md:w-96 p-4 rounded">
-          <h1 class="font-semibold text-2xl">Morning rush</h1>
-          <p>depart from Copenhagen Airport (EKCH) in the morning hours (06-08z) to be in the raffel.</p>
-        </div>
-
-        <div class="bg-[#1a4860] text-white aspect-video w-full md:w-96">
   
-        </div>
-        <div class="bg-[#1a4860] text-white aspect-video w-full md:w-96">
-  
-        </div>
-        <div class="bg-[#1a4860] text-white aspect-video w-full lg:w-96">
-  
-        </div>
-
-    </div>
-  </div>
 </Layout>
