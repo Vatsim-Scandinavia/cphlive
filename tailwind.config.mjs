@@ -1,4 +1,3 @@
-import keepPreset from "keep-react/preset";
 /** @type {import('tailwindcss').Config} */
 const { nextui } = require("@nextui-org/react");
 
