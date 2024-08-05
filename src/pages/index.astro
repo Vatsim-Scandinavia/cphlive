@@ -44,70 +44,92 @@ import Layout from "../layout/index.astro";
       </a>
     </div>
 
-    <div class="col-span-5 xl:col-span-3 bg-white p-12 rounded-md h-full">
+    <div class="col-span-5 xl:col-span-3 bg-white rounded h-full p-12">
       <h1 class="text-4xl font-bold">✈️ VA Fly-in</h1>
       <h3 class="text-lg font-medium">We have established mini events & preferred routes in collaboration with several of the virtual airline operators, check them out below.</h3>
-      <div class="w-full h-full grid grid-cols-1 2xl:grid-cols-4 grid-rows-4 2xl:grid-rows-2 text-white">
+      <div class="w-full h-full grid grid-cols-2  text-white">
 
-        <div class="text-black w-full p-2 min-w-[220px]">
+        <div class="text-black w-full p-2 min-w-[220px] h-fit">
           <div class="bg-[#000099] h-fit rounded-lg p-2 flex justify-center">
             <img src="https://static.wixstatic.com/media/1bcc9c_51d507bd2dcf42478dbd7fd5ca6ecde8~mv2.png/v1/fill/w_222,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/1bcc9c_51d507bd2dcf42478dbd7fd5ca6ecde8~mv2.png" class="h-12" />
           </div>
           <p class="font-medium">vSAS have planned some community flight!</p>
           <p class="font-medium mt-4">Routes:</p>
-          <ul class="list-disc list-inside">
-            <li>CPH-AAL</li>
-            <li>AAL-BLL</li>
-            <li>BLL-CPH</li>
-          </ul>
+          <table>
+            <tr class="flex gap-4 py-1">
+              <td class="bg-gray-100 p-2 rounded">CPH-AAL</td>
+            </tr>
+            <tr class="flex gap-4 py-1">
+              <td class="bg-gray-100 p-2 rounded">AAL-BLL</td>
+            </tr>
+            <tr class="flex gap-4 py-1">
+              <td class="bg-gray-100 p-2 rounded">BLL-CPH</td>
+            </tr>
+          </table>
           <p class="font-medium mt-4">vSAS is hosting a giveaway, check our their event posting for more information</p>
         </div>
 
-        <div class="text-black w-full p-2 min-w-[220px]">
+        <div class="text-black w-full p-2 min-w-[220px] h-fit">
           <div class="bg-[#1f1e2e] h-fit rounded-lg p-2 flex justify-center">
             <img src="https://cdn.vamsys.xyz/phoenixMediaStore/logo_dashboard_dark/31065/c/vEZY_White_2022-logo-logo.png" class="h-12" />
           </div>
-          <p class="font-medium">vEZY have planned some community flight!</p>
-          <p class="font-medium mt-4">Departures:</p>
-          <ul class="list-disc list-inside">
-            <li>CPH-BER - 06:00Z</li>
-            <li>CPH-AMS - 07:30Z</li>
-            <li>CPH-CFG - 08:00Z</li>
-            <li>CPH-MAN - 08:30Z</li>
-          </ul>
-          <p class="font-medium mt-4">Arrivals:</p>
-          <ul class="list-disc list-inside">
-            <li>MXP-CPH - 11:15Z</li>
-            <li>CPH-AMS - 07:30Z</li>
-            <li>CPH-CFG - 08:00Z</li>
-            <li>CPH-MAN - 08:30Z</li>
-          </ul>
+          <p class="font-medium">Book direct flights to Copenhagen for a fun and easy city break, or as the perfect gateway for a longer trip to Scandinavia</p>
+          <p class="font-medium mt-4">Common vEZY destinations from CPH:</p>
+          <table>
+            <tr class="flex gap-4 p-1">
+              <td class="bg-gray-100 p-2 rounded">
+                Manchester
+              </td>
+              <td class="bg-gray-100 p-2 rounded">
+                London Gatwick
+              </td>
+              <td class="bg-gray-100 p-2 rounded">
+                Edinburgh
+              </td>
+              <td class="bg-gray-100 p-2 rounded">
+                Amsterdam
+              </td>
+            </tr>
+            <tr class="flex gap-4 p-1">
+              <td class="bg-gray-100 p-2 rounded">
+                Berlin Brandenburg
+              </td>
+              <td class="bg-gray-100 p-2 rounded">
+                Charles de Gaulle
+              </td>
+              <td class="bg-gray-100 p-2 rounded">
+                Milan Malpensa
+              </td>
+              <td class="bg-gray-100 p-2 rounded">
+                Nice
+              </td>
+            </tr>
+          </table>
           <p class="font-medium mt-4">250 Points pr. PIREP on the published routes</p>
         </div>
 
-        <div class="text-black w-full p-2 min-w-[220px]">
+        <div class="text-black w-full p-2 min-w-[220px] h-fit">
           <div class="bg-[#05164d] h-fit rounded-lg p-2 flex justify-center">
             <img src="https://lh-virtual.com/wp-content/uploads/2022/12/full-hd_transparent_logo_white-300x71.png" class="h-12" />
           </div>
           <p class="font-medium">vDLH have planned a community flight!</p>
         </div>
 
-        <div class="text-black w-full p-2 min-w-[220px]">
+        <div class="text-black w-full p-2 min-w-[220px] h-fit">
           <div class="bg-[#e42e3c] h-fit rounded-lg p-2 flex justify-center">
             <img src="https://www.virtualnorwegian.net/lib/skins/vnorwegian/img/logo2.png" class="h-12 w-fit aspect-auto" />
           </div>
           <p class="font-medium">vNAX have planned a community flight!</p>
         </div>
-
       </div>
     </div>
+
     <div class="col-span-5 xl:col-span-2 bg-white p-12 rounded-md">
       <h1 class="text-4xl font-bold">👋🏻 Event Sponsors</h1>
       <div class="flex justify-between gap-4 p-4 mt-12">
         <img src="/simnord.png" alt="" class="h-auto w-64 bg-gray-400 p-2 rounded-md">
       </div>
-      
     </div>
+
   </div>
-  
 </Layout>
