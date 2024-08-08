@@ -9,39 +9,63 @@ import Layout from "../layout/index.astro";
       <iframe src="https://lottie.host/embed/51823aa2-f66a-43b7-822a-19bc5df0f843/mkeOn7yXol.json" />
   </div>
 
-  <div class="w-screen min-h-screen h-fit md:h-screen text-[#1a4860] grid grid-cols-5 gap-8 p-12" id="info">
+  <div class="w-screen min-h-screen h-fit md:h-screen grid grid-cols-5 gap-8 p-12" id="info">
     <div class="col-span-5 xl:col-span-3 bg-white p-12 rounded-md">
       <h1 class="text-4xl font-bold">📅 Schedule</h1>
-      <div class="flex text-2xl font-semibold pt-4 justify-center items-center">
-        <div class="w-1/3">
-          <h2>06:00 | Event start</h2>
-          <h2>06:00-10:00</h2>
-          <u>
-            <li class="text-lg">Morning rush event</li>
-          </u>
-          <h2>10:00-12:00</h2>
-          <h2>12:00-14:00</h2>
+      <h3 class="text-lg italic font-medium">All times are in Zulu</h3>
+      <div class="flex text-2xl font-semibold pt-4 justify-center items-center flex-col xl:flex-row">
+        <div class="w-full">
+          <div class="py-4">
+            <h2 class="text-[#1a4860] font-bold">04:00-06:00</h2>
+            <ul class="list-disc list-inside">
+              <li>Event Start</li>
+            </ul>
+          </div>
+          <div class="py-4">
+            <h2 class="text-[#1a4860] font-bold">06:00-08:00</h2>
+          </div>
+          <div class="py-4">
+            <h2 class="text-[#1a4860] font-bold">08:00-10:00</h2>
+          </div>
         </div>
-        <div class="w-1/3">
-          <h2>14:00-16:00</h2>
-          <h2>16:00-18:00</h2>
+        <div class="w-full">
+          <div class="py-4">
+            <h2 class="text-[#1a4860] font-bold">10:00-12:00</h2>
+          </div>
+          <div class="py-4">
+            <h2 class="text-[#1a4860] font-bold">12:00-14:00</h2>
+          </div>
+          <div class="py-4">
+            <h2 class="text-[#1a4860] font-bold">14:00-16:00</h2>
+          </div>
         </div>
-        <div class="w-1/3">
-          <h2>18:00-20:00</h2>
-          <h2>20:00-22:00</h2>
-          <h2>22:00 | Event end</h2>
+        <div class="w-full">
+          <div class="py-4">
+            <h2 class="text-[#1a4860] font-bold">16:00-18:00</h2>
+          </div>
+          <div class="py-4">
+            <h2 class="text-[#1a4860] font-bold">18:00-20:00</h2>
+          </div>
+          <div class="py-4">
+            <h2 class="text-[#1a4860] font-bold">20:00-22:00</h2>
+            <ul class="list-disc list-inside">
+              <li>Event End</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="col-span-5 xl:col-span-2 bg-white p-12 rounded-md">
       <h1 class="text-4xl font-bold mb-12" >🔗 Links</h1>
-      <a href="" class="text-3xl font-semibold mb-6">
-        <p>📄 Pilot Briefing</p> 
-      </a>
-      <a href="" class="text-3xl font-semibold mb-6">
-        <p class="mb-6">📺 Twich Stream</p>
-      </a>
+      <div class="flex flex-col gap-4">
+        <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekch-copenhagenkastrup" target="_blank" class="text-3xl font-semibold">
+          <p>📄 Pilot Briefing</p> 
+        </a>
+        <a href="https://www.twitch.tv/vatsimscandinavia" target="_blank" class="text-3xl font-semibold">
+          <p class="mb-6">📺 Twich Stream</p>
+        </a>
+      </div>
     </div>
 
     <div class="col-span-5 xl:col-span-3 bg-white rounded h-full p-12">
