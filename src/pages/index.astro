@@ -79,13 +79,17 @@ import Layout from "../layout/index.astro";
           </div>
           <p class="font-medium">vSAS have planned some community flight!</p>
           <p class="font-medium mt-4">Routes:</p>
-          <table>
-            <tr class="flex gap-4 py-1">
-              <td class="bg-gray-100 p-2 rounded">CPH-AAL</td>
-              <td class="bg-gray-100 p-2 rounded">AAL-BLL</td>
-              <td class="bg-gray-100 p-2 rounded">BLL-CPH</td>
-            </tr>
-          </table>
+          <div class="flex gap-4 flex-col lg:flex-row  ">
+            <div class="bg-gray-100 p-2 rounded">
+              CPH-AAL
+            </div>
+            <div class="bg-gray-100 p-2 rounded">
+              AAL-BLL
+            </div>
+            <div class="bg-gray-100 p-2 rounded">
+              BLL-CPH
+            </div>
+          </div>
           <p class="font-medium mt-4">vSAS is hosting a giveaway, check our their event posting for more information</p>
         </div>
 
@@ -95,36 +99,37 @@ import Layout from "../layout/index.astro";
           </div>
           <p class="font-medium">Book direct flights to Copenhagen for a fun and easy city break, or as the perfect gateway for a longer trip to Scandinavia</p>
           <p class="font-medium mt-4">Common vEZY destinations from CPH:</p>
-          <table>
-            <tr class="flex gap-4 p-1">
-              <td class="bg-gray-100 p-2 rounded">
-                Manchester
-              </td>
-              <td class="bg-gray-100 p-2 rounded">
-                London Gatwick
-              </td>
-              <td class="bg-gray-100 p-2 rounded">
-                Edinburgh
-              </td>
-              <td class="bg-gray-100 p-2 rounded">
-                Amsterdam
-              </td>
-            </tr>
-            <tr class="flex gap-4 p-1">
-              <td class="bg-gray-100 p-2 rounded">
-                Berlin Brandenburg
-              </td>
-              <td class="bg-gray-100 p-2 rounded">
-                Charles de Gaulle
-              </td>
-              <td class="bg-gray-100 p-2 rounded">
-                Milan Malpensa
-              </td>
-              <td class="bg-gray-100 p-2 rounded">
-                Nice
-              </td>
-            </tr>
-          </table>
+          <div class="flex gap-4 flex-col lg:flex-row flex-1 p-2">
+            <div class="bg-gray-100 p-2 rounded">
+              Nice
+            </div>
+            <div class="bg-gray-100 p-2 rounded">
+              Manchester
+            </div>
+            <div class="bg-gray-100 p-2 rounded">
+              London Gatwick
+            </div>
+            <div class="bg-gray-100 p-2 rounded">
+              Edinburgh
+            </div>
+            <div class="bg-gray-100 p-2 rounded">
+              Amsterdam
+            </div>
+          </div>
+          <div class="flex gap-4 flex-col lg:flex-row flex-1 p-2">
+            <div class="bg-gray-100 p-2 rounded">
+              Berlin Brandenburg
+            </div>
+            <div class="bg-gray-100 p-2 rounded">
+              Charles de Gaulle
+            </div>
+            <div class="bg-gray-100 p-2 rounded">
+              Milan Malpensa
+            </div>
+            <div class="bg-gray-100 p-2 rounded">
+              Nice
+            </div>
+          </div>
           <p class="font-medium mt-4">250 Points pr. PIREP on the published routes</p>
         </div>
 
