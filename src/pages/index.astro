@@ -1,5 +1,6 @@
 ---
 import Layout from "../layout/index.astro";
+import { Flight } from "../components/Flight";
 ---
 
 <Layout>
@@ -71,26 +72,57 @@ import Layout from "../layout/index.astro";
     <div class="col-span-5 xl:col-span-3 bg-white rounded h-full p-12">
       <h1 class="text-4xl font-bold">✈️ VA Fly-in</h1>
       <h3 class="text-lg font-medium">We have established mini events & preferred routes in collaboration with several of the virtual airline operators, check them out below.</h3>
-      <div class="w-full h-fit grid 2xl:grid-cols-2  text-white">
+      <div class="w-full h-fit grid 2xl:grid-cols-2 text-white gap-8">
 
         <div class="text-black w-full p-2 min-w-[220px] h-fit">
           <div class="bg-[#000099] h-fit rounded-lg p-2 flex justify-center">
-            <img src="https://static.wixstatic.com/media/1bcc9c_51d507bd2dcf42478dbd7fd5ca6ecde8~mv2.png/v1/fill/w_222,h_55,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/1bcc9c_51d507bd2dcf42478dbd7fd5ca6ecde8~mv2.png" class="h-12" />
+            <img src="/vSAS_light.png" class="h-12" />
           </div>
-          <p class="font-medium">vSAS have planned some community flight!</p>
-          <p class="font-medium mt-4">Routes:</p>
-          <div class="flex gap-4 flex-col lg:flex-row  ">
-            <div class="bg-gray-100 p-2 rounded">
-              CPH-AAL
-            </div>
-            <div class="bg-gray-100 p-2 rounded">
-              AAL-BLL
-            </div>
-            <div class="bg-gray-100 p-2 rounded">
-              BLL-CPH
-            </div>
-          </div>
-          <p class="font-medium mt-4">vSAS is hosting a giveaway, check our their event posting for more information</p>
+          <p>Toghter with vSAS we have arranged three community flights and all participating pilots will be in a giveaway raffle!</p>
+          <p>vSAS are also organizing a giveaway raffle for all participating pilots!</p>
+          <p class="font-medium">Prerequisites</p>
+          <ul class="list-disc list-inside">
+            <li>Be part of vSAS</li>
+            <li>The pilots have partiticpated in the group flight</li>
+            <li>Each leg's PIREPS must be sent via the vAMSYS Pegasus System</li>
+          </ul>
+          <p class="font-medium mt-4">Routes & times</p>
+
+          <Flight flight_number="SAS 9001"
+          departure="Copenhagen" 
+          departure_short="CPH"
+          arrival="Aalborg" 
+          departure_time="1200z" 
+          arrival_time="1305z" 
+          arrival_short="AAL"
+          time_hours={1}
+          time_minutes={5}
+          client:visible 
+          />
+          <Flight flight_number="SAS 9002"
+          departure="Aalborg" 
+          departure_short="AAL"
+          departure_time="1330z" 
+          arrival="Bilund" 
+          arrival_short="BLL"
+          arrival_time="1425z" 
+          time_hours={1}
+          time_minutes={15}
+          client:visible 
+          />
+          <Flight flight_number="SAS 9003"
+          departure="Billund" 
+          departure_short="BLL"
+          arrival="Copenhagen" 
+          departure_time="1450z" 
+          arrival_time="1555z" 
+          arrival_short="CPH"
+          time_hours={1}
+          time_minutes={5}
+          client:visible 
+          />
+
+          <p class="font-medium mt-6">Unable to join the group flights? no worries!<br/> vSAS Pilots get +60 Bonus Points for each flight in or out of CPH from 04:00z - 22:00z.</p>
         </div>
 
         <div class="text-black w-full p-2 min-w-[220px] h-fit">

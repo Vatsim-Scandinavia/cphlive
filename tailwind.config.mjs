@@ -5,7 +5,8 @@ export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-    "node_modules/keep-react/**/*.{js,jsx,ts,tsx}"
+    "node_modules/keep-react/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
   ],
   theme: {
     extend: {

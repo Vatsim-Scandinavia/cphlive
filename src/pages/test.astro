@@ -1,0 +1,70 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import '../globals.css'
+---
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/Arrow transparent.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <title>Copenhagen Live</title>
+        <ViewTransitions />
+      </head>
+    <body class="bg-[#f3f1ed] bg-[url('/skies.svg')] bg-cover flex justify-center items-center h-full min-h-screen text-[#1a4860]" >
+        <div class="py-4 px-2 mx-auto max-w-screen-2xl sm:py-4 lg:px-6 w-full h-fit">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 h-fit">
+                <div class="col-span-2 sm:col-span-1 md:col-span-6 bg-gray-50 h-fit md:h-64 flex flex-col">
+                    <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
+                        <img src="/logo.svg" alt="" class="w-32 aspect-auto z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                        <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl"></h3>
+                    </div>
+                </div>
+                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
+                    <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
+                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                        <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">👋🏻 Sponsors</h3>
+                        <img src="/simnord.png" alt="" class="h-auto w-64 bg-gray-400 p-2 rounded-md absolute top-28">
+                        <img src="/vSAS_dark.png" alt="" class="h-auto w-64  p-2 rounded-md absolute top-48">
+                    </div>
+                </div>
+                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
+                    <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4">
+                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                        <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">🔗 Links</h3>
+                        <div class="z-10 flex justify-around  w-full gap-4 absolute left-1/2 top-16 transform -translate-x-1/2 ">
+                            <div class="aspect-video flex flex-col items-center justify-center p-4 rounded">
+                                <span class="text-4xl">📄</span>
+                                <span class="text-lg">Pilot Briefing</span>
+                            </div>
+                            <div class="aspect-video flex flex-col items-center justify-center p-4 rounded">
+                                <span class="text-4xl">📄</span>
+                                <span class="text-lg">Learn more</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
+                        <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
+                            <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                            <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">✈️ VA Fly-in</h3>
+                        </a>
+                        <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
+                            <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                            <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">🔴 Live!</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-sky-50 h-auto md:h-full flex flex-col">
+                    <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
+                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                        <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl">📅 Schedule</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
