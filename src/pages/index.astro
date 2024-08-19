@@ -1,192 +1,73 @@
 ---
-import Layout from "../layout/index.astro";
-import { Flight } from "../components/Flight";
+import { ViewTransitions } from "astro:transitions";
+import '../globals.css'
 ---
-
-<Layout>
-
-  <div class="w-screen min-h-screen h-fit md:h-screen flex flex-col justify-center items-center gap-4">
-    <img src="/logo.svg" alt="" class="max-w-[50vw]" />
-      <iframe src="https://lottie.host/embed/51823aa2-f66a-43b7-822a-19bc5df0f843/mkeOn7yXol.json" />
-  </div>
-
-  <div class="w-screen min-h-screen h-fit md:h-screen grid grid-cols-5 gap-8 p-12" id="info">
-    <div class="col-span-5 xl:col-span-3 bg-white p-12 rounded-md">
-      <h1 class="text-4xl font-bold">📅 Schedule</h1>
-      <h3 class="text-lg italic font-medium">All times are in Zulu</h3>
-      <div class="flex text-2xl font-semibold pt-4 justify-center items-center flex-col xl:flex-row">
-        <div class="w-full">
-          <div class="py-4">
-            <h2 class="text-[#1a4860] font-bold">04:00-06:00</h2>
-            <ul class="list-disc list-inside">
-              <li>Event Start</li>
-            </ul>
-          </div>
-          <div class="py-4">
-            <h2 class="text-[#1a4860] font-bold">06:00-08:00</h2>
-          </div>
-          <div class="py-4">
-            <h2 class="text-[#1a4860] font-bold">08:00-10:00</h2>
-          </div>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/Arrow transparent.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <title>Copenhagen Live</title>
+        <ViewTransitions />
+      </head>
+    <body class="bg-[#f3f1ed] bg-[url('/skies.svg')] bg-cover flex justify-center items-center h-full min-h-screen text-[#1a4860]" >
+        <div class="py-4 px-2 mx-auto max-w-screen-2xl sm:py-4 lg:px-6 w-full h-fit">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 h-fit">
+                <div class="col-span-2 sm:col-span-1 md:col-span-6 bg-gray-50 h-fit md:h-64 flex flex-col">
+                    <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
+                        <img src="/logo.svg" alt="" class="w-32 aspect-auto z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                        <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl"></h3>
+                    </div>
+                </div>
+                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
+                    <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
+                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                        <h3 class="text-center z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl w-full">👋🏻 Sponsors</h3>
+                        <img src="/simnord1.png" alt="" class="h-auto w-64 p-2 rounded-md absolute top-42 z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <img src="/vSAS_dark.png" alt="" class="h-auto w-64 p-2 rounded-md absolute top-64 z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    </div>
+                </div>
+                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
+                    <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4">
+                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                        <div class="flex justify-around w-full gap-2 z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <div class="aspect-video flex flex-col items-center justify-center p-4 rounded">
+                                <span class="text-4xl">🧑🏻‍✈️</span>
+                                <span class="text-xl font-medium">Pilot Briefing</span>
+                            </div>
+                            <div class="aspect-video flex flex-col items-center justify-center p-4 rounded">
+                                <span class="text-4xl">✈️</span>
+                                <span class="text-xl font-medium">Book a slot</span>
+                            </div>
+                            <div class="aspect-video flex flex-col items-center justify-center p-4 rounded">
+                                <span class="text-4xl">📄</span>
+                                <span class="text-xl font-medium">Learn more</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
+                        <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
+                            <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                            <h3 class="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-medium p-4 xs:text-xl md:text-3xl w-fit">Virtual Airline <br /> Fly-in</h3>
+                        </a>
+                        <a href="https://twitch.tv/vatsimscandinavia" target="_blank" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
+                            <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                            <img class="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32" src="/Twitch_logo.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-sky-50 h-auto md:h-full flex flex-col">
+                    <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
+                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
+                        <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl w-full text-center">📅 Schedule</h3>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="w-full">
-          <div class="py-4">
-            <h2 class="text-[#1a4860] font-bold">10:00-12:00</h2>
-          </div>
-          <div class="py-4">
-            <h2 class="text-[#1a4860] font-bold">12:00-14:00</h2>
-          </div>
-          <div class="py-4">
-            <h2 class="text-[#1a4860] font-bold">14:00-16:00</h2>
-          </div>
-        </div>
-        <div class="w-full">
-          <div class="py-4">
-            <h2 class="text-[#1a4860] font-bold">16:00-18:00</h2>
-          </div>
-          <div class="py-4">
-            <h2 class="text-[#1a4860] font-bold">18:00-20:00</h2>
-          </div>
-          <div class="py-4">
-            <h2 class="text-[#1a4860] font-bold">20:00-22:00</h2>
-            <ul class="list-disc list-inside">
-              <li>Event End</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-5 xl:col-span-2 bg-white p-12 rounded-md">
-      <h1 class="text-4xl font-bold mb-12" >🔗 Links</h1>
-      <div class="flex flex-col gap-4">
-        <a href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekch-copenhagenkastrup" target="_blank" class="text-3xl font-semibold">
-          <p>📄 Pilot Briefing</p> 
-        </a>
-        <a href="https://www.twitch.tv/vatsimscandinavia" target="_blank" class="text-3xl font-semibold">
-          <p class="mb-6">📺 Twich Stream</p>
-        </a>
-      </div>
-    </div>
-
-    <div class="col-span-5 xl:col-span-3 bg-white rounded h-full p-12">
-      <h1 class="text-4xl font-bold">✈️ VA Fly-in</h1>
-      <h3 class="text-lg font-medium">We have established mini events & preferred routes in collaboration with several of the virtual airline operators, check them out below.</h3>
-      <div class="w-full h-fit grid 2xl:grid-cols-2 text-white gap-8">
-
-        <div class="text-black w-full p-2 min-w-[220px] h-fit">
-          <div class="bg-[#000099] h-fit rounded-lg p-2 flex justify-center">
-            <img src="/vSAS_light.png" class="h-12" />
-          </div>
-          <p>Toghter with vSAS we have arranged three community flights and all participating pilots will be in a giveaway raffle!</p>
-          <p>vSAS are also organizing a giveaway raffle for all participating pilots!</p>
-          <p class="font-medium">Prerequisites</p>
-          <ul class="list-disc list-inside">
-            <li>Be part of vSAS</li>
-            <li>The pilots have partiticpated in the group flight</li>
-            <li>Each leg's PIREPS must be sent via the vAMSYS Pegasus System</li>
-          </ul>
-          <p class="font-medium mt-4">Routes & times</p>
-
-          <Flight flight_number="SAS 9001"
-          departure="Copenhagen" 
-          departure_short="CPH"
-          arrival="Aalborg" 
-          departure_time="1200z" 
-          arrival_time="1305z" 
-          arrival_short="AAL"
-          time_hours={1}
-          time_minutes={5}
-          client:visible 
-          />
-          <Flight flight_number="SAS 9002"
-          departure="Aalborg" 
-          departure_short="AAL"
-          departure_time="1330z" 
-          arrival="Bilund" 
-          arrival_short="BLL"
-          arrival_time="1425z" 
-          time_hours={1}
-          time_minutes={15}
-          client:visible 
-          />
-          <Flight flight_number="SAS 9003"
-          departure="Billund" 
-          departure_short="BLL"
-          arrival="Copenhagen" 
-          departure_time="1450z" 
-          arrival_time="1555z" 
-          arrival_short="CPH"
-          time_hours={1}
-          time_minutes={5}
-          client:visible 
-          />
-
-          <p class="font-medium mt-6">Unable to join the group flights? no worries!<br/> vSAS Pilots get +60 Bonus Points for each flight in or out of CPH from 04:00z - 22:00z.</p>
-        </div>
-
-        <div class="text-black w-full p-2 min-w-[220px] h-fit">
-          <div class="bg-[#1f1e2e] h-fit rounded-lg p-2 flex justify-center">
-            <img src="https://cdn.vamsys.xyz/phoenixMediaStore/logo_dashboard_dark/31065/c/vEZY_White_2022-logo-logo.png" class="h-12" />
-          </div>
-          <p class="font-medium">Book direct flights to Copenhagen for a fun and easy city break, or as the perfect gateway for a longer trip to Scandinavia</p>
-          <p class="font-medium mt-4">Common vEZY destinations from CPH:</p>
-          <div class="flex gap-4 flex-col lg:flex-row flex-1 p-2">
-            <div class="bg-gray-100 p-2 rounded">
-              Nice
-            </div>
-            <div class="bg-gray-100 p-2 rounded">
-              Manchester
-            </div>
-            <div class="bg-gray-100 p-2 rounded">
-              London Gatwick
-            </div>
-            <div class="bg-gray-100 p-2 rounded">
-              Edinburgh
-            </div>
-            <div class="bg-gray-100 p-2 rounded">
-              Amsterdam
-            </div>
-          </div>
-          <div class="flex gap-4 flex-col lg:flex-row flex-1 p-2">
-            <div class="bg-gray-100 p-2 rounded">
-              Berlin Brandenburg
-            </div>
-            <div class="bg-gray-100 p-2 rounded">
-              Charles de Gaulle
-            </div>
-            <div class="bg-gray-100 p-2 rounded">
-              Milan Malpensa
-            </div>
-            <div class="bg-gray-100 p-2 rounded">
-              Nice
-            </div>
-          </div>
-          <p class="font-medium mt-4">250 Points pr. PIREP on the published routes</p>
-        </div>
-
-        <div class="text-black w-full p-2 min-w-[220px] h-fit">
-          <div class="bg-[#05164d] h-fit rounded-lg p-2 flex justify-center">
-            <img src="https://lh-virtual.com/wp-content/uploads/2022/12/full-hd_transparent_logo_white-300x71.png" class="h-12" />
-          </div>
-          <p class="font-medium">vDLH have planned a community flight!</p>
-        </div>
-
-        <div class="text-black w-full p-2 min-w-[220px] h-fit">
-          <div class="bg-[#e42e3c] h-fit rounded-lg p-2 flex justify-center">
-            <img src="https://www.virtualnorwegian.net/lib/skins/vnorwegian/img/logo2.png" class="h-12 w-fit aspect-auto" />
-          </div>
-          <p class="font-medium">vNAX have planned a community flight!</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-span-5 xl:col-span-2 bg-white p-12 rounded-md">
-      <h1 class="text-4xl font-bold">👋🏻 Event Sponsors</h1>
-      <div class="flex justify-between gap-4 p-4 mt-12">
-        <img src="/simnord.png" alt="" class="h-auto w-64 bg-gray-400 p-2 rounded-md">
-      </div>
-    </div>
-
-  </div>
-</Layout>
+    </body>
+</html>
