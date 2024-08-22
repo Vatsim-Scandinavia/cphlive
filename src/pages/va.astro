@@ -1,0 +1,82 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import '../globals.css'
+---
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/Arrow transparent.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <title>Copenhagen Live</title>
+        <ViewTransitions />
+      </head>
+    <body class="bg-[#f3f1ed] bg-[url('/skies.svg')] bg-cover w-screen h-full min-h-screen flex gap-8 justify-center items-center p-8" >
+        <div class="w-full h-full flex flex-col justify-center items-center bg-[#f3f1ed]">
+            <div class="bg-[#272c88] w-full p-4 rounded flex justify-center">
+                <img src="/vSAS_light.png" class="h-32 p-4" />
+            </div>
+            <div class="bg-[#ffffff] w-full p-4 rounded flex justify-around h-full gap-8">
+                <div class="flex gap-4 flex-col">
+                    <h2 class="text-2xl text-center font-medium">vSAS is hosting a triangle group fligh!</h2>
+                    <div class="bg-white w-96 mx-4 h-20 flex justify-between rounded-lg drop-shadow">
+                        <div class="flex flex-col justify-center items-center h-20 aspect-square">
+                            <p class="font-bold text-xl">CPH</p>
+                            <p class="font-medium text-xl">EKCH</p>
+                        </div>
+                        <div class="flex flex-col justify-center items-center h-20 ">
+                            <span class="text-lg">12:00z - 13:05z</span>
+                            <span class="text-sm">GOLGA DCT</span>
+                        </div>
+                        <div class="flex flex-col justify-center items-center h-20 aspect-square">
+                            <p class="font-bold text-xl">AAL</p>
+                            <p class="font-medium text-xl">EKYT</p>
+                        </div>
+                    </div>
+                    <div class="bg-white w-96 mx-4 h-20 flex justify-between rounded-lg drop-shadow">
+                        <div class="flex flex-col justify-center items-center h-20 aspect-square">
+                            <p class="font-bold text-xl">AAL</p>
+                            <p class="font-medium text-xl">EKYT</p>
+                        </div>
+                        <div class="flex flex-col justify-center items-center h-20 ">
+                            <span class="text-lg">12:00z - 13:05z</span>
+                            <span class="text-sm">LOKSA DCT</span>
+                        </div>
+                        <div class="flex flex-col justify-center items-center h-20 aspect-square">
+                            <p class="font-bold text-xl">BLL</p>
+                            <p class="font-medium text-xl">EKBI</p>
+                        </div>
+                    </div>
+                    <div class="bg-white w-96 mx-4 h-20 flex justify-between rounded-lg drop-shadow">
+                        <div class="flex flex-col justify-center items-center h-20 aspect-square">
+                            <p class="font-bold text-xl">BLL</p>
+                            <p class="font-medium text-xl">EKBI</p>
+                        </div>
+                        <div class="flex flex-col justify-center items-center h-20 ">
+                            <span class="text-lg">12:00z - 13:05z</span>
+                            <span class="text-sm">ABINO T56 TESPI</span>
+                        </div>
+                        <div class="flex flex-col justify-center items-center h-20 aspect-square">
+                            <p class="font-bold text-xl">CPH</p>
+                            <p class="font-medium text-xl">EKCH</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-4 flex-col">
+                    asdasd
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-100 w-full h-full flex flex-col justify-center items-center">
+            <div class="bg-[#2b2b2b] w-full p-4 rounded flex justify-center">
+                <img src="https://cdn.vamsys.xyz/phoenixMediaStore/logo_select_page_dark/24620/c/vEZY_White_2022-logo.png" class="h-32 p-4" />
+            </div>
+            <div class="bg-white w-full p-4 rounded flex justify-center h-full min-h-[50vh]">
+
+            </div>
+        </div>
+    </body>
+</html>
