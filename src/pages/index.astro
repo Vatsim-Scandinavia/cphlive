@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import "../globals.css";
+import Accordion from "../components/Accordion.astro";
 ---
 
 <html lang="en">
@@ -97,21 +98,23 @@ import "../globals.css";
             class="flex flex-col overflow-hidden rounded-lg px-4 pb-4 flex-grow"
           >
             <h3 class="text-2xl font-medium w-full text-center">📅 Schedule</h3>
-            <div>
+            <div class="my-auto">
               <div class="flex flex-col gap-2 p-4">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center font-medium">
                   <span class="text-xl">04:00</span>
                   <span class="text-xl">Opening</span>
                 </div>
                 <div class="flex justify-between items-center">
-                  <span class="text-xl">12:00</span>
-                  <span class="text-xl">vSAS group flight</span>
+                  <Accordion time="15:00" title="Join the simulator" details="We will be following a flight into Copenhagen from a full B373 simulator!" />
+                </div>
+                <div class="flex justify-between items-center">
+                  <Accordion time="12:00" title="vSAS group flight" details="Join vSAS in their group flight around Denmark!" />
                 </div>
                 <div class="flex justify-between items-center">
                   <span class="text-xl">15:00</span>
                   <span class="text-xl">ATC Q&A</span>
                 </div>
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center font-medium">
                   <span class="text-xl">22:00</span>
                   <span class="text-xl">Closing</span>
                 </div>
