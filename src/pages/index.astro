@@ -15,58 +15,46 @@ import '../globals.css'
         <ViewTransitions />
       </head>
     <body class="bg-[#f3f1ed] bg-[url('/skies.svg')] bg-cover flex justify-center items-center h-full min-h-screen text-[#1a4860]" >
-        <div class="py-4 px-2 mx-auto max-w-screen-2xl sm:py-4 lg:px-6 w-full h-fit">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 h-fit">
-                <div class="col-span-2 sm:col-span-1 md:col-span-6 bg-gray-50 h-fit md:h-64 flex flex-col">
-                    <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-                        <img src="/logo.svg" alt="" class="w-32 aspect-auto z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
-                        <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl"></h3>
-                    </div>
+        <div class="py-4 px-2 mx-auto max-w-screen-2xl sm:py-4 lg:px-6 w-full h-fit ">
+            <div class="grid grid-cols-4 grid-rows-1 xl:grid-rows-3 gap-4 h-fit">
+                <div class="col-span-4 h-fit py-12 flex flex-col justify-center items-center bg-[#e6e8ee] w-full">
+                    <img src="/logo.svg" alt="" class="w-32 aspect-auto">
                 </div>
-                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col">
-                    <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
-                        <h3 class="text-center z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl w-full">👋🏻 Sponsors</h3>
-                        <img src="/simnord1.png" alt="" class="h-auto w-64 p-2 rounded-md absolute top-42 z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <img src="/vSAS_dark.png" alt="" class="h-auto w-64 p-2 rounded-md absolute top-64 z-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    </div>
+                <div class="col-span-4 xl:col-span-1 xl:row-span-2 xl:row-start-2 h-auto md:h-full flex flex-col bg-[#e6e8ee]">
+                    <h3 class="text-center text-2xl font-medium p-4 xs:text-xl md:text-3xl w-full">👋🏻 Sponsors</h3>
+                    <img src="/simnord1.png" alt="" class="h-auto w-64 p-2 rounded-md ">
+                    <img src="/vSAS_dark.png" alt="" class="h-auto w-64 p-2 rounded-md">
                 </div>
-                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
-                    <div class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4">
-                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
-                        <div class="flex justify-around w-full gap-2 z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                            <a href="/Copenhagen Airport Pilot Briefing 2024.pdf" class="aspect-video flex flex-col items-center justify-center p-4 rounded">
-                                <span class="text-4xl">🧑🏻‍✈️</span>
-                                <span class="text-xl font-medium">Pilot Briefing</span>
-                            </a>
-                            <div class="aspect-video flex flex-col items-center justify-center p-4 rounded">
-                                <span class="text-4xl">✈️</span>
-                                <span class="text-xl font-medium">Book a slot</span>
-                            </div>
-                            <div class="aspect-video flex flex-col items-center justify-center p-4 rounded">
-                                <span class="text-4xl">📄</span>
-                                <span class="text-xl font-medium">Learn more</span>
-                            </div>
+                <div class="flex flex-col overflow-hidden rounded-lg px-4 w-full col-span-4 xl:col-span-2 xl:col-start-2 md:row-start-2 bg-[#e6e8ee] h-full py-4">
+                    <div class="flex flex-wrap justify-around items-center h-full w-full gap-2">
+                        <a href="/Copenhagen Airport Pilot Briefing 2024.pdf" class="aspect-video flex flex-col items-center justify-center p-4 rounded">
+                            <span class="text-4xl">🧑🏻‍✈️</span>
+                            <span class="text-xl font-medium">Pilot Briefing</span>
+                        </a>
+                        <a href="https://booking.vatsim-scandinavia.org/" target="_blank" class="aspect-video flex flex-col items-center justify-center p-4 rounded">
+                            <span class="text-4xl">✈️</span>
+                            <span class="text-xl font-medium">Book a slot</span>
+                        </a>
+                        <div class="aspect-video flex flex-col items-center justify-center p-4 rounded">
+                            <span class="text-4xl">📄</span>
+                            <span class="text-xl font-medium">Learn more</span>
                         </div>
                     </div>
-                    <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
-                        <a href="/va" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
-                            <div class="absolute inset-0 bg-[#e6e8ee]"></div>
-                            <h3 class="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-medium p-4 xs:text-xl md:text-3xl w-fit">Virtual Airline <br /> Fly-in</h3>
-                        </a>
-                        <a href="https://twitch.tv/vatsimscandinavia" target="_blank" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40">
-                            <div class="absolute inset-0 bg-[#e6e8ee]"></div>
-                            <img class="z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32" src="/Twitch_logo.svg" alt="">
-                        </a>
-                    </div>
                 </div>
-                <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-sky-50 h-auto md:h-full flex flex-col">
-                    <a href="" class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow">
-                        <div class="absolute inset-0 bg-[#e6e8ee]"></div>
-                        <h3 class="z-10 text-2xl font-medium absolute top-0 left-0 p-4 xs:text-xl md:text-3xl w-full text-center">📅 Schedule</h3>
-                    </a>
+                <a href="/va" class="flex flex-col justify-center items-center overflow-hidden rounded-lg px-4 col-span-4 xl:col-span-1 xl:col-start-2 xl:row-start-3 bg-[#e6e8ee] h-full py-4">
+                    <h3 class="text-4xl font-medium p-4 w-fit">Virtual <br /> Airline <br /> Fly-in</h3>
+                </a>
+                <a href="https://twitch.tv/vatsimscandinavia" target="_blank" class="flex flex-col justify-center items-center overflow-hidden rounded-lg px-4 col-span-4 xl:col-span-1 xl:col-start-3 xl:row-start-3 bg-[#e6e8ee] h-full py-4">
+                    <img class="w-32" src="/Twitch_logo.svg" alt="">
+                </a>
+                <div class="flex flex-col col-span-4 xl:col-span-1 xl:row-span-2 xl:col-start-4 xl:row-start-2 bg-[#e6e8ee] h-full py-4">
+                  <a href="" class="flex flex-col overflow-hidden rounded-lg px-4 pb-4 flex-grow">
+                      <h3 class="text-2xl font-medium w-full text-center">📅 Schedule</h3>
+                  </a>
+              </div>
+            </div>
                 </div>
+
             </div>
         </div>
     </body>
