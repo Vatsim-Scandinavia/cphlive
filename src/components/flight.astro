@@ -1,0 +1,17 @@
+---
+const { departureAirport,flightNumber,duration,arrivalAirport,aircraftType } = Astro.props;
+---
+<div class="w-[calc(50%-10px)] bg-white aspect-[3/1] flex justify-between items-center px-2">
+    <div class="flex flex-col justify-center items-center">
+        <span class="font-bold">{departureAirport}</span>
+        <span class="text-sm">{flightNumber}</span>
+    </div>
+    <div class="flex flex-col justify-center items-center pt-4">
+        <span class="text-sm">- - - - - <img src="/airplane.svg" class="w-6 aspect-square inline"/> - - - - -</span>
+        <span class="text-sm">{duration}</span>
+    </div> 
+    <div class="flex flex-col justify-center items-center">
+        <span class="font-bold">{arrivalAirport}</span>
+        <span class="text-sm">{aircraftType}</span>
+    </div>
+</div>
