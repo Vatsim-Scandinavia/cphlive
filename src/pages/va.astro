@@ -15,8 +15,8 @@ import '../globals.css'
         <title>Copenhagen Live</title>
         <ViewTransitions />
       </head>
-    <body class="bg-[#fff] bg-[url('/skies.svg')] bg-cover w-screen h-full min-h-screen grid grid-cols-1 2xl:grid-cols-3 justify-center items-center" >
-        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[400px] h-full">
+    <body class="scroll-smooth bg-[#fff] bg-[url('/skies.svg')] bg-cover w-full h-full min-h-screen grid grid-cols-1 2xl:grid-cols-3 justify-center items-center overflow-hidden overflow-y-scroll" style='scrollbar-gutter: stable both-edges'  >
+        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[250px] h-full ">
             <div class="bg-[#3168e1] w-full p-4 rounded flex justify-center">
                 <img src="/vRYR-White.png" class="h-32 p-4" />
             </div>
@@ -26,16 +26,16 @@ import '../globals.css'
                     <p class="text-center">Some common routes for Raynair:</p>
                     <div class="flex justify-between gap-6 flex-col ">
                         <div class="flex justify-center flex-row gap-2 w-full flex-wrap">
-                            <Flight departureAirport="CPH" flightNumber="FR6845" duration="" arrivalAirport="GDN" aircraftType="B738" />
-                            <Flight departureAirport="CPH" flightNumber="FR3759" duration="" arrivalAirport="EDI" aircraftType="B738" />
-                            <Flight departureAirport="CPH" flightNumber="FR9742" duration="" arrivalAirport="BVA" aircraftType="B738" />
-                            <Flight departureAirport="CPH" flightNumber="FR606" duration="" arrivalAirport="MAD" aircraftType="B738" />
+                            <Flight departureAirport="CPH" flightNumber="FR6845" duration="45 min" arrivalAirport="GDN" aircraftType="B738" />
+                            <Flight departureAirport="CPH" flightNumber="FR3759" duration="1 hour 30 min" arrivalAirport="EDI" aircraftType="B738" />
+                            <Flight departureAirport="CPH" flightNumber="FR9742" duration="1 hour 30 min" arrivalAirport="BVA" aircraftType="B738" />
+                            <Flight departureAirport="CPH" flightNumber="FR606" duration="3 hours" arrivalAirport="MAD" aircraftType="B738" />
                         </div>
                         <div class="flex justify-center flex-row gap-2 w-full flex-wrap">
-                            <Flight departureAirport="BYG" flightNumber="FR2990" duration="" arrivalAirport="CPH" aircraftType="B738" />
-                            <Flight departureAirport="STN" flightNumber="FR7384" duration="" arrivalAirport="CPH" aircraftType="B738" />
-                            <Flight departureAirport="GDN" flightNumber="FR6844" duration="" arrivalAirport="CPH" aircraftType="B738" />
-                            <Flight departureAirport="SOF" flightNumber="FR3607" duration="" arrivalAirport="CPH" aircraftType="B738" />
+                            <Flight departureAirport="BYG" flightNumber="FR2990" duration="1 hour 45 min" arrivalAirport="CPH" aircraftType="B738" />
+                            <Flight departureAirport="STN" flightNumber="FR7384" duration="1 hour 20 min" arrivalAirport="CPH" aircraftType="B738" />
+                            <Flight departureAirport="GDN" flightNumber="FR6844" duration="45 min" arrivalAirport="CPH" aircraftType="B738" />
+                            <Flight departureAirport="SOF" flightNumber="FR3607" duration="2 hours 20 min" arrivalAirport="CPH" aircraftType="B738" />
                         </div>
                     </div>
                     <p class="text-center">Visit their website here for more information</p>
@@ -43,7 +43,7 @@ import '../globals.css'
                 </div>
             </div>
         </div>
-        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[400px] h-full">
+        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[250px] h-full">
             <div class="bg-[#272c88] w-full p-4 rounded flex justify-center">
                 <img src="/vSAS_light.png" class="h-32 p-4" />
             </div>
@@ -101,7 +101,7 @@ import '../globals.css'
                 </div>
             </div>
         </div>
-        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[400px] h-full">
+        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[250px] h-full">
             <div class="bg-[#05164d] w-full p-4 rounded flex justify-center">
                 <img src="https://lh-virtual.com/wp-content/uploads/2022/12/full-hd_transparent_logo_white-300x71.png" class="h-32 p-4" />
             </div>
@@ -145,7 +145,7 @@ import '../globals.css'
                 </div>
             </div>
         </div>
-        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[400px] h-full">
+        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[250px] h-full">
             <div class="bg-[#05164d] w-full p-4 rounded flex justify-center">
                 <img src="https://www.dlhvirtual.de/lib/skins/DLH/img/dlh.png" class="h-32 p-4" />
             </div>
@@ -189,105 +189,35 @@ import '../globals.css'
                 </div>
             </div>
         </div>
-        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[400px] h-full">
+        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[250px] h-full">
             <div class="bg-[#2b2b2b] w-full p-4 rounded flex justify-center">
                 <img src="https://cdn.vamsys.xyz/phoenixMediaStore/logo_select_page_dark/24620/c/vEZY_White_2022-logo.png" class="h-32 p-4" />
             </div>
             <div class="bg-[#f0f2f2] w-full p-4 rounded flex justify-around gap-8 h-full min-h-[50vh]">
                 <div class="flex gap-4 flex-col">
                     <h2 class="text-2xl text-center font-medium">vEZY is hosting multiple fly-in events!</h2>
-                    <p>All vEZY Pilots will get 250 Bonus Points for each flight in or out of CPH during the event.</p>
+                    <p class="text-center">All vEZY Pilots will get 250 Bonus Points for each flight in or out of CPH during the event.</p>
                     <p>Some common routes for EasyJet:</p>
-                    <div class="flex justify-between gap-6 flex-col">
-                        <table class="w-full">
-                            <tbody>
-                                <tr class="bg-gray-900 text-white"> 
-                                    <th>
-                                        Flight num
-                                    </td>
-                                    <th>
-                                        Destination
-                                    </th>
-                                    <th>
-                                        Origin
-                                    </th>
-                                    <th>
-                                        Aircraft
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td>U25271</td>
-                                    <td>BER</td>
-                                    <td>CPH</td>
-                                    <td>A319</td>
-                                </tr>
-                                <tr>
-                                    <td>U23323</td>
-                                    <td>EDI</td>
-                                    <td>CPH</td>
-                                    <td>A320</td>
-                                </tr>
-                                <tr>
-                                    <td>U27935</td>
-                                    <td>AMS</td>
-                                    <td>CPH</td>
-                                    <td>A20N</td>
-                                </tr>
-                                <tr>
-                                    <td>U24651</td>
-                                    <td>CDG</td>
-                                    <td>CPH</td>
-                                    <td>A319</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="w-full">
-                            <tbody>
-                                <tr class="bg-gray-900 text-white">
-                                    <th>
-                                        Flight num
-                                    </td>
-                                    <th>
-                                        Destination
-                                    </th>
-                                    <th>
-                                        Origin
-                                    </th>
-                                    <th>
-                                        Aircraft
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td>U23922</td>
-                                    <td>CPH</td>
-                                    <td>MXP</td>
-                                    <td>A319</td>
-                                </tr>
-                                <tr>
-                                    <td>U28722</td>
-                                    <td>CPH</td>
-                                    <td>LGW</td>
-                                    <td>A319</td>
-                                </tr>
-                                <tr>
-                                    <td>U21956</td>
-                                    <td>CPH</td>
-                                    <td>BOD</td>
-                                    <td>A320</td>
-                                </tr>
-                                <tr>
-                                    <td>U25268</td>
-                                    <td>CPH</td>
-                                    <td>BER</td>
-                                    <td>A320</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="flex justify-between gap-6 flex-col ">
+                        <div class="flex justify-center flex-row gap-2 w-full flex-wrap">
+                            <Flight departureAirport="CPH" flightNumber="U25262" duration="" arrivalAirport="BER" aircraftType="A320" />
+                            <Flight departureAirport="CPH" flightNumber="U24488" duration="" arrivalAirport="LYS" aircraftType="A320" />
+                            <Flight departureAirport="CPH" flightNumber="U24648" duration="" arrivalAirport="CDG" aircraftType="A320" />
+                            <Flight departureAirport="CPH" flightNumber="U22236" duration="" arrivalAirport="MAN" aircraftType="A320" />
+                        </div>
+                        <div class="flex justify-center flex-row gap-2 w-full flex-wrap">
+                            <Flight departureAirport="AMS" flightNumber="U27935" duration="" arrivalAirport="CPH" aircraftType="A320" />
+                            <Flight departureAirport="BOD" flightNumber="U21955" duration="" arrivalAirport="CPH" aircraftType="A320" />
+                            <Flight departureAirport="BRS" flightNumber="U22931" duration="" arrivalAirport="CPH" aircraftType="A320" />
+                            <Flight departureAirport="GVA" flightNumber="U21537" duration="" arrivalAirport="CPH" aircraftType="A320" />
+                        </div>
                     </div>
+                    <p class="text-center">Visit their website here for more information</p>
+                    <a href="https://www.dlhvirtual.de/" target="_blank" class="text-center text-blue-700 font-medium hover:underline -mt-4 p-0">dlhvirtual.de</a>
                 </div>
             </div>
         </div>
-        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[400px] h-full">
+        <div class="flex flex-col justify-center items-center basis-1/1 2xl:basis-1/4 p-4 w-full xl:min-w-[250px] h-full">
             <div class="bg-[#e42e3c] w-full p-4 rounded flex justify-center">
                 <img src="https://www.virtualnorwegian.net/lib/skins/vnorwegian/img/logo2.png" class="h-32 p-4" />
             </div>
@@ -297,16 +227,16 @@ import '../globals.css'
                     <p class="text-center">Some common routes for Norwegian:</p>
                     <div class="flex justify-between gap-6 flex-col ">
                         <div class="flex justify-center flex-row gap-2 w-full flex-wrap">
-                            <Flight departureAirport="CPH" flightNumber="" duration="" arrivalAirport="AAL" aircraftType="B738" />
-                            <Flight departureAirport="CPH" flightNumber="" duration="" arrivalAirport="BRG" aircraftType="B738" />
-                            <Flight departureAirport="CPH" flightNumber="" duration="" arrivalAirport="" aircraftType="B738" />
-                            <Flight departureAirport="CPH" flightNumber="" duration="" arrivalAirport="" aircraftType="B738" />
+                            <Flight departureAirport="CPH" flightNumber="D83082" duration="" arrivalAirport="AAL" aircraftType="B738" />
+                            <Flight departureAirport="CPH" flightNumber="D83656" duration="" arrivalAirport="BCN" aircraftType="B738" />
+                            <Flight departureAirport="CPH" flightNumber="D83640" duration="" arrivalAirport="NCE" aircraftType="B38M" />
+                            <Flight departureAirport="CPH" flightNumber="D83628" duration="" arrivalAirport="MPL" aircraftType="B738" />
                         </div>
                         <div class="flex justify-center flex-row gap-2 w-full flex-wrap">
-                            <Flight departureAirport="BYG" flightNumber="" duration="" arrivalAirport="" aircraftType="B738" />
-                            <Flight departureAirport="STN" flightNumber="" duration="" arrivalAirport="" aircraftType="B738" />
-                            <Flight departureAirport="GDN" flightNumber="" duration="" arrivalAirport="" aircraftType="B738" />
-                            <Flight departureAirport="SOF" flightNumber="" duration="" arrivalAirport="" aircraftType="B738" />
+                            <Flight departureAirport="OSL" flightNumber="DY940" duration="" arrivalAirport="CPH" aircraftType="B738" />
+                            <Flight departureAirport="AGP" flightNumber="D83671" duration="" arrivalAirport="CPH" aircraftType="B38M" />
+                            <Flight departureAirport="KRK" flightNumber="D83563" duration="" arrivalAirport="CPH" aircraftType="B738" />
+                            <Flight departureAirport="ARN" flightNumber="D83205" duration="" arrivalAirport="CPH" aircraftType="B738" />
                         </div>
                     </div>
                     <p class="text-center">Visit their website here for more information</p>
