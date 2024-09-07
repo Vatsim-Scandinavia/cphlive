@@ -37,7 +37,7 @@ import Accordion from "../components/Accordion.astro";
           <h3
             class="text-center text-2xl font-medium p-4 xs:text-xl md:text-3xl w-full"
           >
-            👋🏻 Sponsors
+          <img src="/trophy.svg" class="w-8 inline" /> Sponsors
           </h3>
           <img src="/simnord1.png" alt="" class="h-auto w-64 my-12 px-12 rounded-md" />
           <img src="/vatsca.svg" alt="" class="h-auto w-64 my-12 px-6 rounded-md" />
@@ -52,7 +52,7 @@ import Accordion from "../components/Accordion.astro";
               href="/Copenhagen Airport Pilot Briefing 2024.pdf"
               class="aspect-video flex flex-col items-center justify-center p-4 hover:bg-[#d6d8ddea] rounded"
             >
-              <span class="text-4xl">🧑🏻‍✈️</span>
+              <span class="text-4xl"><img src="/captain.svg" class="w-8" /></span>
               <span class="text-xl font-medium">Pilot Briefing</span>
             </a>
             <a
@@ -60,13 +60,13 @@ import Accordion from "../components/Accordion.astro";
               target="_blank"
               class="aspect-video flex flex-col items-center justify-center p-4 rounded hover:bg-[#d6d8ddea]"
             >
-              <span class="text-4xl">✈️</span>
+              <span class="text-4xl"><img src="/aircraft.svg" class="w-8" /></span>
               <span class="text-xl font-medium">Book a slot</span>
             </a>
             <div
               class="aspect-video flex flex-col items-center justify-center p-4 rounded hover:bg-[#d6d8ddea]"
             >
-              <span class="text-4xl">📄</span>
+              <span class="text-4xl"><img src="/document.svg" class="w-8" /></span>
               <span class="text-xl font-medium">Learn more</span>
             </div>
           </div>
@@ -93,7 +93,7 @@ import Accordion from "../components/Accordion.astro";
             href=""
             class="flex flex-col overflow-hidden rounded-lg px-4 pb-4 flex-grow"
           >
-            <h3 class="text-2xl font-medium w-full text-center">📅 Schedule</h3>
+            <h3 class="text-2xl font-medium w-full text-center"><img src="/schedule.svg" class="w-8 inline" /> Schedule</h3>
             <div class="my-auto">
               <div class="flex flex-col gap-2 p-4">
                 <div class="flex justify-between items-center font-medium">
@@ -121,19 +121,18 @@ import Accordion from "../components/Accordion.astro";
         <div class="col-span-4 h-fit py-12 flex flex-col justify-center items-center bg-[#e6e8ee] w-full">
           <h3 class="text-2xl font-medium w-full text-center"> 📅 Competitions </h3>
           <div class="w-full h-full grid grid-cols-3 gap-4 p-2">
-            <div class="text-xl font-medium text-center flex flex-col">Morning rush
-              <span class="text-md font-normal">Fly in or out of Copenhagen within the early morning hours to be in the raffel of a SimNord scenery!</span>
-              <a href="" target="_blank" class="text-center text-blue-700 font-medium hover:underline pt-2">Read More</a>
+            <div class="text-xl font-medium text-center flex flex-col">Morning rush<span class="text-sm font-medium italic">04-05 UTC</span>
+              <span class="text-md font-normal">Fly into or out of Copenhagen in the early morning hours for a chance to win a SimNord scenery!</span>
+              <a href="/competitions" class="text-center text-blue-700 font-medium hover:underline pt-2">Read More</a>
             </div>
-            <div class="text-xl font-medium text-center flex flex-col">vSAS
+            <div class="text-xl font-medium text-center flex flex-col">vSAS<span class="text-sm font-medium italic">04-22 UTC</span>
               <span class="text-md font-normal">Are organizing a giveaway raffle for all participating pilots who fly in/out of copenhagen dureing the event</span>
-              <a href="" target="_blank" class="text-center text-blue-700 font-medium hover:underline pt-2">Read More</a>
+              <a href="https://www.flysasvirtual.net/events" target="_blank" class="text-center text-blue-700 font-medium hover:underline pt-2">Read More</a>
             </div>
-            <div class="text-xl font-medium text-center  flex flex-col">Night owl
-              <span class="text-md font-normal">Fly in or out of Copenhagen within the early morning hours to be in the raffel of a SimNord scenery!</span>
-              <a href="" target="_blank" class="text-center text-blue-700 font-medium hover:underline pt-2">Read More</a>
+            <div class="text-xl font-medium text-center  flex flex-col">Night owl<span class="text-sm font-medium italic">21-22 UTC</span>
+              <span class="text-md font-normal">Fly into or out of Copenhagen in the late night hours for a chance to win a SimNord scenery!</span>
+              <a href="/competitions" class="text-center text-blue-700 font-medium hover:underline pt-2">Read More</a>
             </div>
-            
           </div>
       </div>
       </div>
