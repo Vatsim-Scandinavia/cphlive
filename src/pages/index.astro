@@ -50,7 +50,7 @@ import Accordion from "../components/Accordion.astro";
           >
             <a
               href="/Copenhagen Airport Pilot Briefing 2024.pdf"
-              class="aspect-video flex flex-col items-center justify-center p-4 hover:bg-[#d6d8ddea] rounded"
+              class="aspect-square flex flex-col items-center justify-center p-4 hover:bg-[#d6d8ddea] rounded w-48 h-full"
             >
               <span class="text-4xl"><img src="/captain.svg" class="w-8" /></span>
               <span class="text-xl font-medium">Pilot Briefing</span>
@@ -58,17 +58,19 @@ import Accordion from "../components/Accordion.astro";
             <a
               href="https://booking.vatsim-scandinavia.org/"
               target="_blank"
-              class="aspect-video flex flex-col items-center justify-center p-4 rounded hover:bg-[#d6d8ddea]"
+              class="aspect-square flex flex-col items-center justify-center p-4 rounded hover:bg-[#d6d8ddea] w-48 h-full"
             >
               <span class="text-4xl"><img src="/aircraft.svg" class="w-8" /></span>
               <span class="text-xl font-medium">Book a slot</span>
             </a>
-            <div
-              class="aspect-video flex flex-col items-center justify-center p-4 rounded hover:bg-[#d6d8ddea]"
+            <a
+              class="aspect-square flex flex-col items-center justify-center p-4 rounded hover:bg-[#d6d8ddea] w-48 h-full"
+              href="https://cdm.vatsim-scandinavia.org"
+              target="_blank"
             >
-              <span class="text-4xl"><img src="/document.svg" class="w-8" /></span>
-              <span class="text-xl font-medium">Learn more</span>
-            </div>
+              <span class="text-4xl"><img src="/clock.svg" class="w-8" /></span>
+              <span class="text-xl font-medium">vACDM</span>
+          </a>
           </div>
         </div>
         <a
