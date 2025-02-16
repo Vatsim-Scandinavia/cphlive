@@ -18,11 +18,11 @@ import "../globals.css";
     class="bg-[#f3f1ed] bg-[url('/skies.svg')] bg-cover flex flex-col justify-around items-center h-full min-h-screen overflow-x-hidden"
   >
     <section
-      class="flex justify-between items-center w-full px-6 md:px-24 min-h-screen h-fit"
+      class="flex justify-between items-center w-full px-6 md:px-32 min-h-screen h-fit"
     >
-      <div class="flex justify-center items-left flex-col w-full md:w-1/2">
-        <h3 class="text-xl font-semibold">MAJOR EVENT SERIES</h3>
-        <h1 class="text-4xl md:text-6xl font-medium">Copenhagen Live 2025</h1>
+      <div class="flex justify-center items-left flex-col w-full md:w-1/2 text-blue-gray-900">
+        <h3 class="text-xl font-bold ">MAJOR EVENT SERIES</h3>
+        <h1 class="text-4xl md:text-6xl font-semibold">Copenhagen Live 2025</h1>
         <div class="bg-black w-6 md:w-10 h-2 md:h-4 my-4"></div>
         <p class="text-2xl">September 21th - 04-22z</p>
       </div>
@@ -35,7 +35,7 @@ import "../globals.css";
     <section class="min-h-[50vh] px-6 md:px-24">
       <h2 class="mx-auto text-4xl font-medium">Schedule</h2>
       <ol
-        class="border-s border-black dark:border-neutral-500 md:flex md:justify-center md:gap-6 md:border-s-0 md:border-t-2 my-6"
+        class="border-s border-black dark:border-neutral-500 md:flex md:justify-center md:gap-6 md:border-s-0 md:border-t-2 my-6 "
       >
         <li>
           <div class="flex-start flex items-center pt-2 md:block md:pt-0 w-32">
@@ -44,11 +44,12 @@ import "../globals.css";
             >
             </div>
             <p class="mt-2 text-sm text-neutral-500 dark:text-black">
-              04:00Z
+              04-06z
             </p>
           </div>
           <div class="ms-4 mt-2 pb-5 md:ms-0">
             <h4 class="mb-1.5 text-xl font-semibold">Event start</h4>
+            <p>Rise and shine! We start the day early!</p>
           </div>
         </li>
 
@@ -59,41 +60,12 @@ import "../globals.css";
             >
             </div>
             <p class="mt-2 text-sm text-neutral-500 dark:text-black">
-              06:00Z
+              06-10Z
             </p>
           </div>
           <div class="ms-4 mt-2 pb-5 md:ms-0">
-            <h4 class="mb-1.5 text-xl font-semibold">TBD</h4>
-          </div>
-        </li>
-
-        <li>
-          <div class="flex-start flex items-center pt-2 md:block md:pt-0 w-32">
-            <div
-              class="-ms-[5px] me-3 h-[9px] w-[9px] rounded-full bg-black dark:bg-neutral-500 md:-mt-[5px] md:me-0 md:ms-0"
-            >
-            </div>
-            <p class="mt-2 text-sm text-neutral-500 dark:text-black">
-              08:00Z
-            </p>
-          </div>
-          <div class="ms-4 mt-2 pb-5 md:ms-0">
-            <h4 class="mb-1.5 text-xl font-semibold">TBD</h4>
-          </div>
-        </li>
-
-        <li>
-          <div class="flex-start flex items-center pt-2 md:block md:pt-0 w-32">
-            <div
-              class="-ms-[5px] me-3 h-[9px] w-[9px] rounded-full bg-black dark:bg-neutral-500 md:-mt-[5px] md:me-0 md:ms-0"
-            >
-            </div>
-            <p class="mt-2 text-sm text-neutral-500 dark:text-black">
-              10:00Z
-            </p>
-          </div>
-          <div class="ms-4 mt-2 pb-5 md:ms-0">
-            <h4 class="mb-1.5 text-xl font-semibold">TBD</h4>
+            <h4 class="mb-1.5 text-xl font-semibold">Morning Rush</h4>
+            <p>We expect a medium load around these hours.</p>
           </div>
         </li>
 
@@ -149,26 +121,12 @@ import "../globals.css";
             >
             </div>
             <p class="mt-2 text-sm text-neutral-500 dark:text-black">
-              18:00Z
+              18-20Z
             </p>
           </div>
           <div class="ms-4 mt-2 pb-5 md:ms-0">
-            <h4 class="mb-1.5 text-xl font-semibold">TBD</h4>
-          </div>
-        </li>
-
-        <li>
-          <div class="flex-start flex items-center pt-2 md:block md:pt-0 w-32">
-            <div
-              class="-ms-[5px] me-3 h-[9px] w-[9px] rounded-full bg-black dark:bg-neutral-500 md:-mt-[5px] md:me-0 md:ms-0"
-            >
-            </div>
-            <p class="mt-2 text-sm text-neutral-500 dark:text-black">
-              20:00Z
-            </p>
-          </div>
-          <div class="ms-4 mt-2 pb-5 md:ms-0">
-            <h4 class="mb-1.5 text-xl font-semibold">TBD</h4>
+            <h4 class="mb-1.5 text-xl font-semibold">Evening Rush</h4>
+            <p>We expect CPH to be at peek capacety around these hours.</p>
           </div>
         </li>
 
@@ -287,6 +245,29 @@ import "../globals.css";
     <section class="min-h-[50vh] px-6 md:px-24">
       <h2 class="mx-auto text-4xl font-medium text-center">Virtual Airline Cooperations</h2>
       <p class="mx-auto text-lg text-center">The following airlines have announced that they will be attending this years event.</p>
+      <div class="flex flex-wrap gap-4 items-center justify-center">
+        <div class="w-80 h-96 bg-white shadow rounded-xl relative">
+          <div class="bg-[#011328] w-full h-20 rounded-t-xl flex items-center">
+            <img src="/vSAS_light.png" alt="" class="w-fit mx-auto px-8">
+          </div>
+          <p class="px-4 pt-2">vSAS will one agian be visiting CPH live with both a group flight and extra points for flying the regonal routes.</p>
+          <p class="absolute bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center">Read more on their website:<br/><a href="https://www.flysasvirtual.net" target="_blank" class="text-[#011328] hover:underline">flysasvirtual.net</a></p>
+        </div>
+        <div class="w-80 h-96 bg-white shadow rounded-xl relative">
+          <div class="bg-[#011328] w-full h-20 rounded-t-xl flex items-center">
+            <img src="/vRYR-White.png" alt="" class="w-fit mx-auto px-8">
+          </div>
+          <p class="px-4 pt-2">vSAS will one agian be visiting CPH live with both a group flight and extra points for flying the regonal routes.</p>
+          <p class="absolute bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center">Read more on their website:<br/><a href="https://www.flysasvirtual.net" target="_blank" class="text-[#011328] hover:underline">flysasvirtual.net</a></p>
+        </div>
+        <div class="w-80 h-96 bg-white shadow rounded-xl relative">
+          <div class="bg-[#011328] w-full h-20 rounded-t-xl flex items-center">
+            <img src="/vEZY_White_2022-logo.png" alt="" class="w-fit mx-auto px-8">
+          </div>
+          <p class="px-4 pt-2">vSAS will one agian be visiting CPH live with both a group flight and extra points for flying the regonal routes.</p>
+          <p class="absolute bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center">Read more on their website:<br/><a href="https://www.flysasvirtual.net" target="_blank" class="text-[#011328] hover:underline">flysasvirtual.net</a></p>
+        </div>
+      </div>
     </section>
   </body>
 </html>
