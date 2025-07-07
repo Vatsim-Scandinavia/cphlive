@@ -1,0 +1,173 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Data from "../components/Data.tsx";
+import "../globals.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/Arrow transparent.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Copenhagen Live</title>
+    <ClientRouter />
+    <style>
+        .noselect {
+            -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                    -ms-user-select: none; /* Internet Explorer/Edge */
+                        user-select: none; /* Non-prefixed version, currently
+                                            supported by Chrome, Edge, Opera and Firefox */
+        }
+    </style>
+  </head>
+  <body
+    class="flex w-full h-full items-center justify-center bg-gray-200 noselect"
+  >
+    <div
+      class="grid full w-full h-screen grid-cols-1 xl:grid-cols-4 xl:grid-rows-4 gap-6 p-6"
+    >
+      <div
+        class="xl:col-span-2 row-span-1 bg-white rounded-lg shadow-md shadow-black/25 flex items-center justify-center bg-[url('/skies.svg')] bg-cover bg-center"
+      >
+        <Data client:only="preact"/>
+      </div>
+
+      <div
+        class="xl:col-span-2 row-span-1 bg-white rounded-lg shadow-md shadow-black/25 bg-[url('/skies.svg')] bg-cover bg-center"
+      >
+        <h1 class="text-2xl font-bold text-center pt-4">
+          Arrival and Departure prodecures
+        </h1>
+        <div class="flex items-center justify-center w-full h-full pb-8 gap-4">
+          <a
+            href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekch-copenhagenkastrup"
+            target="_blank"
+            class="w-48 aspect-square flex justify-between items-center text-2xl flex-col"
+          >
+            <img src="/CPH_icon__MASTER_RGB.png" alt="" class="p-2" />
+            EKCH
+          </a>
+          <a
+            href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekrn-ronne"
+            target="_blank"
+            class="w-48 aspect-square flex justify-between items-center text-2xl flex-col"
+          >
+            <img src="/Logo RNN DK footer og header 235x131.webp" alt="" class="p-2" />
+            EKRN
+          </a>
+          <a
+            href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekbi-billund-airport"
+            target="_blank"
+            class="w-48 aspect-square flex justify-between items-center text-2xl flex-col"
+          >
+            <img src="/Billund-Airport-2019-300x214.png" alt="" class="p-2" />
+            EKBI</a
+          >
+          <a
+            href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts/page/ekyt-aalborg"
+            target="_blank"
+            class="w-48 aspect-square flex justify-between items-center text-2xl flex-col"
+          >
+            <img src="/logo-schema.png" alt="" class="p-2" />
+            EKYT
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="col-span-1 xl:row-span-4 bg-white rounded-lg shadow-md shadow-black/25 flex items-center justify-center bg-[url('/skies.svg')] bg-cover bg-center"
+      >
+        <p>Tamago</p>
+      </div>
+
+      <div
+        class="xl:col-span-2 xl:row-span-2 bg-white rounded-lg shadow-md shadow-black/25 flex items-center justify-around bg-[url('/skies.svg')] bg-cover bg-center"
+      >
+        <p class="text-4xl xl:text-7xl font-bold text-center">SEP 20th</p>
+        <p class="text-4xl xl:text-7xl font-bold text-center">CPH<br />LIVE<br />2025</p>
+        <p class="text-4xl xl:text-7xl font-bold text-center">06-22z</p>
+      </div>
+
+      <div
+        class="col-span-1 xl:row-span-2 bg-white rounded-lg shadow-md shadow-black/25 flex xl:flex-col items-center justify-center xl:gap-12 bg-[url('/skies.svg')] bg-cover bg-center"
+      >
+        <a
+          href="https://twitch.tv/vatsimscandinavia"
+          target="_blank"
+          class="w-64 aspect-square flex justify-center items-center m-4"
+        >
+          <div class="w-full h-full text-center flex justify-center items-center flex-col">
+            <img src="/Twitch_logo.svg" alt="" class="w-3/4 xl:w-full"/>
+            <p class="font-bold">Watch live on Twitch!</p>
+          </div>
+        </a>
+        <a
+          href="https://twitch.tv/vatsimscandinavia"
+          target="_blank"
+          class="w-64 aspect-square flex justify-center items-center m-4"
+        >
+          <div class="w-full text-center flex justify-center items-center flex-col">
+            <img src="/YouTube_2024.svg" alt="" class="w-3/4 xl:w-full"/>
+            <p class="font-bold">Watch live on YouTube!</p>
+          </div>
+        </a>
+      </div>
+
+      <div
+        class="xl:col-span-3 row-span-2 bg-white rounded-lg shadow-md shadow-black/25 bg-[url('/skies.svg')] bg-cover bg-center flex flex-col justify-center items-center"
+      >
+        <h1 class="text-xl xl:text-2xl font-bold text-center pt-4">
+          Participating Virtual Airlines
+        </h1>
+        <div class="flex items-center justify-center w-full">
+          <a
+            class="w-full flex flex-col p-4 justify-center items-center"
+            href="https://www.virtualnorwegian.net/"
+            target="_blank"
+          >
+            <img src="/Norwegian.png" alt="" class="w-32 aspect-auto"/>
+            <p class="font-semibold text-lg py-2">vNSZ</p>
+          </a>
+          <a
+            class="w-full flex flex-col p-4 justify-center items-center"
+            href="https://www.flysasvirtual.net/"
+            target="_blank"
+          >
+            <img src="/SAS.png" alt="" class="w-32 aspect-auto"/>
+            <p class="font-semibold text-lg py-2">vSAS</p>
+          </a>
+          <a
+            class="w-full flex flex-col p-4 justify-center items-center"
+            href="https://www.jetva.co.uk/"
+            target="_blank"
+          >
+            <img src="/easyJet.png" alt="" class="w-32 aspect-auto"/>
+            <p class="font-semibold text-lg py-2">vEZY</p>
+          </a>
+          <a
+            class="w-full flex flex-col p-4 justify-center items-center"
+            href="https://vryr.eu/"
+            target="_blank"
+          >
+            <img src="/Raynair.png" alt="" class="w-32 aspect-auto"/>
+            <p class="font-semibold text-lg py-2">vRYR</p>
+          </a>
+          <a
+            class="w-full flex flex-col p-4 justify-center items-center"
+            href="https://www.bavirtual.co.uk/"
+            target="_blank"
+          >
+            <img src="/British Air Ways.png" alt="" class="w-32 aspect-auto"/>
+            <p class="font-semibold text-lg py-2">vBA</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
