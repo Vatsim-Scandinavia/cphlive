@@ -1,10 +1,10 @@
 ---
-title: "Home"
+title: "Home";
 import "../globals.css";
 import EKCHStatsClient from "../components/EKCHStatsClient.tsx";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -17,223 +17,287 @@ import EKCHStatsClient from "../components/EKCHStatsClient.tsx";
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     </head>
-    <body class="p-4 text-white overflow-x-scroll flex flex-col relative gap-0 bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat">
-
-        <section class="bg-[#183B90] rounded-2xl h-[30rem] w-full p-4 flex flex-col justify-center items-center">
-                <h1 class="text-4xl md:text-6xl font-semibold">Copenhagen Live 2025</h1>
-                <h3 class="text-lg md:text-2xl py-4">04-22Z | Copenhagen Airport, Kastrup | September 20<sup>th</sup></h3>
+    <body
+        class="text-white overflow-x-scroll flex flex-col items-center justify-center relative gap-0 w-full"
+    >
+        <section
+            class="w-full bg-[url('/bg.png')] bg-cover bg-center bg-no-repeat min-h-lvh flex flex-col items-center justify-center p-4 relative"
+        >
+            <h1 class="text-6xl md:text-8xl font-semibold">
+                Copenhagen Live 2025
+            </h1>
+            <h3 class="text-lg md:text-4xl py-4">
+                04-22Z | Copenhagen Airport, Kastrup | September 20<sup>th</sup>
+            </h3>
+            <div
+                class="flex flex-col md:flex-row md:justify-around w-full bottom-48 absolute gap-8"
+            >
+                <a class="text-center" href="#" class="h-64 flex items-center justify-center">
+                    <img src="/Aerosoft.svg" alt="" class="w-64 mx-auto" />
+                </a>
+                <a class="text-center" href="#" class="h-64 flex items-center justify-center">
+                    <img src="/orbx.png" alt="" class="w-48 mx-auto" />
+                </a>
+                <a class="text-center" href="#" class="h-64 flex items-center justify-center">
+                    <img src="/SIMNORD.svg" alt="" class="w-64 mx-auto" />
+                </a>
+            </div>
         </section>
-
-        <section class="rounded-2xl min-h-64 h-fit w-3/4 outline outline-[1rem] outline-white relative -top-24 mx-auto justify-center items-center z-10 bg-[#183B90] grid grid-cols-1 lg:grid-cols-3 content-center itens-center gap-8 box-border py-6 lg:py-0">
-                <a class="text-center" href="https://booking.vatsim-scandinavia.org/" target="_blank">
-                    <img src="/calendar-add-svgrepo-com.svg" alt="" class="w-24 h-24 mx-auto" />
-                    <p class="text-2xl font-semibold pt-2">Bookings</p>
-                </a>
-                <a class="text-center" href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts" target="_blank">
-                    <img src="/document-text-svgrepo-com.svg" alt="" class="w-24 h-24 mx-auto" />
-                    <p class="text-2xl font-semibold pt-2">Charts & Prodecures</p>
-                </a>
-                <a class="text-center" href="https://twitch.tv/vatsimscandinavia" target="_blank">
-                    <img src="/tv-svgrepo-com.svg" alt="" class="w-24 h-24 mx-auto" />
-                    <p class="text-2xl font-semibold pt-2">Livestream</p>
-                </a>
-        </section>
-
-        
-        <section class="rounded-2xl min-h-64 h-fit w-3/4 outline outline-[1rem] outline-white -top-12 relative mx-auto justify-center items-center z-10 bg-[#183B90] grid grid-cols-2 lg:grid-cols-5 content-center itens-center gap-8 box-border py-6 lg:py-0">
-                <a class="text-center" href="#">
-                    <h1 class="text-8xl"><strong id="arrivals"><img src="/loading.gif" class="w-24 h-24"></strong></h1>
-                    <p class="text-2xl font-semibold pt-2 ">EKCH <br />Live Arrivals</p>
-                </a>
-                <a class="text-center" href="#">
-                    <h1 class="text-8xl"><strong id="departures"><img src="/loading.gif" class="w-24 h-24"></strong></h1>
-                    <p class="text-2xl font-semibold pt-2">EKCH <br />Live Departures</p>
-                </a>
-                <a class="text-center mt-8" href="#">
-                    <h1 class="text-8xl"><strong id="dk-total"><img src="/loading.gif" class="w-24 h-24"></strong></h1>
-                    <p class="text-2xl font-semibold pt-2">Total Movements <br/> for CPH FIR</p>
-                </a>
-                <a class="text-center" href="#">
-                    <h1 class="text-8xl"><strong id="today-arrivals"><img src="/loading.gif" class="w-24 h-24"></strong></h1>
-                    <p class="text-2xl font-semibold pt-2">Total Arrivals</p>
-                </a>
-                <a class="text-center" href="#">
-                    <h1 class="text-8xl"><strong id="today-departures"><img src="/loading.gif" class="w-24 h-24"></strong></h1>
-                    <p class="text-2xl font-semibold pt-2">Total Departures</p>
-                </a>
-        </section>
-
-        <section class="rounded-2xl min-h-64 h-fit w-3/4 outline outline-[1rem] outline-white relative  mx-auto justify-center z-10 bg-[#183B90] grid grid-rows-[4rem_1fr] grid-cols-4 content-center items-center gap-2 box-border py-6 lg:py-0">
-            <h1 class="row-start-1 col-start-1 col-span-5 text-2xl font-semibold text-center">Virtual Airlines</h1>    
-            <a class="text-center row-start-2" href="#">
-            <img src="/tails/Norwegian.png" alt="" class="w-24 mx-auto" />
-            <p class="text-2xl font-semibold pt-2">Virtual Norwegian</p>
+        <section
+            class="bg-[#000109] w-full h-96 flex justify-around items-center gap-8"
+        >
+            <a
+                class="text-center"
+                href="https://booking.vatsim-scandinavia.org/"
+                target="_blank"
+            >
+                <img
+                    src="/calendar-add-svgrepo-com.svg"
+                    alt=""
+                    class="w-24 h-24 mx-auto"
+                />
+                <p class="text-2xl font-semibold pt-2">Bookings</p>
             </a>
-            <a class="text-center row-start-2" href="#">
-            <img src="/tails/SAS.png" alt="" class="w-24 mx-auto" />
-            <p class="text-2xl font-semibold pt-2">vSAS</p>
+            <a
+                class="text-center"
+                href="https://wiki.vatsim-scandinavia.org/books/danish-airports-charts"
+                target="_blank"
+            >
+                <img
+                    src="/document-text-svgrepo-com.svg"
+                    alt=""
+                    class="w-24 h-24 mx-auto"
+                />
+                <p class="text-2xl font-semibold pt-2">Charts & Prodecures</p>
             </a>
-            <a class="text-center row-start-2" href="#">
-            <img src="/tails/easyJet.png" alt="" class="w-24 mx-auto" />
-            <p class="text-2xl font-semibold pt-2">vEZY</p>
+            <a
+                class="text-center"
+                href="https://cdm.vatsim-scandinavia.org/"
+                target="_blank"
+            >
+                <img
+                    src="/clock.svg"
+                    alt=""
+                    class="w-24 h-24 mx-auto"
+                />
+                <p class="text-2xl font-semibold pt-2">CDM</p>
             </a>
-            <a class="text-center row-start-2" href="#">
-            <img src="/tails/Raynair.png" alt="" class="w-24 mx-auto" />
-            <p class="text-2xl font-semibold pt-2">vRYR</p>
-            </a>
-            <a class="text-center row-start-3" href="#">
-            <img src="/tails/KLMT.png" alt="" class="w-24 mx-auto" />
-            <p class="text-2xl font-semibold pt-2">vKLMTRAVA</p>
-            </a>
-            <a class="text-center row-start-3" href="#">
-            <img src="/tails/Lufthansa.png" alt="" class="w-24 mx-auto" />
-            <p class="text-2xl font-semibold pt-2">LH Virtual</p>
-            </a>
-            <a class="text-center row-start-3" href="#">
-            <img src="/tails/blank.png" alt="" class="w-24 mx-auto" />
-            <p class="text-2xl font-semibold pt-2">AFKL Virtual</p>
+            <a
+                class="text-center"
+                href="https://twitch.tv/vatsimscandinavia"
+                target="_blank"
+            >
+                <img
+                    src="/tv-svgrepo-com.svg"
+                    alt=""
+                    class="w-24 h-24 mx-auto"
+                />
+                <p class="text-2xl font-semibold pt-2">Livestream</p>
             </a>
         </section>
-
-
-        <section class="rounded-2xl min-h-64 h-fit w-3/4 outline outline-[1rem] outline-white relative mt-12 mx-auto justify-center z-10 bg-[#183B90] grid grid-rows-[4rem_1fr] grid-cols-3 content-center items-center gap-2 box-border py-6 lg:py-0">
-            <h1 class="row-start-1 col-start-1 col-span-5 text-2xl font-semibold text-center">Events Sponsors</h1>    
-            <a class="text-center" href="#" class="h-64">
-                <img src="/Aerosoft.svg" alt="" class="w-64 mx-auto" />
+        <section
+            class="bg-gradient-to-b from-[#000109] to-black w-full h-96 flex justify-around items-center gap-8"
+        >
+            <a class="text-center" href="#">
+                <h1 class="text-8xl">
+                    <strong id="arrivals"
+                        ><img src="/loading.gif" class="w-24 h-24" /></strong>
+                </h1>
+                <p class="text-2xl font-semibold pt-2">
+                    Live Arrivals
+                </p>
             </a>
             <a class="text-center" href="#">
-                <img src="/orbx.png" alt="" class="w-48 mx-auto" />
+                <h1 class="text-8xl">
+                    <strong id="departures"
+                        ><img src="/loading.gif" class="w-24 h-24" /></strong>
+                </h1>
+                <p class="text-2xl font-semibold pt-2">
+                    Live Departures
+                </p>
             </a>
             <a class="text-center" href="#">
-                <img src="/simnord.png" alt="" class="w-64 mx-auto" />
+                <h1 class="text-8xl">
+                    <strong id="today-arrivals"
+                        ><img src="/loading.gif" class="w-24 h-24" /></strong>
+                </h1>
+                <p class="text-2xl font-semibold pt-2">Total Arrivals</p>
+            </a>
+            <a class="text-center" href="#">
+                <h1 class="text-8xl">
+                    <strong id="today-departures"
+                        ><img src="/loading.gif" class="w-24 h-24" /></strong>
+                </h1>
+                <p class="text-2xl font-semibold pt-2">Total Departures</p>
             </a>
         </section>
-
+        <section
+            class="bg-black w-full h-96 grid grid-cols-4 grid-rows-2 gap-8 p-8"
+        >
+            <a class="text-center" href="#">
+                <img src="/tails/Norwegian.png" alt="" class="w-24 mx-auto" />
+                <p class="text-2xl font-semibold pt-2">Virtual Norwegian</p>
+            </a>
+            <a class="text-center" href="#">
+                <img src="/tails/SAS.png" alt="" class="w-24 mx-auto" />
+                <p class="text-2xl font-semibold pt-2">vSAS</p>
+            </a>
+            <a class="text-center" href="#">
+                <img src="/tails/easyJet.png" alt="" class="w-24 mx-auto" />
+                <p class="text-2xl font-semibold pt-2">vEZY</p>
+            </a>
+            <a class="text-center" href="#">
+                <img src="/tails/Raynair.png" alt="" class="w-24 mx-auto" />
+                <p class="text-2xl font-semibold pt-2">vRYR</p>
+            </a>
+            <a class="text-center row-start-3" href="#">
+                <img src="/tails/KLMT.png" alt="" class="w-24 mx-auto" />
+                <p class="text-2xl font-semibold pt-2">vKLMTRAVA</p>
+            </a>
+            <a class="text-center row-start-3" href="#">
+                <img src="/tails/Lufthansa.png" alt="" class="w-24 mx-auto" />
+                <p class="text-2xl font-semibold pt-2">LH Virtual</p>
+            </a>
+            <a class="text-center row-start-3" href="#">
+                <img src="/tails/blank.png" alt="" class="w-24 mx-auto" />
+                <p class="text-2xl font-semibold pt-2">AFKL Virtual</p>
+            </a>
+        </section>
     </body>
-<script is:inline>
-    const EKCH = 'EKCH';
+    <script is:inline>
+        const EKCH = "EKCH";
 
-    function getTodayUrl() {
-        const now = new Date();
-        const yyyy = now.getFullYear();
-        const mm = String(now.getMonth() + 1).padStart(2, '0');
-        const dd = String(now.getDate()).padStart(2, '0');
+        function getTodayUrl() {
+            const now = new Date();
+            const yyyy = now.getFullYear();
+            const mm = String(now.getMonth() + 1).padStart(2, "0");
+            const dd = String(now.getDate()).padStart(2, "0");
 
-        const from = `${yyyy}-${mm}-${dd} 00:00`;
-        const to = `${yyyy}-${mm}-${dd} 23:59`;
+            const from = `${yyyy}-${mm}-${dd} 00:00`;
+            const to = `${yyyy}-${mm}-${dd} 23:59`;
 
-        const params = new URLSearchParams({
-            icao: EKCH.toLowerCase(),
-            period: 'custom',
-            from,
-            to,
-            json: 'true'
-        });
+            const params = new URLSearchParams({
+                icao: EKCH.toLowerCase(),
+                period: "custom",
+                from,
+                to,
+                json: "true",
+            });
 
-        return `https://statsim.net/flights/airport/?${params.toString()}`;
-    }
+            return `https://statsim.net/flights/airport/?${params.toString()}`;
+        }
 
-    function getTodayCountryUrl() {
-        const now = new Date();
-        const yyyy = now.getFullYear();
-        const mm = String(now.getMonth() + 1).padStart(2, '0');
-        const dd = String(now.getDate()).padStart(2, '0');
+        function getTodayCountryUrl() {
+            const now = new Date();
+            const yyyy = now.getFullYear();
+            const mm = String(now.getMonth() + 1).padStart(2, "0");
+            const dd = String(now.getDate()).padStart(2, "0");
 
-        const from = `${yyyy}-${mm}-${dd} 00:00`;
-        const to = `${yyyy}-${mm}-${dd} 23:59`;
+            const from = `${yyyy}-${mm}-${dd} 00:00`;
+            const to = `${yyyy}-${mm}-${dd} 23:59`;
 
-        const params = new URLSearchParams({
-            countrycode: 'DK',
-            period: 'custom',
-            from,
-            to,
-            json: 'true'
-        });
+            const params = new URLSearchParams({
+                countrycode: "DK",
+                period: "custom",
+                from,
+                to,
+                json: "true",
+            });
 
-        return `https://statsim.net/flights/country/?${params.toString()}`;
-    }
+            return `https://statsim.net/flights/country/?${params.toString()}`;
+        }
 
-    async function fetchEKCHLiveStats() {
-        try {
-            const res = await fetch('https://data.vatsim.net/v3/vatsim-data.json');
-            const data = await res.json();
+        async function fetchEKCHLiveStats() {
+            try {
+                const res = await fetch(
+                    "https://data.vatsim.net/v3/vatsim-data.json",
+                );
+                const data = await res.json();
 
-            let onGate = 0;
-            let taxiOut = 0;
-            let onStar = 0;
-            let totalArrivals = 0;
-            let totalDepartures = 0;
+                let onGate = 0;
+                let taxiOut = 0;
+                let onStar = 0;
+                let totalArrivals = 0;
+                let totalDepartures = 0;
 
-            for (const pilot of data.pilots) {
-                if (pilot.flight_plan) {
-                    if (pilot.flight_plan.departure === EKCH) totalDepartures++;
-                    if (pilot.flight_plan.arrival === EKCH) totalArrivals++;
+                for (const pilot of data.pilots) {
+                    if (pilot.flight_plan) {
+                        if (pilot.flight_plan.departure === EKCH)
+                            totalDepartures++;
+                        if (pilot.flight_plan.arrival === EKCH) totalArrivals++;
+                    }
+
+                    if (pilot.departure_airport === EKCH) {
+                        if (pilot.groundspeed > 0 && pilot.altitude < 500)
+                            taxiOut++;
+                        if (pilot.groundspeed === 0 && pilot.altitude < 100)
+                            onGate++;
+                    }
+
+                    if (pilot.arrival_airport === EKCH) {
+                        if (pilot.altitude > 5000 && pilot.altitude < 13000)
+                            onStar++;
+                    }
                 }
 
-                if (pilot.departure_airport === EKCH) {
-                    if (pilot.groundspeed > 0 && pilot.altitude < 500) taxiOut++;
-                    if (pilot.groundspeed === 0 && pilot.altitude < 100) onGate++;
-                }
-
-                if (pilot.arrival_airport === EKCH) {
-                    if (pilot.altitude > 5000 && pilot.altitude < 13000) onStar++;
-                }
+                document.getElementById("arrivals").textContent = totalArrivals;
+                document.getElementById("departures").textContent =
+                    totalDepartures;
+                document.getElementById("onGate").textContent = onGate;
+                document.getElementById("taxiOut").textContent = taxiOut;
+                document.getElementById("onStar").textContent = onStar;
+            } catch (error) {
+                console.error("Error fetching EKCH live stats:", error);
             }
-
-            document.getElementById('arrivals').textContent = totalArrivals;
-            document.getElementById('departures').textContent = totalDepartures;
-            document.getElementById('onGate').textContent = onGate;
-            document.getElementById('taxiOut').textContent = taxiOut;
-            document.getElementById('onStar').textContent = onStar;
-        } catch (error) {
-            console.error('Error fetching EKCH live stats:', error);
         }
-    }
 
-    async function fetchStatsimEKCHStats() {
-        try {
-            const url = getTodayUrl();
-            const res = await fetch(url);
-            const data = await res.json();
+        async function fetchStatsimEKCHStats() {
+            try {
+                const url = getTodayUrl();
+                const res = await fetch(url);
+                const data = await res.json();
 
-            const arrivals = data.arrived?.length || 0;
-            const departures = data.departed?.length || 0;
+                const arrivals = data.arrived?.length || 0;
+                const departures = data.departed?.length || 0;
 
-            document.getElementById('today-arrivals').textContent = arrivals;
-            document.getElementById('today-departures').textContent = departures;
-        } catch (err) {
-            console.error('Error fetching EKCH statsim data:', err);
-        }
-    }
-
-    async function fetchStatsimDenmarkTotal() {
-        try {
-            const url = getTodayCountryUrl();
-            const res = await fetch(url);
-            const data = await res.json();
-
-            let totalMovements = 0;
-
-            for (const airport of Object.values(data)) {
-                totalMovements += (airport.deps || 0) + (airport.arrs || 0);
+                document.getElementById("today-arrivals").textContent =
+                    arrivals;
+                document.getElementById("today-departures").textContent =
+                    departures;
+            } catch (err) {
+                console.error("Error fetching EKCH statsim data:", err);
             }
-
-            document.getElementById('dk-total').textContent = totalMovements;
-        } catch (err) {
-            console.error('Error fetching Denmark total movements:', err);
         }
-    }
 
-    // Initial load
-    fetchEKCHLiveStats();
-    fetchStatsimEKCHStats();
-    fetchStatsimDenmarkTotal();
+        async function fetchStatsimDenmarkTotal() {
+            try {
+                const url = getTodayCountryUrl();
+                const res = await fetch(url);
+                const data = await res.json();
 
-    // Refresh every 30 seconds
-    setInterval(() => {
+                let totalMovements = 0;
+
+                for (const airport of Object.values(data)) {
+                    totalMovements += (airport.deps || 0) + (airport.arrs || 0);
+                }
+
+                document.getElementById("dk-total").textContent =
+                    totalMovements;
+            } catch (err) {
+                console.error("Error fetching Denmark total movements:", err);
+            }
+        }
+
+        // Initial load
         fetchEKCHLiveStats();
         fetchStatsimEKCHStats();
         fetchStatsimDenmarkTotal();
-    }, 30000);
-</script>
+
+        // Refresh every 30 seconds
+        setInterval(() => {
+            fetchEKCHLiveStats();
+            fetchStatsimEKCHStats();
+            fetchStatsimDenmarkTotal();
+        }, 30000);
+    </script>
 </html>
