@@ -16,16 +16,18 @@ import "../globals.css";
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     </head>
-    <body class="overflow-x-scroll text-white bg-black">
-        <section class="bg-red-600 w-screen min-h-lvh bg-[url('/bg.png')] bg-cover bg-bottom bg-no-repeat flex flex-col items-center justify-center p-4 relative">
-            <h1 class="text-6xl font-semibold">
+    <body class="text-white overflow-x-scroll flex flex-col items-center justify-center w-screen bg-[url('/bg.png')] bg-cover bg-bottom bg-no-repeat">
+        <section class="w-full min-h-lvh h-full bg-red-500">
+            <h1 class="text-6xl font-semibold text-center">
                 Copenhagen Live 2025
             </h1>
             <h3 class="text-2xl">
                 04-22Z | Copenhagen Airport, Kastrup | September 20<sup>th</sup>
             </h3>
         </section>
-        <section class="w-screen h-fit bg-[#000109] flex flex-col md:flex-row justify-around items-center gap-8 p-8">
+        <section
+            class="bg-[#000109] w-full h-96 flex justify-around items-center gap-8"
+        >
             <a
                 class="text-center"
                 href="https://booking.vatsim-scandinavia.org/"
@@ -75,8 +77,9 @@ import "../globals.css";
                 <p class="text-2xl font-semibold pt-2">Livestream</p>
             </a>
         </section>
-        <hr class="bg-black p-4 border-gray-700"/>
-        <section class="bg-gradient-to-b from-[#000109] to-black w-full h-fit flex flex-col md:flex-row justify-around items-center gap-8">
+        <section
+            class="bg-gradient-to-b from-[#000109] to-black w-full h-96 flex justify-around items-center gap-8"
+        >
             <a class="text-center" href="#">
                 <h1 class="text-8xl">
                     <strong id="arrivals"
@@ -110,9 +113,8 @@ import "../globals.css";
                 <p class="text-2xl font-semibold pt-2">Total Departures</p>
             </a>
         </section>
-        <hr class="bg-black p-4 mt-8 border-gray-700"/>
         <section
-            class="bg-black w-full h-fit grid grid-cols-2 md:grid-cols-4 grid-rows-6 md:grid-rows-2 gap-8 p-8"
+            class="bg-black w-full h-96 grid grid-cols-4 grid-rows-2 gap-8 p-8"
         >
             <a class="text-center" href="#">
                 <img src="/tails/Norwegian.png" alt="" class="w-24 mx-auto" />
