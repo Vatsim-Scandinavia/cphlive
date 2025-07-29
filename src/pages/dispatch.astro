@@ -1,0 +1,49 @@
+---
+title: "Home";
+import "../globals.css";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Welcome to CPH Live</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/Arrow transparent.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    </head>
+    <body class="text-white bg-gray-950 overflow-y-scroll">
+        <table class="min-w-[66%] w-fit mx-auto border-separate border-spacing-2">
+            <thead>
+                <tr class="text-2xl">
+                    <th>Callsign</th>
+                    <th>Type</th>
+                    <th>Destination</th>
+                    <th>Stand</th>
+                    <th>EOBT</th>
+                    <th>TOBT</th>
+                    <th>CTOT</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+
+                {Array.from({ length: 50 }).map((_, i) => (
+                    <tr class="border border-gray-300 dark:border-gray-600">
+                        <td>SAS{i + 1}</td>
+                        <td>A20N</td>
+                        <td>ENBR</td>
+                        <td>A{i + 1}</td>
+                        <td>1250</td>
+                        <td class="underline"><a href=" " target="_blank" title="File TOBT">File</a></td>
+                        <td>1340</td>
+                    </tr>
+                ))}
+
+            </tbody>
+        </table>
+    </body>
+</html>

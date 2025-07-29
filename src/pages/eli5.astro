@@ -1,0 +1,62 @@
+---
+title: "Home";
+import "../globals.css";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Welcome to CPH Live</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/Arrow transparent.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    </head>
+    <body class="text-white bg-gray-950 overflow-y-scroll">
+        <div class="w-full h-full grid grid-cols-3 gap-4 p-4">
+            <div class="flex flex-col gap-4 h-full">
+                <div class="bg-[#e3e8ec] text-gray-950 w-full h-full rounded p-4">
+                    <h1 class="bg-yellow-500 font-semibold px-2 w-fit">What is the initial altitude?</h1>
+                    <p class="text-base">
+                        In EKCH, the initial departure altitude is Flight Level 070, when runway 22L/R or 04L/R is in use. 
+                    </p>
+                </div>
+                <div class="bg-[#e3e8ec] text-gray-950 w-full h-full rounded p-4">
+                    <!-- Add more content here for subsplit if needed -->
+                    <h1 class="bg-yellow-500 font-semibold px-2 w-fit">Switching frequency</h1>
+                    <p class="text-base">
+                        Under no circumstances should you switch frequency on your own. ATC will tell you when to.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-[#e3e8ec] text-gray-950 w-full h-full rounded p-4">
+                <h1 class="bg-yellow-500 font-semibold px-2 w-fit">What is EOBT?</h1>
+                <p class="text-base">
+                    EOBT stands for Estimated Off Block Time. <br/> It is the time at which an aircraft is expected to leave its parking position and start taxiing to the runway. <br/><br/> <i>This is what you have filed in your flight plan.</i>
+                </p>
+            </div>
+            <div class="bg-[#e3e8ec] text-gray-950 w-full h-full rounded p-4">
+                <h1 class="bg-yellow-500 font-semibold px-2 w-fit">What is TOBT?</h1>
+                <p class="text-base">
+                    TOBT stands for Target Off Block Time. <br/> It is the time at which an aircraft is expected to leave its parking position and start taxiing to the runway. <br/><br/> This is what ATC assigns to you to ensure a smooth flow of traffic.
+                </p>
+            </div>
+            <div class="bg-[#e3e8ec] text-gray-950 w-full h-full rounded p-4">
+                <h1 class="bg-yellow-500 font-semibold px-2 w-fit">What is CTOT?</h1>
+                <p class="text-base">
+                    CTOT stands for Calculated Take Off Time. <br/> It is the time at which an aircraft is expected to take off, as determined by air traffic control. <br /><br /> If your destination airport is busy, you may receive a CTOT that is later than your TOBT. <br/> This is to ensure that the airport can handle the traffic and avoid congestion.
+                </p>
+            </div>
+            <div class="bg-[#e3e8ec] text-gray-950 w-full h-full rounded p-4">
+                <h1 class="bg-yellow-500 font-semibold px-2 w-fit">What is a pushback point?</h1>
+                <p class="text-base">
+                    A pushback point is a designated location on the airport apron where an aircraft is pushed back from its parking position by a tug. <br /><br /> This allows ATC to optimize the flow of traffic and ensure that aircraft are pushed back in a safe and efficient manner.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
