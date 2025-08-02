@@ -1,6 +1,7 @@
 ---
 title: "Home";
 import "../globals.css";
+import DispatchComponent from "../components/dispatch.jsx";
 ---
 
 <!doctype html>
@@ -17,33 +18,10 @@ import "../globals.css";
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     </head>
     <body class="text-white bg-gray-950 overflow-y-scroll">
-        <table class="min-w-[66%] w-fit mx-auto border-separate border-spacing-2">
-            <thead>
-                <tr class="text-2xl">
-                    <th>Callsign</th>
-                    <th>Type</th>
-                    <th>Destination</th>
-                    <th>Stand</th>
-                    <th>EOBT</th>
-                    <th>TOBT</th>
-                    <th>CTOT</th>
-                </tr>
-            </thead>
-            <tbody class="text-center">
-
-                {Array.from({ length: 50 }).map((_, i) => (
-                    <tr class="border border-gray-300 dark:border-gray-600">
-                        <td>SAS{i + 1}</td>
-                        <td>A20N</td>
-                        <td>ENBR</td>
-                        <td>A{i + 1}</td>
-                        <td>1250</td>
-                        <td class="underline"><a href=" " target="_blank" title="File TOBT">File</a></td>
-                        <td>1340</td>
-                    </tr>
-                ))}
-
-            </tbody>
+        <table
+            class="w-fit mx-auto border-spacing-8 caption-top"
+        >
+            <DispatchComponent />
         </table>
     </body>
 </html>
