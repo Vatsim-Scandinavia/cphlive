@@ -1,0 +1,162 @@
+---
+title: "Home";
+import "../globals.css";
+import Challenge from "../components/Challenge.astro";
+
+const challenges = [
+    {
+        title: "Early bird",
+        description: "Rise and shine! This challenge is all about getting your flights in before the early morning rush. Complete at least one departure and arrival into Copenhagen Kastrup Airport before 0800Z",
+        backgroundImage: "/morning.jpg",
+        requirements: [
+            { type: "flightRules" as const, value: "IFR", count: undefined, tooltip: "Flight Rules" },
+            { type: "departure" as const, count: 1, value: undefined, tooltip: "Total Departures" },
+            { type: "arrival" as const, count: 1, value: undefined, tooltip: "Total Arrivals" },
+            { type: "time" as const, value: ">08z", count: undefined, tooltip: "When you need to complete the task" },
+            { type: "airport" as const, value: "EKCH", count: undefined, tooltip: "What airport is part of the task" },
+            { type: "bookingRequired" as const, value: "true", count: undefined, tooltip: "Booking is required" }
+        ],
+        sponsors: [
+            { name: "Aerosoft", logo: "/icons/volanta.svg" },
+        ],  
+        prize: [
+            { count: 2, text: "Volanta Premium" }
+        ]
+    },
+    {
+        title: "Late night Owl",
+        description: "Complete at least one departure and one landing into EKCH between 1900Z and 2200Z",
+        backgroundImage: "/night.jpg",
+        requirements: [
+            { type: "flightRules" as const, value: "IFR", count: undefined, tooltip: "Flight Rules" },
+            { type: "departure" as const, count: 1, value: undefined, tooltip: "Total Departures" },
+            { type: "arrival" as const, count: 1, value: undefined, tooltip: "Total Arrivals" },
+            { type: "time" as const, value: "19-22z", count: undefined, tooltip: "When you need to complete the task" },
+            { type: "airport" as const, value: "EKCH", count: undefined, tooltip: "What airport is part of the task" },
+            { type: "bookingRequired" as const, value: "true", count: undefined, tooltip: "Booking is required" }
+        ],
+        sponsors: [
+            { name: "Aerosoft", logo: "/icons/aerosoft.svg" },
+        ],  
+        prize: [
+            { count: 1, text: "Giftcard Voucher (25€)" }
+        ]
+    },
+    {
+        title: "Copenhagen fanatic",
+        description: "Complete at least 4 departures and 4 arrivals throughout the whole day @ Copenhagen Kastrup Airport",
+        backgroundImage: "/night.jpg",
+        requirements: [
+            { type: "flightRules" as const, value: "IFR", count: undefined, tooltip: "Flight Rules" },
+            { type: "departure" as const, count: 4, value: undefined, tooltip: "Total Departures" },
+            { type: "arrival" as const, count: 4, value: undefined, tooltip: "Total Arrivals" },
+            { type: "time" as const, value: "00-24z", count: undefined, tooltip: "When you need to complete the task" },
+            { type: "airport" as const, value: "EKCH", count: undefined, tooltip: "What airport is part of the task" },
+            { type: "bookingRequired" as const, value: "true", count: undefined, tooltip: "Booking is required" }
+        ],
+        sponsors: [
+            { name: "Orbex", logo: "/icons/volanta.svg" },
+        ],  
+        prize: [
+            { count: 1, text: "Volanta Premium" },
+            { count: 1, text: "Orbx Scenery - YBBN" }
+        ]
+    },
+    {
+        title: "Regional master",
+        description: "Complete at least 2 flights to/from any regional airport in Denmark (e.g. Billund, Aalborg, Esbjerg, Karup, Bornholm & Sønderborg)",
+        backgroundImage: "/night.jpg",
+        requirements: [
+            { type: "flightRules" as const, value: "IFR", count: undefined, tooltip: "Flight Rules" },
+            { type: "departure" as const, count: 2, value: undefined, tooltip: "Total Departures" },
+            { type: "arrival" as const, count: 2, value: undefined, tooltip: "Total Arrivals" },
+            { type: "time" as const, value: "19-22z", count: undefined, tooltip: "When you need to complete the task" },
+            { type: "airport" as const, value: "Multiple", count: undefined, tooltip: "What airport is part of the task" },
+            { type: "bookingRequired" as const, value: "true", count: undefined, tooltip: "Booking is required" }
+        ],
+        sponsors: [
+            { name: "Simnord", logo: "/icons/simnord.svg" },
+        ],  
+        prize: [
+            { count: 1, text: "Scenery of choise" }
+        ]
+    },
+    {
+        title: "VFR master",
+        description: "Complete a VFR flight in any proppeller aircraft with a minimum airtime of 30 min.",
+        backgroundImage: "/night.jpg",
+        requirements: [
+            { type: "flightRules" as const, value: "VFR", count: undefined, tooltip: "Flight Rules" },
+            { type: "departure" as const, count: 1, value: undefined, tooltip: "Total Departures" },
+            { type: "arrival" as const, count: 1, value: undefined, tooltip: "Total Arrivals" },
+            { type: "time" as const, value: "04-22z", count: undefined, tooltip: "When you need to complete the task" },
+            { type: "airport" as const, value: "EKDK", count: undefined, tooltip: "What airport is part of the task" },
+            { type: "bookingRequired" as const, value: "true", count: undefined, tooltip: "Booking is required" }
+        ],
+        sponsors: [
+            { name: "Simnord", logo: "/icons/simnord.svg" },
+        ],  
+        prize: [
+            { count: 1, text: "Scenery of choise" }
+        ]
+    },
+    {
+        title: "Scandinavian Lover",
+        description: "Complete at least two flights from and to EKCH to any airport in either Finland, Iceland, Norway or Sweden",
+        backgroundImage: "/night.jpg",
+        requirements: [
+            { type: "flightRules" as const, value: "IFR", count: undefined, tooltip: "Flight Rules" },
+            { type: "departure" as const, count: 2, value: undefined, tooltip: "Total Departures" },
+            { type: "arrival" as const, count: 2, value: undefined, tooltip: "Total Arrivals" },
+            { type: "time" as const, value: "04-22z", count: undefined, tooltip: "When you need to complete the task" },
+            { type: "airport" as const, value: "VATSCA", count: undefined, tooltip: "What airport is part of the task" },
+            { type: "bookingRequired" as const, value: "true", count: undefined, tooltip: "Booking is required" }
+        ],
+        sponsors: [
+            { name: "Orbex", logo: "/icons/volanta.svg" },
+        ],  
+        prize: [
+            { count: 1, text: " Orbx Scenery - YBBN" }
+        ]
+    },
+];
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Welcome to CPH Live</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/Arrow transparent.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    </head>
+    <body class="text-white bg-gray-950 flex flex-col w-screen h-fit items-center justify-center gap-4 p-8 antialiased overflow-x-hidden">
+
+        
+        <div class="w-72 h-fit bg-slate-800 rounded">
+            <div class="w-full h-10 bg-slate-900 flex items-center justify-center">
+                <h1 class="text-lg font-semibold">Welcome to CPH Live 2025</h1>
+            </div>
+            <p class="px-4 pt-2 text-sm leading-6">
+                <b>Welcome to CPH Live!</b> Complete the challenges to earn your a ticket for the prize raffel in each competition.
+            </p>
+        </div>
+        <div class="flex p-8 gap-8 flex-wrap justify-center">
+            {challenges.map((challenge) => (
+                <Challenge 
+                    title={challenge.title}
+                    backgroundImage={challenge.backgroundImage}
+                    description={challenge.description}
+                    sponsors={challenge.sponsors}
+                    requirements={challenge.requirements}
+                    prize={challenge.prize}
+                />
+            ))}
+        </div>
+    </body>
+</html>
