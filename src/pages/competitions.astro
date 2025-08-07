@@ -135,18 +135,8 @@ const challenges = [
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     </head>
-    <body class="text-white bg-gray-950 flex flex-col w-screen h-fit items-center justify-center gap-4 p-8 antialiased overflow-x-hidden">
-
-        
-        <div class="w-72 h-fit bg-slate-800 rounded">
-            <div class="w-full h-10 bg-slate-900 flex items-center justify-center">
-                <h1 class="text-lg font-semibold">Welcome to CPH Live 2025</h1>
-            </div>
-            <p class="px-4 pt-2 text-sm leading-6">
-                <b>Welcome to CPH Live!</b> Complete the challenges to earn your a ticket for the prize raffel in each competition.
-            </p>
-        </div>
-        <div class="flex p-8 gap-8 flex-wrap justify-center">
+    <body class="text-white bg-gray-950 w-screen h-fit gap-4 p-8 antialiased overflow-x-hidden">
+        <div class="grid grid-cols-3 p-2 gap-2 ">
             {challenges.map((challenge) => (
                 <Challenge 
                     title={challenge.title}
