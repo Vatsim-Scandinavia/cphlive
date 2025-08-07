@@ -29,19 +29,19 @@ const svgPaths = {
 };
 ---
 
-<div class="w-72 min-h-[40rem] bg-slate-800 rounded relative">
-    <div class="w-full h-10 bg-slate-900 flex items-center justify-center">
-        <h1 class="text-lg font-semibold">{title}</h1>
+<div class="w-96 h-fit bg-slate-800 rounded">
+    <div class="w-full h-14 bg-slate-900 flex items-center justify-center">
+        <h1 class="text-2xl font-semibold">{title}</h1>
     </div>
     <img src={backgroundImage} alt="" class="w-full">
-    <p class="px-4 pt-2">
-        <b class="text-center">{description.split('!')[0]}!</b><br /> 
+    <p class="px-4 pt-2 text-xl h-12">
+        <b>{description.split('!')[0]}!</b><br /> 
     </p>
-    <p class="px-4 text-sm">
+    <p class="px-4 text-lg h-52">
         {description.split('!').slice(1).join('!')}
     </p>
 
-    <span class="absolute bottom-0 left-0 right-0">
+    <span class="">
         <hr class="border-slate-600 mx-4 my-2" />
         <div class="px-4 text-center">
             <img src={sponsors[0].logo} alt={sponsors[0].name} class="h-6 my-1 mx-auto" />

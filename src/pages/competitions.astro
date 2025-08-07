@@ -25,7 +25,7 @@ const challenges = [
     },
     {
         title: "Late night Owl",
-        description: "Complete at least one departure and one landing into EKCH between 1900Z and 2200Z",
+        description: "Night shift calling! This challenge is for those who prefer the quiet skies when most are sleeping. Complete at least one departure and one landing into EKCH between 1900Z and 2200Z",
         backgroundImage: "/night.jpg",
         requirements: [
             { type: "flightRules" as const, value: "IFR", count: undefined, tooltip: "Flight Rules" },
@@ -44,7 +44,7 @@ const challenges = [
     },
     {
         title: "Copenhagen fanatic",
-        description: "Complete at least 4 departures and 4 arrivals throughout the whole day @ Copenhagen Kastrup Airport",
+        description: "Copenhagen calling! This challenge is for the true aviation enthusiasts who can't get enough of Denmark's busiest airport. Complete at least 4 departures and 4 arrivals throughout the whole day at Copenhagen",
         backgroundImage: "/night.jpg",
         requirements: [
             { type: "flightRules" as const, value: "IFR", count: undefined, tooltip: "Flight Rules" },
@@ -58,13 +58,12 @@ const challenges = [
             { name: "Orbex", logo: "/icons/volanta.svg" },
         ],  
         prize: [
-            { count: 1, text: "Volanta Premium" },
-            { count: 1, text: "Orbx Scenery - YBBN" }
+            { count: 1, text: "Volanta Premium & Orbx Scenery" }
         ]
     },
     {
         title: "Regional master",
-        description: "Complete at least 2 flights to/from any regional airport in Denmark (e.g. Billund, Aalborg, Esbjerg, Karup, Bornholm & Sønderborg)",
+        description: "Explore Denmark! This challenge takes you beyond the capital to discover the charm of regional Danish aviation. Complete at least 2 flights to/from any regional airport in Denmark (e.g. Billund, Aalborg, Esbjerg, Karup, Bornholm & Sønderborg)",
         backgroundImage: "/night.jpg",
         requirements: [
             { type: "flightRules" as const, value: "IFR", count: undefined, tooltip: "Flight Rules" },
@@ -83,7 +82,7 @@ const challenges = [
     },
     {
         title: "VFR master",
-        description: "Complete a VFR flight in any proppeller aircraft with a minimum airtime of 30 min.",
+        description: "Back to basics! This challenge celebrates the pure joy of visual flying in beautiful Denmark. Complete a VFR flight in any propeller aircraft with a minimum airtime of 30 minutes",
         backgroundImage: "/night.jpg",
         requirements: [
             { type: "flightRules" as const, value: "VFR", count: undefined, tooltip: "Flight Rules" },
@@ -102,7 +101,7 @@ const challenges = [
     },
     {
         title: "Scandinavian Lover",
-        description: "Complete at least two flights from and to EKCH to any airport in either Finland, Iceland, Norway or Sweden",
+        description: "Nordic adventure awaits! This challenge connects you with our beautiful Scandinavian neighbors. Complete at least two flights from and to EKCH to any airport in either Finland, Iceland, Norway or Sweden",
         backgroundImage: "/night.jpg",
         requirements: [
             { type: "flightRules" as const, value: "IFR", count: undefined, tooltip: "Flight Rules" },
@@ -135,8 +134,8 @@ const challenges = [
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     </head>
-    <body class="text-white bg-gray-950 w-screen h-fit gap-4 p-8 antialiased overflow-x-hidden">
-        <div class="grid grid-cols-3 p-2 gap-2 ">
+    <body class="text-white bg-gray-950 w-screen h-screen gap-4 p-8 antialiased overflow-x-hidden">
+        <div class="flex flex-wrap p-4 gap-4 justify-center items-center h-full">
             {challenges.map((challenge) => (
                 <Challenge 
                     title={challenge.title}
