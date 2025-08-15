@@ -16,7 +16,7 @@ SAS7745,EKCH,LGSM,04:10,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 NSZ3648,EKCH,LFKB,04:20,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS7725,EKCH,LGSA,04:20,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 THY3HP,EKCH,LTFM,04:25,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
-SK683,EKCH,LIMC,04:30,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
+SAS683,EKCH,LIMC,04:30,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 JTD385,EKCH,LDSP,04:40,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 BEL6NQ,EKCH,EBBR,04:50,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 JTD305,EKCH,LGRP,04:50,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
@@ -104,7 +104,7 @@ AUA30YN,EKCH,LOWW,07:40,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SWR359D,EKCH,LSZH,07:40,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SXS3RB,EKCH,LTAI,07:45,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 EZY8720,EKCH,EGKK,08:05,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
-SK404,EKCH,ESSA,08:05,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
+SAS404,EKCH,ESSA,08:05,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS69P,EKCH,LEPA,08:20,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 NSZ3674,EKCH,LEMG,08:25,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 THY6BN,EKCH,LTFM,08:25,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
@@ -168,7 +168,7 @@ NSZ6UK,EKCH,LIRP,10:55,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS949,EKCH,CYYZ,11:00,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS1456,EKCH,ENGM,11:00,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS2761,EKCH,EPWA,11:00,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
-SK1422,EKCH,ESSA,11:00,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
+SAS1422,EKCH,ESSA,11:00,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 PGT56UM,EKCH,LTFJ,11:00,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 RYR4SP,EKCH,LIRP,11:05,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 NSZ3302,EKCH,EDDB,11:10,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
@@ -214,7 +214,7 @@ SAS65D,EKCH,LEBL,13:20,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 JTD253,EKCH,LGRP,13:25,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS1215,EKCH,EKYT,13:30,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS63Y,EKCH,LEMG,13:30,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
-SK1424,EKCH,ESSA,13:35,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
+SAS1424,EKCH,ESSA,13:35,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 MSR760,EKCH,HECA,13:45,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS6271,EKCH,LIRN,13:45,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 NSZ3390,EKCH,LCLK,13:50,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
@@ -282,7 +282,7 @@ SAS7709,EKCH,LDSP,17:05,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 CCA598,EKCH,ZBAA,17:05,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS96A,EKCH,BKPR,17:10,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 DLH6AX,EKCH,EDDF,17:10,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
-SK1430,EKCH,ESSA,17:15,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
+SAS1430,EKCH,ESSA,17:15,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 NSZ5715,EKCH,GCLP,17:15,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 RYR691H,EKCH,EGCC,17:20,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SEH3211,EKCH,LGIR,17:20,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
@@ -312,7 +312,7 @@ PGT1076,EKCH,LTFJ,18:55,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 WMT8DC,EKCH,LROP,19:00,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 CES708,EKCH,ZSSS,19:00,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 WZZ64KW,EKCH,LYBE,19:15,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
-SK1410,EKCH,ESSA,19:25,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
+SAS1410,EKCH,ESSA,19:25,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS742,EKCH,EYVI,19:25,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 VLG2EQ,EKCH,LEBL,19:35,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 RYR1GJ,EKCH,EGPH,19:40,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
@@ -328,5 +328,5 @@ SAS1225,EKCH,EKYT,21:05,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS1878,EKCH,ENZV,21:05,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS448,EKCH,ESGG,21:05,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 SAS1747,EKCH,ENGM,21:10,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
-SK1428,EKCH,ESSA,21:10,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
+SAS1428,EKCH,ESSA,21:10,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending
 UBD432,EKCH,ORER,21:35,https://cdm.vatsim-scandinavia.org/vdgs,NIL,Pending

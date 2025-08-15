@@ -108,18 +108,18 @@ flights = flights.map((f) => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     </head>
-    <body class="text-white bg-[#181a1f]">
-        <div class="w-full mx-auto px-4 py-4 h-screen flex flex-col">
+    <body class="text-slate-50 bg-black bg-[url('/Vector.jpg')] bg-cover bg-center">
+        <div class="w-full mx-auto h-screen flex flex-col">
             <div
                 id="dispatchTableContainer"
-                class="flex-1 overflow-y-auto rounded border border-gray-700/40 scroll-py-8"
+                class="flex-1 overflow-y-auto rounded scroll-py-8"
             >
                 <table
-                    class="w-full table-auto border-separate border-spacing-x-0 border-spacing-y-4"
+                    class="w-full max-w-6xl table-auto border-separate border-spacing-x-0 border-spacing-y-4 mx-auto"
                 >
                     <thead>
                         <tr class="text-2xl md:text-3xl">
-                            <th class="px-2 md:px-4">Callsign</th>
+                            <th class="px-2 md:px-4 text-start">Callsign</th>
                             <th class="px-2 md:px-4">Origin</th>
                             <th class="px-2 md:px-4">Destination</th>
                             <th class="px-2 md:px-4">Stand</th>
@@ -147,18 +147,18 @@ flights = flights.map((f) => {
                                             class={`font-medium text-xl my-2 ${f.highlight ? "bg-yellow-500 text-gray-950" : ""}`}
                                             data-ref-time={f.tobt || f.eobt}
                                         >
-                                            <td class="p-2 md:px-4">
-                                                <div class="flex items-center gap-2 justify-center">
+                                            <td class="p-1 md:px-4">
+                                                <div class="flex items-center gap-2 justify-start ">
                                                     <img
                                                         src={logo}
                                                         alt={(
                                                             f.callsign || ""
                                                         ).substring(0, 3)}
-                                                        class="h-12 w-auto object-contain select-none rounded"
+                                                        class="h-12 w-auto object-contain select-none rounded bg-slate-50 p-1"
                                                         loading="lazy"
                                                         onerror="this.style.display='none'"
                                                     />
-                                                    <span>{f.callsign}</span>
+                                                    <span class="text-2xl pl-4">{f.callsign}</span>
                                                 </div>
                                             </td>
                                             <td>{f.origin}</td>
@@ -174,7 +174,7 @@ flights = flights.map((f) => {
                                                         href={f.tobtLink}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        class="ml-2 inline-block px-2 py-1 rounded bg-slate-50 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 text-black text-lg font-semibold"
+                                                        class="ml-2 inline-block px-2 py-1 rounded bg-slate-200 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 text-black text-lg font-semibold"
                                                     >
                                                         File here
                                                     </a>
