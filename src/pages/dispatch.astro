@@ -1,7 +1,98 @@
 ---
 title: "Home";
 import "../globals.css";
-import DispatchComponent from "../components/dispatch.jsx";
+import fs from "node:fs";
+import path from "node:path";
+
+// Load & parse CSV (server-side at request time in dev / build time for static)
+// Resolve CSV relative to project root (this file is in src/pages)
+const csvPath = path.join(process.cwd(), "public", "dispatch.csv");
+let flights = [];
+try {
+    const raw = fs.readFileSync(csvPath, "utf-8").trim();
+    const lines = raw.split(/\r?\n/).filter((l) => l.trim().length);
+    if (lines.length > 1) {
+        const headers = lines[0]
+            .split(",")
+            .map((h) => h.replace(/"/g, "").trim());
+        const normTime = (t) => {
+            if (!t || t.startsWith("http")) return "";
+            const cleaned = t.replace(/[^0-9:]/g, "");
+            if (!cleaned) return "";
+            const parts = cleaned.split(":");
+            if (parts.length === 2)
+                return parts[0].padStart(2, "0") + parts[1].padStart(2, "0");
+            if (cleaned.length === 4) return cleaned;
+            return "";
+        };
+        const parseLine = (line) => {
+            const values =
+                line
+                    .match(/("[^"]*"|[^",]+)(?=,|$)/g)
+                    ?.map((v) => v.replace(/"/g, "").trim()) || [];
+            const obj = {};
+            headers.forEach((h, i) => (obj[h] = values[i] ?? ""));
+
+            const eobt = normTime(obj["EOBT"]);
+
+            // Preserve original TOBT field – may be a URL (VDGS / information portal) or a time (HH:MM)
+            const rawTOBT = obj["TOBT"] || "";
+            let tobtTime = "";
+            let tobtLink = "";
+            if (rawTOBT) {
+                if (rawTOBT.startsWith("http")) tobtLink = rawTOBT;
+                else tobtTime = normTime(rawTOBT);
+            }
+            const tobtRef = tobtTime || eobt; // reference for sorting/highlighting
+
+            const ctotRaw = obj["CTOT"];
+            const ctot =
+                ctotRaw && ctotRaw !== "NIL" && ctotRaw !== "Pending"
+                    ? normTime(ctotRaw)
+                    : "";
+
+            // Always show stand exactly as in CSV (even if "Pending")
+            const standRaw = obj["Stand Assignment"];
+
+            return {
+                callsign: obj["Call Sign"],
+                origin: obj["Origin"],
+                dest: obj["Destination"],
+                stand: standRaw || "",
+                eobt,
+                tobt: tobtRef,
+                tobtTime,
+                tobtLink,
+                ctot,
+            };
+        };
+        flights = lines
+            .slice(1)
+            .map(parseLine)
+            .filter((f) => f.callsign);
+        flights.sort((a, b) =>
+            (a.eobt || "9999").localeCompare(b.eobt || "9999"),
+        );
+    }
+} catch (e) {
+    console.error("Failed to read dispatch.csv", e);
+}
+
+// Compute highlight server-side (snapshot) – will also update client-side via script
+const now = new Date();
+const currentMinutes = now.getUTCHours() * 60 + now.getUTCMinutes();
+const getMinutes = (str) => {
+    if (!str || str.length < 4) return Number.POSITIVE_INFINITY;
+    const h = parseInt(str.slice(0, 2), 10);
+    const m = parseInt(str.slice(2, 4), 10);
+    if (isNaN(h) || isNaN(m)) return Number.POSITIVE_INFINITY;
+    return h * 60 + m;
+};
+flights = flights.map((f) => {
+    const ref = f.tobt || f.eobt;
+    const diff = getMinutes(ref) - currentMinutes;
+    return { ...f, highlight: diff >= -30 && diff <= 5 };
+});
 ---
 
 <!doctype html>
@@ -17,11 +108,157 @@ import DispatchComponent from "../components/dispatch.jsx";
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     </head>
-    <body class="text-white bg-gray-950 overflow-y-scroll">
-        <table
-            class="w-fit mx-auto border-spacing-8 caption-top"
-        >
-            <DispatchComponent client:only="react"/>
-        </table>
+    <body class="text-white bg-[#181a1f]">
+        <div class="w-full mx-auto px-4 py-4 h-screen flex flex-col">
+            <div
+                id="dispatchTableContainer"
+                class="flex-1 overflow-y-auto rounded border border-gray-700/40 scroll-py-8"
+            >
+                <table
+                    class="w-full table-auto border-separate border-spacing-x-0 border-spacing-y-4"
+                >
+                    <thead>
+                        <tr class="text-2xl md:text-3xl">
+                            <th class="px-2 md:px-4">Callsign</th>
+                            <th class="px-2 md:px-4">Origin</th>
+                            <th class="px-2 md:px-4">Destination</th>
+                            <th class="px-2 md:px-4">Stand</th>
+                            <th class="px-2 md:px-4">EOBT</th>
+                            <th class="px-2 md:px-4">TOBT</th>
+                            <th class="px-2 md:px-4">CTOT</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        {
+                            flights.length === 0 && (
+                                <tr>
+                                    <td colspan="7" class="py-4">
+                                        No data
+                                    </td>
+                                </tr>
+                            )
+                        }
+                        {
+                            flights.length > 0 &&
+                                flights.map((f) => {
+                                    const logo = `https://www.flightaware.com/images/airline_logos/90p/${(f.callsign || "").substring(0, 3).toUpperCase()}.png`;
+                                    return (
+                                        <tr
+                                            class={`font-medium text-xl my-2 ${f.highlight ? "bg-yellow-500 text-gray-950" : ""}`}
+                                            data-ref-time={f.tobt || f.eobt}
+                                        >
+                                            <td class="p-2 md:px-4">
+                                                <div class="flex items-center gap-2 justify-center">
+                                                    <img
+                                                        src={logo}
+                                                        alt={(
+                                                            f.callsign || ""
+                                                        ).substring(0, 3)}
+                                                        class="h-12 w-auto object-contain select-none rounded"
+                                                        loading="lazy"
+                                                        onerror="this.style.display='none'"
+                                                    />
+                                                    <span>{f.callsign}</span>
+                                                </div>
+                                            </td>
+                                            <td>{f.origin}</td>
+                                            <td>{f.dest}</td>
+                                            <td>{f.stand}</td>
+                                            <td>{f.eobt}</td>
+                                            <td>
+                                                {f.tobtTime && (
+                                                    <span>{f.tobtTime}</span>
+                                                )}
+                                                {f.tobtLink && (
+                                                    <a
+                                                        href={f.tobtLink}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        class="ml-2 inline-block px-2 py-1 rounded bg-slate-50 hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 text-black text-lg font-semibold"
+                                                    >
+                                                        File here
+                                                    </a>
+                                                )}
+                                            </td>
+                                            <td>{f.ctot}</td>
+                                        </tr>
+                                    );
+                                })
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            // Client-side dynamic highlight refresh every minute (UTC based)
+            const getMinutes = (t) => {
+                if (!t || t.length < 4) return Infinity;
+                const h = +t.slice(0, 2),
+                    m = +t.slice(2, 4);
+                if (isNaN(h) || isNaN(m)) return Infinity;
+                return h * 60 + m;
+            };
+            function refreshHighlights() {
+                const now = new Date();
+                const current = now.getUTCHours() * 60 + now.getUTCMinutes();
+                document.querySelectorAll("tbody tr").forEach((tr) => {
+                    const ref = tr.getAttribute("data-ref-time") || "";
+                    const diff = getMinutes(ref) - current;
+                    if (diff >= -30 && diff <= 5)
+                        tr.classList.add("bg-yellow-500", "text-gray-950");
+                    else tr.classList.remove("bg-yellow-500", "text-gray-950");
+                });
+            }
+            refreshHighlights();
+            setInterval(refreshHighlights, 60000);
+
+            // Initial auto-scroll to the row nearest current UTC time and center it
+            function centerOnCurrent() {
+                const container = document.getElementById(
+                    "dispatchTableContainer",
+                );
+                if (!container) return;
+                const rows = Array.from(container.querySelectorAll("tbody tr"));
+                const filtered = rows.filter((r) =>
+                    r.getAttribute("data-ref-time"),
+                );
+                if (!filtered.length) return;
+                const now = new Date();
+                const current = now.getUTCHours() * 60 + now.getUTCMinutes();
+                let target = filtered.find((r) =>
+                    r.classList.contains("bg-yellow-500"),
+                );
+                if (!target) {
+                    const withDiff = filtered
+                        .map((r) => {
+                            const rt = r.getAttribute("data-ref-time");
+                            return { r, m: getMinutes(rt) };
+                        })
+                        .filter((o) => isFinite(o.m));
+                    const upcoming = withDiff
+                        .filter((o) => o.m >= current)
+                        .sort((a, b) => a.m - b.m)[0];
+                    target =
+                        upcoming?.r || withDiff.sort((a, b) => b.m - a.m)[0]?.r;
+                }
+                if (!target) return;
+                // Compute scroll offset via bounding rects to avoid relying on offsetTop typing
+                const targetRect = target.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+                const currentScroll = container.scrollTop;
+                const relativeTop = targetRect.top - containerRect.top; // within visible area
+                const offset =
+                    currentScroll +
+                    relativeTop -
+                    container.clientHeight / 2 +
+                    targetRect.height / 2;
+                container.scrollTo({
+                    top: Math.max(offset, 0),
+                    behavior: "instant" in window ? "instant" : "auto",
+                });
+            }
+            // Run after paint
+            requestAnimationFrame(() => centerOnCurrent());
+        </script>
     </body>
 </html>
