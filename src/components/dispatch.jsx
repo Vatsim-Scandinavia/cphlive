@@ -100,7 +100,7 @@ const Dispatch = () => {
                                     <td>{flight.stand}</td>
                                     <td>{flight.eobt}</td>
                                     <td>{flight.tobt}</td>
-                                    <td>{flight.ctot}</td>
+                                    <td><a href={flight.ctot}>CTOT</a></td>
                                 </tr>
                             );
                         })
