@@ -1,35 +1,40 @@
 {
-  "name": "cphlive1",
+  "name": "copenhagen-live-2026",
+  "private": true,
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "dev": "astro dev --host",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint \"src/**/*.{js,mjs,cjs,ts,tsx,astro}\"",
+    "lint:fix": "eslint \"src/**/*.{js,mjs,cjs,ts,tsx,astro}\" --fix",
+    "format": "prettier . --write --cache",
+    "format:check": "prettier . --check --cache"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.3.0",
-    "@heroicons/react": "^2.1.5",
-    "@tailwindcss/vite": "^4.1.11",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
-    "aewx-metar-parser": "^1.0.0",
-    "astro": "^5.11.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "cobe": "^0.6.3",
-    "framer-motion": "^11.3.27",
-    "lucide-react": "^0.427.0",
-    "papaparse": "^5.5.3",
-    "prettier": "^3.0.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tailwind-merge": "^2.5.2",
-    "tailwindcss": "^4.1.11",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.3.3"
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.1",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.1",
+    "eslint": "^10.8.1",
+    "eslint-plugin-astro": "^3.1.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.67.0"
   }
 }

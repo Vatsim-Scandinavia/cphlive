@@ -1,0 +1,44 @@
+---
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import StatusPage from "../../components/StatusPage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+interface Props {
+  direction: "Departure" | "Arrival";
+}
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { briefing: "departure" },
+      props: { direction: "Departure" },
+    },
+    {
+      params: { briefing: "arrival" },
+      props: { direction: "Arrival" },
+    },
+  ];
+}
+
+const { direction } = Astro.props;
+const directionLowercase = direction.toLowerCase();
+---
+
+<Layout
+  title={`${direction} briefing coming soon | Copenhagen Live 2026`}
+  description={`The Copenhagen Live ${directionLowercase} briefing is currently being prepared and will be published closer to the event.`}
+  noindex
+>
+  <SiteHeader slot="header" />
+  <StatusPage
+    eyebrow={`${direction} briefing`}
+    title={`The ${directionLowercase} briefing is being prepared.`}
+    description="Our operations team is finalising the procedures and guidance for Copenhagen Live. The complete briefing will be published here when it is ready."
+    primaryHref="/#pilots"
+    primaryLabel="Back to pilot briefings"
+    secondaryHref="/"
+    secondaryLabel="Return home"
+  />
+  <SiteFooter slot="footer" />
+</Layout>

@@ -1,8 +1,0 @@
-@import "./fonts.css";
-@import "tailwindcss";
-
-body {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}

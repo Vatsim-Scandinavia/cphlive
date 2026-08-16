@@ -1,0 +1,84 @@
+---
+import { Font, getImage } from "astro:assets";
+import socialImageSource from "../assets/hero-copenhagen-airport-night.png";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "Copenhagen Live 2026",
+  description = "Copenhagen Live brings virtual pilots and air traffic controllers together for a full day of Scandinavian aviation.",
+  lang = "en",
+  noindex = false,
+} = Astro.props;
+
+const canonicalUrl = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : Astro.url;
+
+const socialImage = await getImage({
+  src: socialImageSource,
+  width: 1200,
+  height: 630,
+  fit: "cover",
+  format: "jpeg",
+  quality: 85,
+});
+const socialImageUrl = new URL(socialImage.src, Astro.site ?? Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#071425" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Copenhagen Live" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Copenhagen Airport at night during Copenhagen Live 2026"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta
+      name="twitter:image:alt"
+      content="Copenhagen Airport at night during Copenhagen Live 2026"
+    />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{title}</title>
+    <Font cssVariable="--font-roboto" preload />
+  </head>
+  <body>
+    <a
+      href="#main-content"
+      class="fixed top-4 left-4 z-50 -translate-y-24 bg-white px-4 py-3 text-sm font-semibold text-slate-950 transition-transform focus:translate-y-0"
+    >
+      Skip to content
+    </a>
+    <slot name="header" />
+    <main id="main-content">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

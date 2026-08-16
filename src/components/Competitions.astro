@@ -1,0 +1,191 @@
+---
+import { Image } from "astro:assets";
+import copenhagenFanaticImage from "../assets/competition-copenhagen-fanatic.jpg";
+import earlyBirdImage from "../assets/competition-early-bird-sunrise.jpg";
+import lateNightOwlImage from "../assets/competition-late-night-owl.jpg";
+import regionalMasterImage from "../assets/competition-regional-master-billund.jpg";
+import orbxLogo from "../assets/sponsors/orbx-wordmark-gold.svg";
+import volantaLogo from "../assets/sponsors/volanta-wordmark-symbol-blue.svg";
+import iniBuildsLogo from "../assets/sponsors/inibuilds-wordmark-white.svg";
+import simNordLogo from "../assets/sponsors/simnord-wordmark-blue.png";
+import SectionEyebrow from "./SectionEyebrow.astro";
+
+const sponsors = {
+  iniBuilds: {
+    name: "iniBuilds",
+    logo: iniBuildsLogo,
+    href: "https://inibuilds.com/",
+  },
+  volanta: {
+    name: "Volanta",
+    logo: volantaLogo,
+    href: "https://volanta.app/",
+  },
+  orbx: {
+    name: "ORBX",
+    logo: orbxLogo,
+    href: "https://orbxdirect.com/",
+  },
+  simNord: {
+    name: "SimNord",
+    logo: simNordLogo,
+    href: "https://www.simnord.com/",
+  },
+};
+
+const competitions = [
+  {
+    title: "Early Bird",
+    description:
+      "Ready for the morning rush? Complete at least one full rotation to/from Copenhagen before 08:00z.",
+    sponsors: [sponsors.iniBuilds, sponsors.volanta],
+    availability: "04:00z – 08:00z",
+    location: "Copenhagen (EKCH)",
+    image: earlyBirdImage,
+    imageClass: "competition-image--early-bird",
+  },
+  {
+    title: "Late Night Owl",
+    description:
+      "Ready for a late-night challenge? Complete at least one full rotation to/from Copenhagen between 19:00z and 22:00z.",
+    sponsors: [sponsors.iniBuilds, sponsors.volanta],
+    availability: "19:00z – 22:00z",
+    location: "Copenhagen (EKCH)",
+    image: lateNightOwlImage,
+    imageClass: "competition-image--late-night-owl",
+  },
+  {
+    title: "Copenhagen Fanatic",
+    description:
+      "Ready to go all-in on Copenhagen? Complete at least four full rotations to/from EKCH throughout the event.",
+    sponsors: [sponsors.orbx, sponsors.simNord],
+    availability: "04:00z – 22:00z",
+    location: "Copenhagen (EKCH)",
+    image: copenhagenFanaticImage,
+    imageClass: "competition-image--copenhagen-fanatic",
+  },
+  {
+    title: "Regional Master",
+    description:
+      "Ready to explore beyond Copenhagen? Complete at least one full rotation to/from any regional airport during the event.",
+    sponsors: [sponsors.iniBuilds, sponsors.simNord],
+    availability: "04:00z – 22:00z",
+    location: "Aalborg (EKYT), Billund (EKBI), Aarhus (EKAH)",
+    image: regionalMasterImage,
+    imageClass: "competition-image--regional-master",
+  },
+];
+---
+
+<section
+  id="competitions"
+  class="border-t border-white/10 bg-event-navy text-white"
+  aria-labelledby="competitions-title"
+>
+  <div class="container mx-auto px-6 py-20 sm:px-10 lg:px-16">
+    <SectionEyebrow label="Test your skills" />
+    <h2 id="competitions-title" class="mt-2 text-4xl font-semibold">
+      Competitions
+    </h2>
+    <p class="mt-1 max-w-xl text-base leading-relaxed text-white/70">
+      Four competitions. Four chances to put your aviation skills to the test
+      and take home a prize.
+    </p>
+
+    <ul
+      class="competition-rail mt-8 flex snap-x snap-proximity gap-4 overflow-x-auto pb-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+      aria-label={`${competitions.length} competition prizes`}
+      tabindex="0"
+    >
+      {
+        competitions.map((competition) => (
+          <li class="group flex shrink-0 grow basis-68 snap-start flex-col overflow-hidden rounded-lg border border-white/10 bg-event-surface shadow-xl shadow-black/20 transition duration-200 ease-out hover:border-event-red/50 hover:shadow-2xl hover:shadow-black/30 motion-reduce:transition-none">
+            <div class="relative aspect-2/1 overflow-hidden bg-event-navy">
+              <Image
+                src={competition.image}
+                alt=""
+                width={720}
+                format="webp"
+                quality={82}
+                loading="lazy"
+                decoding="async"
+                class:list={[
+                  "block h-full w-full scale-100 transform-gpu object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-105 motion-reduce:transition-none",
+                  competition.imageClass,
+                ]}
+              />
+              <div
+                class="pointer-events-none absolute -inset-px z-10 bg-linear-to-t from-event-surface via-transparent to-black/10"
+                aria-hidden="true"
+              />
+              <h3 class="absolute right-4 bottom-2.5 left-4 z-20 text-base leading-none font-bold tracking-tight text-white uppercase">
+                {competition.title}
+              </h3>
+            </div>
+
+            <div class="flex flex-1 flex-col px-4 pt-3">
+              <p class="min-h-20 text-xs leading-relaxed text-white/70">
+                {competition.description}
+              </p>
+              <div class="mt-2 min-h-16 space-y-2 pb-4 text-xs font-medium text-white/65">
+                <div class="flex items-center gap-2">
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="size-3.5 shrink-0 text-event-red"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 3v3M17 3v3M4.5 9h15M5 5h14a1.5 1.5 0 0 1 1.5 1.5v13A1.5 1.5 0 0 1 19 21H5a1.5 1.5 0 0 1-1.5-1.5v-13A1.5 1.5 0 0 1 5 5Z" />
+                  </svg>
+                  <span>{competition.availability}</span>
+                </div>
+                {competition.location && (
+                  <div class="flex items-center gap-2">
+                    <svg
+                      viewBox="0 0 24 24"
+                      class="size-3.5 shrink-0 text-event-red"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                      <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                    <span>{competition.location}</span>
+                  </div>
+                )}
+              </div>
+              <div class="-mx-4 mt-auto flex min-h-14 items-center justify-between gap-3 border-t border-white/10 px-4 py-3">
+                <p class="text-xs leading-tight text-white/70">
+                  Prize provided by
+                </p>
+                <div class="flex h-6 w-40 shrink-0 items-center justify-end gap-2">
+                  {competition.sponsors.map((sponsor) => (
+                    <a
+                      href={sponsor.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${sponsor.name} website`}
+                      class="flex h-6 flex-none items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                    >
+                      <img
+                        src={sponsor.logo.src}
+                        alt={sponsor.name}
+                        class="h-3 w-auto max-w-20 object-contain"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

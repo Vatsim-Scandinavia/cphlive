@@ -1,11 +1,28 @@
-import { defineConfig } from 'astro/config';
-import react from "@astrojs/react";
+// @ts-check
+import { defineConfig, fontProviders } from "astro/config";
+
 import tailwindcss from "@tailwindcss/vite";
 
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
-  site: 'https://cphlive.vatsim-scandinavia.org/',
   vite: {
     plugins: [tailwindcss()],
   },
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes("/briefings/"),
+    }),
+  ],
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Roboto",
+      cssVariable: "--font-roboto",
+      weights: ["100 900"],
+      styles: ["normal", "italic"],
+    },
+  ],
+  site: "https://cphlive.vatsim-scandinavia.org",
 });

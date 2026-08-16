@@ -1,0 +1,7 @@
+# Package-manager-managed files
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# Repository instructions and compatibility link
+AGENTS.md
+CLAUDE.md

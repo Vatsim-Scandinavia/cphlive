@@ -1,0 +1,130 @@
+---
+import { Image } from "astro:assets";
+import arrivalImage from "../assets/briefing-arrival-copenhagen-tower.png";
+import departureImage from "../assets/briefing-departure-copenhagen-apron.jpg";
+import SectionEyebrow from "./SectionEyebrow.astro";
+---
+
+<section
+  id="pilots"
+  class="border-t border-white/10 bg-event-section text-white"
+  aria-labelledby="briefings-title"
+>
+  <div class="container mx-auto px-6 py-20 sm:px-10 lg:px-16">
+    <SectionEyebrow label="Pilot briefings" />
+    <h2 id="briefings-title" class="mt-2 text-4xl font-semibold">
+      Prepare for Copenhagen
+    </h2>
+    <p class="mt-1 text-base leading-relaxed text-white/70">
+      Choose your direction and review the procedures.
+    </p>
+
+    <div
+      class="relative isolate mt-8 grid overflow-hidden rounded-lg border border-white/15 bg-event-surface shadow-2xl shadow-black/25 md:grid-cols-2"
+    >
+      <a
+        href="/briefings/departure"
+        class="group relative isolate flex min-h-60 flex-col justify-end overflow-hidden p-7 focus-visible:z-10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white sm:min-h-72 sm:p-8 lg:p-11"
+        aria-label="Open the departure briefing"
+      >
+        <Image
+          src={departureImage}
+          alt=""
+          widths={[640, 960, 1280, 1920]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          format="webp"
+          quality={90}
+          loading="lazy"
+          decoding="async"
+          class="absolute inset-0 -z-20 h-full w-full scale-100 transform-gpu object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-105 group-focus-visible:scale-105 motion-reduce:transition-none"
+        />
+        <span
+          class="absolute inset-0 -z-10 bg-linear-to-b from-event-navy/20 to-event-navy/85 transition-opacity duration-200 ease-out group-hover:opacity-90 group-focus-visible:opacity-90 motion-reduce:transition-none"
+          aria-hidden="true"></span>
+        <span
+          class="block text-xs font-bold tracking-widest text-white/60 uppercase"
+          >From EKCH</span
+        >
+        <span
+          class="mt-2 block text-3xl leading-none font-semibold tracking-tight sm:text-4xl"
+          >Departure briefing</span
+        >
+        <span
+          class="mt-4 block max-w-md text-sm leading-relaxed text-white/80 text-shadow-md"
+        >
+          Review routing, airport procedures and pushback guidance before
+          departure.
+        </span>
+        <span
+          class="mt-4 inline-flex w-fit items-center gap-3 text-sm font-semibold"
+        >
+          Read briefing
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            class="size-4 transition duration-200 ease-out group-hover:translate-x-1 group-hover:text-event-red group-focus-visible:translate-x-1 group-focus-visible:text-event-red motion-reduce:transition-none"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="square"
+            stroke-linejoin="miter"
+          >
+            <path d="M5 12h14M14 7l5 5-5 5"></path>
+          </svg>
+        </span>
+      </a>
+
+      <a
+        href="/briefings/arrival"
+        class="group relative isolate flex min-h-60 flex-col justify-end overflow-hidden border-t border-white/15 p-7 focus-visible:z-10 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-white sm:min-h-72 sm:p-8 md:border-t-0 md:border-l lg:p-11"
+        aria-label="Open the arrival briefing"
+      >
+        <Image
+          src={arrivalImage}
+          alt=""
+          widths={[640, 960, 1280, 1920]}
+          sizes="(min-width: 768px) 50vw, 100vw"
+          format="webp"
+          quality={90}
+          loading="lazy"
+          decoding="async"
+          class="briefing-image--arrival absolute inset-0 -z-20 h-full w-full scale-100 transform-gpu object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-105 group-focus-visible:scale-105 motion-reduce:transition-none"
+        />
+        <span
+          class="absolute inset-0 -z-10 bg-linear-to-b from-event-navy/20 to-event-navy/85 transition-opacity duration-200 ease-out group-hover:opacity-90 group-focus-visible:opacity-90 motion-reduce:transition-none"
+          aria-hidden="true"></span>
+        <span
+          class="block text-xs font-bold tracking-widest text-white/60 uppercase"
+          >To EKCH</span
+        >
+        <span
+          class="mt-2 block text-3xl leading-none font-semibold tracking-tight sm:text-4xl"
+          >Arrival briefing</span
+        >
+        <span
+          class="mt-4 block max-w-md text-sm leading-relaxed text-white/80 text-shadow-md"
+        >
+          Prepare for expected routing, runway procedures and parking at
+          Copenhagen.
+        </span>
+        <span
+          class="mt-4 inline-flex w-fit items-center gap-3 text-sm font-semibold"
+        >
+          Read briefing
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            class="size-4 transition duration-200 ease-out group-hover:translate-x-1 group-hover:text-event-red group-focus-visible:translate-x-1 group-focus-visible:text-event-red motion-reduce:transition-none"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="square"
+            stroke-linejoin="miter"
+          >
+            <path d="M5 12h14M14 7l5 5-5 5"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+import AirspaceMap from "./AirspaceMap.astro";
+---
+
+<section
+  id="event"
+  class="relative overflow-hidden bg-event-navy text-white"
+  aria-labelledby="event-title"
+>
+  <div class="container mx-auto px-6 py-10 sm:px-10 lg:px-16">
+    <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14">
+      <div class="relative h-80 overflow-hidden">
+        <AirspaceMap />
+      </div>
+
+      <div>
+        <h2 id="event-title" class="text-xl font-semibold">
+          Once a year, Copenhagen comes to life
+        </h2>
+        <div
+          class="mt-4 grid gap-4 text-base leading-relaxed text-white/70 xl:grid-cols-2 xl:gap-8"
+        >
+          <p>
+            Once a year, controllers from the Danish FIR come together in one
+            place for 18 hours of live ATC. Working side by side, we staff
+            Copenhagen and the surrounding Danish airspace from 04:00z until
+            22:00z.
+          </p>
+          <p>
+            For pilots, that means a full day of busy frequencies, realistic
+            coordination and traffic flowing in and out of Denmark. No bookings
+            or reserved slots — just come prepared and join us when you’re
+            ready.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,77 @@
+---
+import SectionEyebrow from "./SectionEyebrow.astro";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primaryHref: string;
+  primaryLabel: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel,
+} = Astro.props;
+---
+
+<section
+  class="relative isolate flex min-h-svh overflow-hidden bg-event-navy pt-24 text-white"
+  aria-labelledby="status-page-title"
+>
+  <div
+    class="absolute inset-0 -z-20 bg-linear-to-br from-event-section via-event-navy to-event-footer"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="absolute top-1/2 right-0 -z-10 h-px w-2/3 bg-linear-to-l from-event-red/60 to-transparent"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div
+    class="container mx-auto flex w-full items-center px-6 py-24 sm:px-10 lg:px-16"
+  >
+    <div class="max-w-4xl">
+      <SectionEyebrow label={eyebrow} />
+      <h1
+        id="status-page-title"
+        class="mt-4 text-5xl leading-tight font-semibold tracking-tight text-balance sm:text-6xl"
+      >
+        {title}
+      </h1>
+      <p
+        class="mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
+      >
+        {description}
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href={primaryHref}
+          class="inline-flex min-h-12 items-center justify-center bg-event-red px-7 text-sm font-semibold text-white transition-colors duration-200 ease-out hover:bg-event-red-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none"
+        >
+          {primaryLabel}
+        </a>
+        {
+          secondaryHref && secondaryLabel && (
+            <a
+              href={secondaryHref}
+              class="inline-flex min-h-12 items-center justify-center border border-white/50 px-7 text-sm font-semibold text-white transition-colors duration-200 ease-out hover:border-white hover:bg-white hover:text-event-navy focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none"
+            >
+              {secondaryLabel}
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
