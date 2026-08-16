@@ -1,47 +1,50 @@
-# Astro Starter Kit: Minimal
+# Copenhagen Live 2026
+
+Event website for Copenhagen Live 2026, a full day of live virtual air traffic control across Copenhagen and Danish airspace, organised by VATSIM Scandinavia.
+
+## Requirements
+
+- Node.js 22.12 or newer
+- pnpm
+
+## Development
+
+Install dependencies:
 
 ```sh
-npm create astro@latest -- --template minimal
+pnpm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+Start Astro's background development server:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+pnpm exec astro dev --background
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Manage the server with:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```sh
+pnpm exec astro dev status
+pnpm exec astro dev logs
+pnpm exec astro dev stop
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Quality checks
 
-## 🧞 Commands
+```sh
+pnpm check
+pnpm lint
+pnpm format:check
+pnpm build
+```
 
-All commands are run from the root of the project, from a terminal:
+The production site is generated in `dist/`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Routes
 
-## 👀 Want to learn more?
+- `/` — event landing page
+- `/briefings/departure` — departure briefing holding page
+- `/briefings/arrival` — arrival briefing holding page
+- `404.astro` — custom not-found page
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The temporary briefing pages are marked `noindex` and excluded from the sitemap until their final content is published.

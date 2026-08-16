@@ -1,1 +1,129 @@
 @import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-roboto);
+  --color-event-navy: #071425;
+  --color-event-red: #c8102e;
+  --color-event-red-hover: #a90d28;
+  --color-nordic-mist: #dfebeb;
+  --color-vatsca-cyan: #43c6e7;
+  --color-event-section: #0b1b2e;
+  --color-event-surface: #091725;
+  --color-event-footer: #040c16;
+}
+
+@layer base {
+  html {
+    @apply bg-event-navy antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-w-80 bg-event-navy font-sans text-white;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    @apply bg-event-red text-white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .briefing-image--arrival {
+    object-position: 42% center;
+  }
+
+  .competition-image--early-bird {
+    object-position: 50% 58%;
+  }
+
+  .competition-image--late-night-owl {
+    object-position: 60% 54%;
+  }
+
+  .competition-image--copenhagen-fanatic {
+    object-position: 56% 52%;
+  }
+
+  .competition-image--regional-master {
+    object-position: 48% 48%;
+  }
+
+  .competition-rail {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 18%) transparent;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(180deg, rgb(2 9 19 / 68%) 0%, transparent 35%),
+      linear-gradient(0deg, rgb(2 9 19 / 72%) 0%, transparent 48%),
+      linear-gradient(90deg, rgb(2 9 19 / 34%) 0%, transparent 52%);
+  }
+
+  .hero-image {
+    animation: image-reveal 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+    object-position: 58% center;
+  }
+
+  .hero-content > * {
+    animation: content-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-content > :nth-child(1) {
+    animation-delay: 160ms;
+  }
+
+  .hero-content > :nth-child(2) {
+    animation-delay: 240ms;
+  }
+
+  .hero-content > :nth-child(3) {
+    animation-delay: 320ms;
+  }
+
+  .hero-content > :nth-child(4) {
+    animation-delay: 400ms;
+  }
+
+  @keyframes image-reveal {
+    from {
+      opacity: 0;
+      transform: scale(1.025);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes content-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(1rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image,
+    .hero-content > * {
+      animation: none;
+    }
+  }
+}

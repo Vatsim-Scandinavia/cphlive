@@ -1,0 +1,207 @@
+---
+import Wordmark from "./Wordmark.astro";
+
+const isHomePage = Astro.url.pathname === "/";
+---
+
+<header id="top" class="absolute inset-x-0 top-0 z-30" data-site-header>
+  <nav
+    class="container mx-auto flex items-center justify-between px-6 py-6 sm:px-10 lg:px-[clamp(3.5rem,6.5vw,6.875rem)] lg:py-5"
+    aria-label="Primary navigation"
+  >
+    <a
+      href="/"
+      class="inline-flex min-h-11 items-center"
+      aria-label="Copenhagen Live 2026 home"
+    >
+      <Wordmark />
+    </a>
+
+    <div class="hidden items-center gap-8 lg:flex xl:gap-10">
+      <div class="flex items-center gap-7 xl:gap-12">
+        <a
+          class:list={["nav-link", { "is-active": isHomePage }]}
+          href="/#hero"
+          aria-current={isHomePage ? "page" : undefined}>Home</a
+        >
+        <a class="nav-link" href="/#event">The event</a>
+        <a class="nav-link" href="/#competitions">Competitions</a>
+        <a class="nav-link" href="/#sponsors">Sponsors</a>
+      </div>
+      <a class="header-action" href="/#pilots">Pilot briefings</a>
+    </div>
+
+    <button
+      class="grid size-11 place-items-center border border-white/40 text-white transition-colors hover:border-white hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white lg:hidden"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+      data-menu-toggle
+    >
+      <span class="sr-only">Open navigation</span>
+      <svg
+        data-menu-open-icon
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        class="size-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.75"
+        stroke-linecap="square"
+      >
+        <path d="M3 7h18M3 12h18M3 17h18"></path>
+      </svg>
+      <svg
+        data-menu-close-icon
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        class="hidden size-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.75"
+        stroke-linecap="square"
+      >
+        <path d="M5 5l14 14M19 5 5 19"></path>
+      </svg>
+    </button>
+
+    <div
+      id="mobile-navigation"
+      class="absolute top-full right-6 left-6 hidden border border-white/15 bg-event-navy/95 px-6 py-5 shadow-2xl shadow-black/30 backdrop-blur-md sm:right-10 sm:left-10 lg:hidden"
+      data-mobile-menu
+      hidden
+    >
+      <div class="flex flex-col">
+        <a
+          class="mobile-nav-link"
+          href="/#hero"
+          aria-current={isHomePage ? "page" : undefined}>Home</a
+        >
+        <a class="mobile-nav-link" href="/#event">The event</a>
+        <a class="mobile-nav-link" href="/#competitions">Competitions</a>
+        <a class="mobile-nav-link" href="/#sponsors">Sponsors</a>
+        <a
+          class="mt-5 flex min-h-12 items-center justify-center bg-event-red px-5 text-sm font-semibold text-white transition-colors hover:bg-event-red-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          href="/#pilots">Pilot briefings</a
+        >
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuToggle =
+    document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+  const mobileMenu = document.querySelector<HTMLElement>("[data-mobile-menu]");
+  const openIcon = document.querySelector<SVGElement>("[data-menu-open-icon]");
+  const closeIcon = document.querySelector<SVGElement>(
+    "[data-menu-close-icon]",
+  );
+
+  const setMenuState = (isOpen: boolean) => {
+    if (!menuToggle || !mobileMenu || !openIcon || !closeIcon) return;
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.querySelector(".sr-only")!.textContent = isOpen
+      ? "Close navigation"
+      : "Open navigation";
+    mobileMenu.hidden = !isOpen;
+    mobileMenu.classList.toggle("hidden", !isOpen);
+    openIcon.classList.toggle("hidden", isOpen);
+    closeIcon.classList.toggle("hidden", !isOpen);
+  };
+
+  menuToggle?.addEventListener("click", () => {
+    setMenuState(menuToggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMenuState(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuState(false);
+  });
+</script>
+
+<style>
+  .nav-link {
+    position: relative;
+    padding-block: 0.65rem;
+    color: rgb(255 255 255 / 78%);
+    font-size: 0.84rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: color 180ms ease;
+  }
+
+  .nav-link::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--color-event-red);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 220ms ease;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible,
+  .nav-link.is-active {
+    color: white;
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after,
+  .nav-link.is-active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .header-action {
+    display: inline-flex;
+    min-height: 3rem;
+    min-width: 9.25rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(255 255 255 / 68%);
+    padding-inline: 1.4rem;
+    color: white;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition:
+      background-color 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease;
+  }
+
+  .header-action:hover,
+  .header-action:focus-visible {
+    border-color: white;
+    background: white;
+    color: var(--color-event-navy);
+  }
+
+  .nav-link:focus-visible,
+  .header-action:focus-visible,
+  .mobile-nav-link:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 4px;
+  }
+
+  .mobile-nav-link {
+    border-bottom: 1px solid rgb(255 255 255 / 12%);
+    padding-block: 0.9rem;
+    color: rgb(255 255 255 / 82%);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:focus-visible {
+    color: white;
+  }
+</style>

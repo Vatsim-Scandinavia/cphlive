@@ -1,0 +1,55 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span class:list={["wordmark", className]} aria-hidden="true">
+  <span class="wordmark-cph">CPH</span>
+  <span class="wordmark-live">LIVE</span>
+  <span class="wordmark-year">2026</span>
+</span>
+
+<style>
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    color: white;
+    font-family: var(--font-roboto), Roboto, Arial, sans-serif;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .wordmark-cph,
+  .wordmark-live {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+  }
+
+  .wordmark-live {
+    margin-left: 0.3rem;
+    color: var(--color-event-red);
+  }
+
+  .wordmark-year {
+    margin-left: 0.55rem;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+  }
+
+  @media (min-width: 40rem) {
+    .wordmark-cph,
+    .wordmark-live {
+      font-size: 1.6rem;
+    }
+
+    .wordmark-year {
+      font-size: 0.85rem;
+    }
+  }
+</style>

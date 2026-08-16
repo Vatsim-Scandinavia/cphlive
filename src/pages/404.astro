@@ -1,0 +1,24 @@
+---
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import StatusPage from "../components/StatusPage.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Page not found | Copenhagen Live 2026"
+  description="The requested page could not be found. Return to Copenhagen Live 2026."
+  noindex
+>
+  <SiteHeader slot="header" />
+  <StatusPage
+    eyebrow="404 — Page not found"
+    title="This route has left the airspace."
+    description="The page may have moved, or the address may be incorrect. Return to Copenhagen Live and continue planning your flight."
+    primaryHref="/"
+    primaryLabel="Return home"
+    secondaryHref="/#pilots"
+    secondaryLabel="View pilot briefings"
+  />
+  <SiteFooter slot="footer" />
+</Layout>

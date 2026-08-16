@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../assets/hero-copenhagen-airport-night.png";
+---
+
+<section
+  id="hero"
+  class="relative isolate flex min-h-svh overflow-hidden bg-event-navy text-white"
+  aria-labelledby="hero-title"
+>
+  <Image
+    src={heroImage}
+    alt=""
+    widths={[640, 960, 1280, 1920, 2560, 3438]}
+    sizes="100vw"
+    format="webp"
+    quality={88}
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    class="hero-image absolute inset-0 -z-20 h-full w-full object-cover lg:object-center"
+  />
+  <div class="hero-shade absolute inset-0 -z-10" aria-hidden="true"></div>
+
+  <div
+    class="container mx-auto flex min-h-svh w-full items-end px-6 pt-36 pb-[10svh] sm:px-10 sm:pt-40 lg:px-[clamp(3.5rem,6.5vw,6.875rem)] lg:pb-[9svh]"
+  >
+    <div class="hero-content">
+      <h1
+        id="hero-title"
+        class="text-6xl leading-none font-semibold tracking-tight text-balance"
+      >
+        <span class="block">Copenhagen</span>
+        <span class="mt-1 block">Live 2026</span>
+      </h1>
+      <div
+        class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold tracking-widest text-white uppercase sm:text-base"
+        aria-label="Event date and time"
+      >
+        <time datetime="2026-09-05">5 September 2026</time>
+        <span class="h-4 w-0.5 bg-event-red" aria-hidden="true"></span>
+        <time datetime="2026-09-05T04:00:00Z">04:00–22:00z</time>
+      </div>
+      <p
+        class="mt-2 max-w-xl text-base leading-relaxed font-normal text-white/85"
+      >
+        Take to the virtual skies and join hundreds of pilots as Copenhagen
+        comes alive with full ATC coverage.
+      </p>
+      <a
+        href="#event"
+        class="group mt-4 inline-flex items-center gap-2 bg-event-red px-8 py-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-event-red-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+      >
+        Explore the event
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          class="size-5 transition-transform duration-200 group-hover:translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+        >
+          <path d="M5 12h14M14 7l5 5-5 5"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
