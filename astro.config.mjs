@@ -10,11 +10,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [
-    sitemap({
-      filter: (page) => !page.includes("/briefings/"),
-    }),
-  ],
+  integrations: [sitemap()],
   fonts: [
     {
       provider: fontProviders.fontsource(),

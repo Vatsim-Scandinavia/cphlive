@@ -1,44 +1,35 @@
 ---
+import BriefingPage from "../../components/BriefingPage.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
-import StatusPage from "../../components/StatusPage.astro";
+import { briefings, type Briefing } from "../../data/briefings";
 import Layout from "../../layouts/Layout.astro";
 
 interface Props {
-  direction: "Departure" | "Arrival";
+  briefing: Briefing;
 }
 
 export function getStaticPaths() {
   return [
     {
       params: { briefing: "departure" },
-      props: { direction: "Departure" },
+      props: { briefing: briefings.departure },
     },
     {
       params: { briefing: "arrival" },
-      props: { direction: "Arrival" },
+      props: { briefing: briefings.arrival },
     },
   ];
 }
 
-const { direction } = Astro.props;
-const directionLowercase = direction.toLowerCase();
+const { briefing } = Astro.props;
 ---
 
 <Layout
-  title={`${direction} briefing coming soon | Copenhagen Live 2026`}
-  description={`The Copenhagen Live ${directionLowercase} briefing is currently being prepared and will be published closer to the event.`}
-  noindex
+  title={`${briefing.label} briefing | Copenhagen Live 2026`}
+  description={`Prepare for your Copenhagen Live ${briefing.direction} with a step-by-step walkthrough of EKCH procedures and event operations.`}
 >
   <SiteHeader slot="header" />
-  <StatusPage
-    eyebrow={`${direction} briefing`}
-    title={`The ${directionLowercase} briefing is being prepared.`}
-    description="Our operations team is finalising the procedures and guidance for Copenhagen Live. The complete briefing will be published here when it is ready."
-    primaryHref="/#pilots"
-    primaryLabel="Back to pilot briefings"
-    secondaryHref="/"
-    secondaryLabel="Return home"
-  />
+  <BriefingPage briefing={briefing} />
   <SiteFooter slot="footer" />
 </Layout>

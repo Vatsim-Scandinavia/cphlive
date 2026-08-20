@@ -1,0 +1,74 @@
+---
+import { Image } from "astro:assets";
+import type { Briefing } from "../data/briefings";
+
+interface Props {
+  briefing: Briefing;
+}
+
+const { briefing } = Astro.props;
+---
+
+<section
+  class="relative isolate flex min-h-[34rem] overflow-hidden bg-event-navy text-white sm:min-h-[36rem]"
+  aria-labelledby="briefing-title"
+>
+  <Image
+    src={briefing.heroImage}
+    alt=""
+    widths={[640, 960, 1280, 1920, 2560, 3438]}
+    sizes="100vw"
+    format="webp"
+    quality={88}
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+    class="briefing-hero-image absolute inset-0 -z-20 h-full w-full object-cover"
+    style={`object-position: ${briefing.heroImagePosition}`}
+  />
+  <div class="briefing-hero-shade absolute inset-0 -z-10" aria-hidden="true">
+  </div>
+
+  <div
+    class="container mx-auto flex w-full items-end px-6 pt-36 pb-16 sm:px-10 sm:pb-20 lg:px-16"
+  >
+    <div class="hero-content max-w-2xl">
+      <p class="text-xs font-bold tracking-[0.18em] text-event-red uppercase">
+        Copenhagen Live 2026
+      </p>
+      <h1
+        id="briefing-title"
+        class="mt-4 text-5xl leading-none font-semibold tracking-tight text-balance sm:text-6xl"
+      >
+        Pilot briefing
+      </h1>
+      <p class="mt-5 text-xl font-semibold text-white sm:text-2xl">
+        Arrive prepared. Keep Copenhagen moving.
+      </p>
+      <p
+        class="mt-3 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg"
+      >
+        Practical guidance for a smooth flight during Copenhagen Live 2026.
+      </p>
+      <nav
+        class="mt-7 flex flex-wrap gap-3"
+        aria-label="Choose briefing direction"
+      >
+        <a
+          href="/briefings/departure"
+          aria-current={briefing.direction === "departure" ? "page" : undefined}
+          class="inline-flex min-h-12 items-center border border-white/35 px-6 text-sm font-semibold text-white transition-colors hover:border-event-red hover:bg-event-red/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white aria-[current=page]:border-event-red aria-[current=page]:bg-event-red"
+        >
+          Departure briefing
+        </a>
+        <a
+          href="/briefings/arrival"
+          aria-current={briefing.direction === "arrival" ? "page" : undefined}
+          class="inline-flex min-h-12 items-center border border-white/35 px-6 text-sm font-semibold text-white transition-colors hover:border-event-red hover:bg-event-red/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white aria-[current=page]:border-event-red aria-[current=page]:bg-event-red"
+        >
+          Arrival briefing
+        </a>
+      </nav>
+    </div>
+  </div>
+</section>

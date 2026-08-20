@@ -76,6 +76,30 @@
     object-position: 58% center;
   }
 
+  .briefing-hero-shade {
+    background:
+      linear-gradient(180deg, rgb(2 9 19 / 62%) 0%, transparent 40%),
+      linear-gradient(
+        0deg,
+        rgb(4 12 22 / 94%) 0%,
+        rgb(4 12 22 / 48%) 45%,
+        transparent 72%
+      ),
+      linear-gradient(90deg, rgb(2 9 19 / 82%) 0%, transparent 72%);
+  }
+
+  .briefing-rail-number {
+    @apply absolute top-0 -left-[1.38rem] grid size-11 place-items-center rounded-full border border-event-red/55 bg-event-navy text-xs font-bold text-event-red sm:-left-[1.55rem] sm:size-12;
+  }
+
+  .briefing-phase {
+    @apply pt-1 text-[0.68rem] font-bold tracking-[0.08em] text-event-red uppercase sm:pt-1.5;
+  }
+
+  .briefing-hero-image {
+    animation: image-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
   .hero-content > * {
     animation: content-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
@@ -122,6 +146,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .hero-image,
+    .briefing-hero-image,
     .hero-content > * {
       animation: none;
     }

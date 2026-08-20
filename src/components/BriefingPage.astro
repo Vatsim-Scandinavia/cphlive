@@ -1,0 +1,16 @@
+---
+import type { Briefing } from "../data/briefings";
+import BriefingHero from "./BriefingHero.astro";
+import BriefingResources from "./BriefingResources.astro";
+import BriefingTimeline from "./BriefingTimeline.astro";
+
+interface Props {
+  briefing: Briefing;
+}
+
+const { briefing } = Astro.props;
+---
+
+<BriefingHero briefing={briefing} />
+<BriefingTimeline briefing={briefing} />
+<BriefingResources briefing={briefing} />

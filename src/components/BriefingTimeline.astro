@@ -1,0 +1,212 @@
+---
+import type { Briefing, BriefingDirection } from "../data/briefings";
+
+interface Props {
+  briefing: Briefing;
+}
+
+const { briefing } = Astro.props;
+
+const phaseLabels: Record<BriefingDirection, Record<string, string>> = {
+  departure: {
+    preparation: "Before connecting",
+    clearance: "Clearance delivery",
+    "ready-time": "CDM and TOBT",
+    "startup-queue": "Startup queue",
+    "release-point": "Pushback",
+    taxi: "Taxi and takeoff",
+    airborne: "After takeoff",
+  },
+  arrival: {
+    preparation: "Before descent",
+    prepare: "Arrival preparation",
+    star: "Standard arrival",
+    sequence: "Holding",
+    approach: "Approach",
+    landing: "Landing",
+    parking: "Taxi in",
+  },
+};
+
+const directionHeading =
+  briefing.direction === "departure"
+    ? "Departing Copenhagen"
+    : "Arriving in Copenhagen";
+const directionIntro =
+  briefing.direction === "departure"
+    ? "From preparing your flight to contacting Departure, follow each stage in order."
+    : "From the top of descent to a clear stand, follow each stage in order.";
+---
+
+<section
+  id="walkthrough"
+  class="scroll-mt-0 bg-event-navy text-white"
+  aria-labelledby="journey-title"
+>
+  <div
+    class="container mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-16 lg:py-24"
+  >
+    <header class="max-w-3xl">
+      <p class="text-xs font-bold tracking-[0.18em] text-event-red uppercase">
+        {briefing.label} briefing
+      </p>
+      <h2
+        id="journey-title"
+        class="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl"
+      >
+        {directionHeading}
+      </h2>
+      <p class="mt-4 text-base leading-7 text-white/62 sm:text-lg">
+        {directionIntro}
+      </p>
+    </header>
+
+    <ol class="relative mt-16 ml-5 border-l border-white/15 sm:ml-6">
+      <li class="relative pb-20 pl-10 sm:pl-14">
+        <span class="briefing-rail-number" aria-hidden="true">01</span>
+        <article class="max-w-3xl">
+          <p class="briefing-phase">
+            {phaseLabels[briefing.direction].preparation}
+          </p>
+          <h3 class="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+            Preparation
+          </h3>
+          <div class="mt-5 space-y-4 text-base leading-7 text-white/65">
+            <p>{briefing.preparationDescription}</p>
+            {briefing.preparationDetails.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+          <dl class="mt-7 border-y border-white/13">
+            {
+              briefing.preparationItems.map((item) => (
+                <div class="grid gap-2 border-b border-white/13 py-4 last:border-b-0 sm:grid-cols-[11rem_1fr] sm:gap-8">
+                  <dt class="text-sm font-semibold text-white">{item.title}</dt>
+                  <dd class="text-sm leading-6 text-white/60">
+                    {item.description}
+                  </dd>
+                </div>
+              ))
+            }
+          </dl>
+          {
+            briefing.preparationWarning && (
+              <p class="mt-6 border-l-2 border-event-red pl-4 text-sm leading-6 font-medium text-white/82">
+                {briefing.preparationWarning}
+              </p>
+            )
+          }
+        </article>
+      </li>
+
+      {
+        briefing.steps.map((step, index) => (
+          <li
+            id={step.id}
+            class="relative scroll-mt-8 pb-20 pl-10 last:pb-0 sm:pl-14"
+          >
+            <span class="briefing-rail-number" aria-hidden="true">
+              {String(index + 2).padStart(2, "0")}
+            </span>
+            <article class="max-w-3xl">
+              <p class="briefing-phase">
+                {phaseLabels[briefing.direction][step.id]}
+              </p>
+              <h3 class="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
+                {step.title}
+              </h3>
+              <div class="mt-5 space-y-4 text-base leading-7 text-white/65">
+                <p>{step.action}</p>
+                {step.details.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+
+              {step.callout && (
+                <p class="mt-7 border-l-2 border-event-red pl-5 text-sm leading-6 font-semibold text-white/85">
+                  {step.callout}
+                </p>
+              )}
+
+              {step.facts && (
+                <dl class="mt-7 border-y border-white/13">
+                  {step.facts.map((fact) => (
+                    <div class="grid gap-2 border-b border-white/13 py-4 last:border-b-0 sm:grid-cols-[11rem_1fr] sm:gap-8">
+                      <dt class="text-sm font-semibold text-white/70">
+                        {fact.label}
+                      </dt>
+                      <dd>
+                        <span class="block text-xl font-semibold text-event-red sm:text-2xl">
+                          {fact.value}
+                        </span>
+                        {fact.description && (
+                          <span class="mt-1 block text-xs leading-5 text-white/50">
+                            {fact.description}
+                          </span>
+                        )}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+
+              {(step.expectation || step.watchOut) && (
+                <dl class="mt-7 border-y border-white/13">
+                  {step.expectation && (
+                    <div
+                      class:list={[
+                        "grid gap-2 py-4 sm:grid-cols-[11rem_1fr] sm:gap-8",
+                        step.watchOut && "border-b border-white/13",
+                      ]}
+                    >
+                      <dt class="text-sm font-semibold text-white">
+                        Expect from ATC
+                      </dt>
+                      <dd class="text-sm leading-6 text-white/60">
+                        {step.expectation}
+                      </dd>
+                    </div>
+                  )}
+                  {step.watchOut && (
+                    <div class="grid gap-2 py-4 sm:grid-cols-[11rem_1fr] sm:gap-8">
+                      <dt class="text-sm font-semibold text-event-red">
+                        Watch out
+                      </dt>
+                      <dd class="text-sm leading-6 text-white/60">
+                        {step.watchOut}
+                      </dd>
+                    </div>
+                  )}
+                </dl>
+              )}
+
+              {step.link && (
+                <a
+                  href={step.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class:list={[
+                    "inline-flex items-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white",
+                    step.link.variant === "button"
+                      ? "mt-5 min-h-11 bg-event-red px-5 text-white transition-colors hover:bg-event-red-hover"
+                      : "mt-2 min-h-9 border-b border-event-red/60 text-event-red hover:border-event-red",
+                  ]}
+                >
+                  {step.link.label}
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    class="ml-2 size-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M7 17 17 7M9 7h8v8" />
+                  </svg>
+                </a>
+              )}
+            </article>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,85 @@
+---
+import type { Briefing } from "../data/briefings";
+
+interface Props {
+  briefing: Briefing;
+}
+
+const { briefing } = Astro.props;
+
+const faqs = [
+  {
+    question: "What is the initial climb?",
+    answer:
+      "Follow the initial climb published for your cleared SID unless ATC assigns a different altitude. Check the current chart before departure and ask Delivery if anything is unclear.",
+  },
+  {
+    question: "I've received a release point. What should I do?",
+    answer:
+      "Push to the marked release point specified by ATC and stop there as instructed. Advise the controller before pushing if your aircraft or pushback setup cannot perform the customized movement.",
+  },
+  {
+    question: "What should I do if I am unsure?",
+    answer:
+      "Stop before entering a runway or continuing an unclear taxi route, then ask ATC to repeat or clarify the instruction.",
+  },
+  {
+    question: "What should I do after the vector fix?",
+    answer:
+      "Continue on the specified downwind heading until Copenhagen Approach turns you toward final or clears you for the approach. Leave the route discontinuity in place and do not connect the transition to the ILS or turn onto final on your own.",
+  },
+];
+---
+
+<section
+  class="border-t border-white/10 bg-event-footer text-white"
+  aria-labelledby="faq-title"
+>
+  <div
+    class="container mx-auto max-w-5xl px-6 py-20 sm:px-10 lg:px-16 lg:py-24"
+  >
+    <div>
+      <p class="text-xs font-bold tracking-[0.18em] text-event-red uppercase">
+        Need a quick answer?
+      </p>
+      <h2
+        id="faq-title"
+        class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl"
+      >
+        Frequently asked questions
+      </h2>
+      <div class="mt-8 border-t border-white/15">
+        {
+          faqs.map((faq) => (
+            <details class="group border-b border-white/15">
+              <summary class="flex min-h-16 cursor-pointer list-none items-center justify-between gap-6 py-4 text-sm font-semibold marker:content-none sm:text-base">
+                {faq.question}
+                <span
+                  class="text-xl font-light text-event-red transition-transform group-open:rotate-45"
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              </summary>
+              <p class="max-w-2xl pr-10 pb-6 text-sm leading-6 text-white/60 sm:text-base sm:leading-7">
+                {faq.answer}
+              </p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-wrap items-center justify-between gap-5">
+      <p class="text-sm text-white/55">
+        If in doubt, ask ATC. We are here to help.
+      </p>
+      <a
+        href={briefing.switchHref}
+        class="border-b border-event-red/70 py-1 text-sm font-semibold text-event-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+      >
+        {briefing.switchLabel} →
+      </a>
+    </div>
+  </div>
+</section>

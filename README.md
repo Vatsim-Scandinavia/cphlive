@@ -43,8 +43,6 @@ The production site is generated in `dist/`.
 ## Routes
 
 - `/` — event landing page
-- `/briefings/departure` — departure briefing holding page
-- `/briefings/arrival` — arrival briefing holding page
+- `/briefings/departure` — step-by-step departure briefing
+- `/briefings/arrival` — step-by-step arrival briefing
 - `404.astro` — custom not-found page
-
-The temporary briefing pages are marked `noindex` and excluded from the sitemap until their final content is published.
