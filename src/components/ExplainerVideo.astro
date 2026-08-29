@@ -1,0 +1,78 @@
+---
+const videoId = "pfWsPc7SPiE";
+const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+---
+
+<div
+  class="group relative aspect-video overflow-hidden rounded-sm border border-white/15 bg-black shadow-2xl"
+  data-explainer-video
+  data-video-id={videoId}
+>
+  <button
+    type="button"
+    class="absolute inset-0 block h-full w-full cursor-pointer overflow-hidden text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+    aria-label="Play the Copenhagen Live explainer video"
+  >
+    <img
+      src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
+      alt=""
+      class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.02] group-hover:opacity-90"
+      loading="lazy"
+      decoding="async"
+    />
+    <span
+      class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-black/20"
+      aria-hidden="true"></span>
+    <span class="absolute inset-0 grid place-items-center" aria-hidden="true">
+      <span
+        class="grid size-16 place-items-center rounded-full bg-event-red text-white shadow-xl transition-transform duration-200 group-hover:scale-105"
+      >
+        <svg viewBox="0 0 24 24" class="ml-1 size-7 fill-current">
+          <path d="M8 5v14l11-7z"></path>
+        </svg>
+      </span>
+    </span>
+    <span
+      class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5"
+    >
+      <span class="font-semibold text-white">Copenhagen Live explainer</span>
+      <span class="shrink-0 text-sm font-medium text-white/75">Watch video</span
+      >
+    </span>
+  </button>
+
+  <noscript>
+    <a
+      href={videoUrl}
+      class="absolute inset-0 grid place-items-center text-event-red underline"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Watch the explainer on YouTube
+    </a>
+  </noscript>
+</div>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>("[data-explainer-video]")
+    .forEach((container) => {
+      const button = container.querySelector("button");
+      const videoId = container.dataset.videoId;
+
+      button?.addEventListener("click", () => {
+        if (!videoId) return;
+
+        const iframe = document.createElement("iframe");
+        iframe.className = "absolute inset-0 h-full w-full";
+        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+        iframe.title = "Copenhagen Live explainer video";
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+
+        container.replaceChildren(iframe);
+      });
+    });
+</script>
