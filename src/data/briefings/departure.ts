@@ -71,7 +71,7 @@ export const departureBriefing = {
         "You can expect to receive your push/start-up clearance ±5 minutes of your TSAT. Missing this window may result in a delay for your flight as it puts you at the back of the sequence.",
       link: {
         label: "Confirm your TOBT",
-        href: "https://vats.im/cdm",
+        href: "https://vats.im/vdgs",
         variant: "button",
       },
       icon: "clock",
